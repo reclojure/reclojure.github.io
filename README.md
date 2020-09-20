@@ -21,4 +21,4 @@ Once @dharrigan is done, your machine will be assigned a new IP (along with all 
 
 You should see `reclojure reClojure Website`. To upload a new version of the website, go to the root folder of the reclojure.org repo and issue the following:
 
-rsync -vahP --delete --exclude '.git' --exclude 'README.md' . rsync://192.168.195.4/reclojure/
+    rsync -vahP --delete --delete-excluded --exclude '.git' --exclude 'README.md' . rsync://192.168.195.4/reclojure/
