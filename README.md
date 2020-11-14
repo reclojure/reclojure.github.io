@@ -25,17 +25,17 @@ address is part of the `reclojure` network that contains the running Nginx
 instance that is serving up the website. To check that everything is ok, you
 can try:
 
-`ping 192.168.195.4`
+    ping 192.168.195.4
 
 If that responds, you can then try the following:
 
-`rsync rsync://192.168.195.4/`
+    rsync rsync://192.168.195.4/
 
 You should see `reclojure reClojure Website`. To upload a new version of the
 website, go to the **root folder of the reclojure.org repo** and issue the
 following:
 
-`rsync -vahP --delete --delete-excluded --exclude '.git' --exclude 'README.md' . rsync://192.168.195.4/reclojure/`
+    rsync -vahP --delete --delete-excluded --exclude '.git' --exclude 'README.md' . rsync://192.168.195.4/reclojure/
 
 ### Notes
 
