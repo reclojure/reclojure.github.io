@@ -1,0 +1,21 @@
+{:deps
+ {:aliases [:dev]}
+
+ :builds
+ {:main
+  {:target     :browser
+   :modules    {:main {:entries [org.reclojure.ui.core]
+                       :init-fn org.reclojure.ui.core/init}}
+   :output-dir "resources/public/ui"
+   :asset-path "/ui"
+   :module-hash-names true
+   :devtools
+   {:repl-pprint true
+    :infer-externs :auto
+    :warnings-as-errors #{:undeclared-var}}
+   :release
+   {:closure-defines
+    {goog.DEBUG false
+     goog.debug.LOGGING_ENABLED true}}}}
+
+ :cache-blockers #{}}
