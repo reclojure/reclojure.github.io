@@ -70,11 +70,6 @@
   ((jit clojure.tools.namespace.repl/set-refresh-dirs) "src")
   ((jit clojure.tools.namespace.repl/refresh-all) :after `resume))
 
-(defn vimeo-conn
-  "Get the vimeo connection from the started system."
-  []
-  (:org.reclojure.vimeo.api/conn (system)))
-
 (def portal-instance (atom nil))
 
 (defn portal

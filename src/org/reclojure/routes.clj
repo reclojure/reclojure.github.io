@@ -15,7 +15,7 @@
    :view (fn [data]
            [layout/layout
             #_(og/social-tags {:image ""})
-            [:div#home-app
+            [:<>
              [home/page data]]])})
 
 (defn routes []

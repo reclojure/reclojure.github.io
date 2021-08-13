@@ -20,10 +20,10 @@
   ([head body]
    [:html
     [:head
-     [:title "Video Library"] ;; FIXME
+     [:title "re:Clojure 2021"]
      [:meta {:charset "UTF-8"}]
      [:meta {:content "width=device-width, initial-scale=1" :name "viewport"}]
-     #_[:link {:rel "stylesheet" :href "styles.css"}]
+     [:link {:rel "stylesheet" :href "/css/styles.css"}] ;FIXME
      (if (io/resource "public/css/compiled/ornament.css")
        [:link {:rel "stylesheet" :href "/css/compiled/ornament.css"}]
        [:style {:type "text/css" :id "ornament"} (ornament/defined-styles {:preflight? true})])
