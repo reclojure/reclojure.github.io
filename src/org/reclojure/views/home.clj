@@ -13,9 +13,61 @@
      :font-extra-large "10rem"
      :colors {:light-green "#5bdc00"
               :dark-green "#0c2900"
-              :light-blue "#726ee8"}}))
+              :light-blue "#726ee8"
+              :dark-blue "#005"
+              :disabled-blue "#e4ddff"
+              :disabled-green "#cadbcb"
+              :white "white"}}))
 
 (def colors (:colors design-tokens))
+
+;;; Helpers
+
+(defstyled disabled :div
+  {:color (str (:disabled-green colors) " !important")
+   :cursor "default"
+   :text-decoration "line-through"}
+  [:at-media {:min-width "60em"}
+   {:color (str (:disabled-blue colors) " !important")}])
+
+(defstyled highlight :mark
+  {:margin "0 -0.4em"
+   :padding "0.1em 0.4em"
+   :border-radius "0.8em 0.3em"
+   :background "transparent"
+   :background-image "linear-gradient(to right, rgba(255,225,0,0.1), rgb(0 255 28 / 81%) 4%, rgba(20, 255, 0, 0.3))"
+   :-webkit-box-decoration-break "clone"
+   :box-decoration-break "clone"})
+
+;;; "Assets"
+
+(defstyled reclojure-symbol :img
+  {:height "6.25rem"
+   :width "6.25rem"
+   :max-width "unset"})
+
+(defstyled reclojure-title :h1
+  {:margin-left "-0.05em"}
+  [:span:first-child {:color (:light-green colors)}]
+  [:span:last-child {:color (:light-blue colors)}]
+  [:at-media {:min-width "60em"}
+   {:-webkit-text-stroke "2px white"}]
+  ([_]
+   [:<> [:span "re:"] [:span "Clojure"]]))
+
+;;; Globals
+
+(defstyled wrapper :div
+  [:h1
+   (:font-bold design-tokens)
+   {:font-size "15vmin"}]
+  [:p :a {:color (:dark-green colors)}]
+  [:at-media {:min-width "60em"}
+   {:background-image "url(/images/liquid-cheese.svg)"
+    :background-size "cover"
+    :min-height "100vh"}])
+
+;;; Components
 
 (defstyled navigation :nav
   (:font-bold design-tokens)
@@ -23,74 +75,57 @@
    :justify-content "space-between"
    :align-items "center"
 
-   :margin "1rem auto 0"
-   :padding "2.5rem"
+   :margin "0 auto"
+   :padding "1.5rem"
    :width "100%"
-   :max-width "1100px"
+   :max-width "1100px"}
+  [:at-media {:min-width "40em"}
+   {:padding "2.5rem"}]
+  [:ul {:display "flex"
+        :flex-wrap "wrap"
+        :flex-direction "column"
+        :align-items "flex-end"}
+   [:li
+    (:font-bold design-tokens)
+    {:font-size (:font-small design-tokens)
+     :margin-bottom "2rem"}
+    [:a {:color (:dark-blue colors)}]
+    [:&:last-child {:margin-bottom 0}]]
+   ;; The following is only necessary because Safari doesn't support
+   ;; flexbox gap yet
+   [:at-media {:min-width "40em"}
+    {:flex-direction "row"}
+    [:li {:margin-right "2rem"
+          :margin-bottom 0}
+     [:&:last-child {:margin-right 0}]]]
+   [:at-media {:min-width "60em"}
+    [:li:first-child {:display "none"}]]])
 
-   :color (:dark-green colors)})
+(defstyled header :header
+  {:margin "0 auto"
+   :padding "12vh 2.5rem"
+   :width "100%"
+   :max-width "1100px"}
+  [:.info
+   {:font-family "inter, sans-serif"
+    :font-size (:font-medium design-tokens)
+    :margin-top "2rem"
+    :margin-bottom "4rem"}
+   [:p:last-child {:font-weight 700}]]
+  [:.description
+   (:font-regular design-tokens)
+   {:display "grid"
+    :grid-template-columns "1fr"}
+   [:p {:font-size (:font-small design-tokens)
+        :line-height 1.6}
+    [:&:first-child {:margin-bottom "1rem"}]]
+   [:at-media {:min-width "40em"}
+    {:grid-template-columns "1fr 1fr"}
+    [:p {:grid-column-start "2"}]]])
 
-(defstyled navigation-links :ul
-  {:display "flex"}
-  [:li
-   (:font-bold design-tokens)
-   {:font-size (:font-small design-tokens)
-    :color (:dark-green colors)
-    ;; The following is only necessary because Safari doesn't
-    ;; support flexbox gap yet
-    :margin-right "2rem"}
-   [:&:last-child {:margin-right 0}]])
-
-(defstyled reclojure-symbol :img
-  {:height "6.25rem"})
-
-(defstyled reclojure-logo :img {})
-
-(defstyled my-reclojure-logo :h1
-  (:font-bold design-tokens)
-  {:font-size (:font-extra-large design-tokens)
-   :margin-left "-8px"}
-  [:span:first-child {:color (:light-green colors)}]
-  [:span:last-child {:color (:light-blue colors)}])
-
-(defstyled background :svg
-  {:background-color (:light-green colors)
-   :background-image  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%235bdc00' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%2300d681' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%2300c8d5' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%2300b4ff' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%230096ff' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23726ee8' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E\")"
-   :background-attachment "fixed"
-   :background-size  "cover"})
-
-(defstyled event-description :div
+(defstyled cfp :section
   (:font-regular design-tokens)
-  {:display "grid"
-   :grid-template-columns "1fr 1fr"
-   :color (:dark-green colors)}
-  [:p {:grid-column-start "2"
-       :font-size (:font-small design-tokens)
-       :line-height 1.6}
-   [:&:first-child {:margin-bottom "1rem"}
-    [:&:first-line
-     (:font-bold design-tokens)]]])
-
-(defstyled mark :mark
-  {:margin "0 -0.4em"
-   :padding "0.1em 0.4em"
-   :border-radius "0.8em 0.3em"
-   :background "transparent"
-   :background-image "linear-gradient(to right, rgba(255,225,0,0.1), rgba(0, 255, 28, 0.7) 4%, rgba(20, 255, 0, 0.3))"
-   :-webkit-box-decoration-break "clone"
-   :box-decoration-break "clone"})
-
-(defstyled info :div
-  {:font-family "inter, sans-serif"
-   :font-size (:font-medium design-tokens)
-   :margin-top "2rem"
-   :margin-bottom "4rem"
-   :color (:dark-green colors)}
-  [:p:last-child {:font-weight 700}])
-
-(defstyled cfp :div
-  {:text-align "center"
-   :font-family "inter, sans-serif"}
+  {:text-align "center"}
   [:p {:font-size "2rem"
        :font-weight 700
        :margin-top "1rem"
@@ -101,7 +136,6 @@
        :background "#5bdd0d"
        :border "none"
        :border-radius "2rem"
-       :color "#101820"
        :cursor "pointer"
        :font-weight 700
        :transition "all .3s"
@@ -110,66 +144,56 @@
        :font-size "1.5rem"}]
   [:small {:display "block"
            :margin "1.5rem"
-           :font-size "1.5rem"}])
+           :font-size "1.5rem"}]
+  [:at-media {:min-width "60em"}
+   {:position "absolute"
+    :left "5vmin"
+    :bottom "5vmin"
+    :background-image "linear-gradient(to bottom right, #ebfdeb, #ebfbeb, white)"
+    :padding "2rem"
+    :border-radius "2rem"
+    :box-shadow "2px 2px 0px 2px lightgreen"}])
+
+;;; Main
 
 (defn page [data]
-  [:<>
+  [wrapper
+   
    [navigation
-    [:a
-     [reclojure-symbol {:src "/images/re-logo-black-trans.png"}]]
-    [navigation-links
-     [:li [:a {:href "#"} "Speakers"]]
-     [:li [:a {:href "#"} "Instructions"]]
-     [:li [:a {:href "#"} "Tickets"]]]]
-   ;; jumbotron
-   [:img {:src "/images/left-2.svg"
-          :style {:position "absolute"
-                  :left 0
-                  :top "55%"
-                  :width "40%"
-                  :z-index "-1"}}]
-   [:img {:src "/images/right-3.svg"
-          :style {:position "absolute"
-                  :right "-10rem"
-                  :top "15%"
-                  :width "40%"
-                  :z-index "-1"}}]
-   [:div {:style {:margin "0 auto"
-                  :padding "8rem 2.5rem"
-                  :width "100%"
-                  :max-width "1100px"
-                  ;; :background-color "#1420ff"
-                  ;; :background-image  "url(/images/Bullseye-Gradient(1).svg)"
-                  ;; :background-attachment "fixed"
-                  ;; :background-size  "cover"
-                  }}
-    ;; [:img {:src "/images/Clojure-icon-vector-04.svg"
-    ;;        :style {:position "absolute"
-    ;;                :z-index -2
-    ;;                :top "-7vh"
-    ;;                :right "50%"
-    ;;                :width "1400px"
-    ;;                :transform "translateX(50%) rotate(15deg)"}}]
-    ;; [reclojure-logo {:src "/images/reclojure-banner-black-trans.png"}]
-    [my-reclojure-logo [:span "re:"] [:span "Clojure"]]
-    [info
+    [:a {:href "#"}
+     [reclojure-symbol {:alt "re:Clojure Symbol"
+                        :src "/images/re-logo-white-bg.png"}]]
+    [:ul
+     [:li [:a {:href "#cfp"} "CFP"]]
+     [:li [:a {:class disabled :href "#speakers"} "Speakers"]]
+     [:li [:a {:class disabled :href "#instructions"} "Instructions"]]
+     [:li [:a {:class disabled :href "#"} "Tickets"]]]]
+   
+   [header
+    [reclojure-title]
+    [:div.info
      [:p "Virtual Conference"]
      [:p "Soon, 2021"]]
-    [event-description
-     [:p [mark "re:Clojure is a community-driven effort"] [:br] " to bring together
-knowledgeable speakers to present new and exciting topics on all
-things Clojure and ClojureScript."]
+    
+    [:div.description
+     [:p [highlight {:style {:text-shadow "0 0 .05em"}} ;FIXME Ornament bug
+          "re:Clojure is a community-driven effort"]
+      " to bring together knowledgeable speakers to present new and exciting
+topics on all things Clojure and ClojureScript."]
      [:p "It is our intention to keep the conferences lean, inclusive and
 rewarding to all attendees and to promote other Clojure conferences in
 Europe and worldwide."]]]
-   ;; CFP
-   [cfp
+   
+   [cfp {:id "cfp"}
     [:p "Want to be a part of the show?"]
     [:p "Call for papers are now open! 🥳"]
-    [:a {:href ""} "Apply"]
+    [:a {:href ""} "Apply"]             ;TODO
     [:small "Questions? Contact us through TODO"]]
+   
    ;; Keynotes
    ;; Speakers
    ;; Instructions
-   [:p "Please review our code of conduct, relax and enjoy the conference! If you have any questions, please do email us at info@reclojure.org"]
+   ;; Footer
+   ;; [:p "Please review our code of conduct, relax and enjoy the conference! If
+   ;; you have any questions, please do email us at info@reclojure.org"]
    ])

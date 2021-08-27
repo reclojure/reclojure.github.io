@@ -24,6 +24,8 @@
      [:meta {:charset "UTF-8"}]
      [:meta {:content "width=device-width, initial-scale=1" :name "viewport"}]
      [:meta {:name "description" :content "re:Clojure Clojure Conference, 2021 edition."}]
+     [:link {:href "favicon.png" :rel "icon"}]
+     [:meta {:name "theme-color" :content "#5bdc00"}]
      [:link {:rel "stylesheet" :href "/css/styles.css"}] ;FIXME
      (if (io/resource "public/css/compiled/ornament.css")
        [:link {:rel "stylesheet" :href "/css/compiled/ornament.css"}]
