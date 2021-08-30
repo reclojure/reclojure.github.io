@@ -27,8 +27,8 @@
      [:link {:href "favicon.png" :rel "icon"}]
      [:meta {:name "theme-color" :content "#5bdc00"}]
      [:link {:rel "stylesheet" :href "/css/styles.css"}] ;FIXME
-     (if (io/resource "public/css/compiled/ornament.css")
-       [:link {:rel "stylesheet" :href "/css/compiled/ornament.css"}]
+     (if (io/resource "public/css/compiled.css")
+       [:link {:rel "stylesheet" :href "/css/compiled.css"}]
        [:style {:type "text/css" :id "ornament"} (ornament/defined-styles {:preflight? true})])
      head]
     [:body
