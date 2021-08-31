@@ -12,9 +12,9 @@
      :font-large "3rem"
      :font-extra-large "10rem"
      :colors {:light-green "#5bdc00"
-              :dark-green "#0c2900"
-              :light-blue "#726ee8"
-              :dark-blue "#005"
+              :dark-green "#005300"
+              :darker-green "#0c2900"
+              :light-blue "#6864e6"
               :disabled-blue "#e4ddff"
               :disabled-green "#cadbcb"
               :white "white"}}))
@@ -61,7 +61,7 @@
   [:h1
    (:font-bold design-tokens)
    {:font-size "15vmin"}]
-  [:p :a {:color (:dark-green colors)}]
+  [:p :a {:color (:darker-green colors)}]
   [:at-media {:min-width "60em"}
    {:background-image "url(/images/liquid-cheese.svg)"
     :background-size "cover"
@@ -89,7 +89,7 @@
     (:font-bold design-tokens)
     {:font-size (:font-small design-tokens)
      :margin-bottom "2rem"}
-    [:a {:color (:dark-blue colors)}]
+    [:a {:color (:light-blue colors)}]
     [:&:last-child {:margin-bottom 0}]]
    ;; The following is only necessary because Safari doesn't support
    ;; flexbox gap yet
@@ -126,6 +126,7 @@
 (defstyled cfp :section
   (:font-regular design-tokens)
   {:text-align "center"}
+   :color (:darker-green colors)}
   [:p {:font-size "2rem"
        :font-weight 700
        :margin-top "1rem"
@@ -142,6 +143,7 @@
        :box-shadow "0 1rem 4rem -1.5rem transparent"
        :margin "1rem 0 0"
        :font-size "1.5rem"}]
+       :color (:dark-green colors)}]
   [:small {:display "block"
            :margin "1.5rem"
            :font-size "1.5rem"}]
