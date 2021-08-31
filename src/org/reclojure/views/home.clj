@@ -39,6 +39,9 @@
    :-webkit-box-decoration-break "clone"
    :box-decoration-break "clone"})
 
+(defstyled nowrap :span
+  {:white-space "nowrap"})
+
 ;;; "Assets"
 
 (defstyled reclojure-symbol :img
@@ -98,12 +101,12 @@
     [:li {:margin-right "2rem"
           :margin-bottom 0}
      [:&:last-child {:margin-right 0}]]]
-   [:at-media {:min-width "60em"}
+   [:at-media {:min-width "80em"}
     [:li:first-child {:display "none"}]]])
 
 (defstyled header :header
   {:margin "0 auto"
-   :padding "12vh 2.5rem"
+   :padding "10vmin 2.5rem"
    :width "100%"
    :max-width "1100px"}
   [:.info
@@ -125,7 +128,8 @@
 
 (defstyled cfp :section
   (:font-regular design-tokens)
-  {:text-align "center"}
+  {:text-align "center"
+   :margin "4rem 2rem"
    :color (:darker-green colors)}
   [:p {:font-size "2rem"
        :font-weight 700
@@ -134,7 +138,7 @@
        :line-height 1.2}]
   [:a {:display "inline-block"
        :padding ".8rem 2rem"
-       :background "#5bdd0d"
+       :background-image "linear-gradient(to bottom right, lime, lightgreen)"
        :border "none"
        :border-radius "2rem"
        :cursor "pointer"
@@ -142,55 +146,59 @@
        :transition "all .3s"
        :box-shadow "0 1rem 4rem -1.5rem transparent"
        :margin "1rem 0 0"
-       :font-size "1.5rem"}]
+       :font-size "1.5rem"
        :color (:dark-green colors)}]
   [:small {:display "block"
            :margin "1.5rem"
            :font-size "1.5rem"}]
-  [:at-media {:min-width "60em"}
+  [:at-media {:min-width "40em"}
+   {:margin "10vmin 2rem 10vmin"}]
+  [:at-media {:min-width "80em"}
    {:position "absolute"
     :left "5vmin"
     :bottom "5vmin"
     :background-image "linear-gradient(to bottom right, #ebfdeb, #ebfbeb, white)"
     :padding "2rem"
     :border-radius "2rem"
-    :box-shadow "2px 2px 0px 2px lightgreen"}])
+    :box-shadow "2px 2px 0px 2px lightgreen"
+    :margin 0}])
 
 ;;; Main
 
 (defn page [data]
-  [wrapper
-   
-   [navigation
-    [:a {:href "#"}
-     [reclojure-symbol {:alt "re:Clojure Symbol"
-                        :src "/images/re-logo-white-bg.png"}]]
-    [:ul
-     [:li [:a {:href "#cfp"} "CFP"]]
-     [:li [:a {:class disabled :href "#speakers"} "Speakers"]]
-     [:li [:a {:class disabled :href "#instructions"} "Instructions"]]
-     [:li [:a {:class disabled :href "#"} "Tickets"]]]]
-   
-   [header
-    [reclojure-title]
-    [:div.info
-     [:p "Virtual Conference"]
-     [:p "Soon, 2021"]]
+  [:<>
+   [wrapper
     
-    [:div.description
-     [:p [highlight {:style {:text-shadow "0 0 .05em"}} ;FIXME Ornament bug
-          "re:Clojure is a community-driven effort"]
-      " to bring together knowledgeable speakers to present new and exciting
+    [navigation
+     [:a {:href "#"}
+      [reclojure-symbol {:alt "re:Clojure Symbol"
+                         :src "images/re-logo-white-bg.png"}]]
+     [:ul
+      [:li [:a {:href "#cfp"} "CFP"]]
+      [:li [:a {:class disabled :href "#speakers"} "Speakers"]]
+      [:li [:a {:class disabled :href "#instructions"} "Instructions"]]
+      [:li [:a {:class disabled :href "#"} "Tickets"]]]]
+    
+    [header
+     [reclojure-title]
+     [:div.info
+      [:p "Virtual Conference"]
+      [:p "Soon, 2021"]]
+     
+     [:div.description
+      [:p [highlight {:style {:text-shadow "0 0 .05em"}} ;FIXME Ornament bug
+           "re:Clojure is a community-driven effort"]
+       " to bring together knowledgeable speakers to present new and exciting
 topics on all things Clojure and ClojureScript."]
-     [:p "It is our intention to keep the conferences lean, inclusive and
+      [:p "It is our intention to keep the conferences lean, inclusive and
 rewarding to all attendees and to promote other Clojure conferences in
-Europe and worldwide."]]]
+Europe and worldwide."]]]]
    
    [cfp {:id "cfp"}
-    [:p "Want to be a part of the show?"]
-    [:p "Call for papers are now open! 🥳"]
+    [:p "Want to be " [nowrap "part of the show?"]]
+    [:p "Call for papers " [nowrap "are now open! 🥳"]]
     [:a {:href ""} "Apply"]             ;TODO
-    [:small "Questions? Contact us through TODO"]]
+    [:small "Questions? Contact us through TODO"]]]
    
    ;; Keynotes
    ;; Speakers
@@ -198,4 +206,4 @@ Europe and worldwide."]]]
    ;; Footer
    ;; [:p "Please review our code of conduct, relax and enjoy the conference! If
    ;; you have any questions, please do email us at info@reclojure.org"]
-   ])
+   )
