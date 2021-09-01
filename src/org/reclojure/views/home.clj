@@ -197,7 +197,7 @@ Europe and worldwide."]]]]
    [cfp {:id "cfp"}
     [:p "Want to be " [nowrap "part of the show?"]]
     [:p "Call for papers " [nowrap "are now open! 🥳"]]
-    [:a {:href ""} "Apply"]             ;TODO
+    [:a {:href "https://share.hsforms.com/1OqUdBlJcSAC1CozoVZBpYQc5hb2"} "Apply"]
     [:small "Questions? Contact us through TODO"]]]
    
    ;; Keynotes
