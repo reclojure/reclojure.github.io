@@ -136,18 +136,19 @@
        :margin-top "1rem"
        :margin-bottom "1rem"
        :line-height 1.2}]
-  [:a {:display "inline-block"
-       :padding ".8rem 2rem"
-       :background-image "linear-gradient(to bottom right, lime, lightgreen)"
-       :border "none"
-       :border-radius "2rem"
-       :cursor "pointer"
-       :font-weight 700
-       :transition "all .3s"
-       :box-shadow "0 1rem 4rem -1.5rem transparent"
-       :margin "1rem 0 0"
-       :font-size "1.5rem"
-       :color (:dark-green colors)}]
+  [:a {:color (colors :light-blue)}]
+  [:.apply {:display "inline-block"
+            :padding ".8rem 2rem"
+            :background-image "linear-gradient(to bottom right, lime, lightgreen)"
+            :border "none"
+            :border-radius "2rem"
+            :cursor "pointer"
+            :font-weight 700
+            :transition "all .3s"
+            :box-shadow "0 1rem 4rem -1.5rem transparent"
+            :margin "1rem 0 0"
+            :font-size "1.5rem"
+            :color (:dark-green colors)}]
   [:small {:display "block"
            :margin "1.5rem"
            :font-size "1.5rem"}]
@@ -197,8 +198,8 @@ Europe and worldwide."]]]]
    [cfp {:id "cfp"}
     [:p "Want to be " [nowrap "part of the show?"]]
     [:p "Call for papers " [nowrap "are now open! 🥳"]]
-    [:a {:href "https://share.hsforms.com/1OqUdBlJcSAC1CozoVZBpYQc5hb2"} "Apply"]
-    [:small "Questions? Contact us through TODO"]]]
+    [:a.apply {:href "https://share.hsforms.com/1OqUdBlJcSAC1CozoVZBpYQc5hb2"} "Apply"]
+    [:small "Questions? Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"]]]]
    
    ;; Keynotes
    ;; Speakers
