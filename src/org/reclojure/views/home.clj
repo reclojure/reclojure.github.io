@@ -169,7 +169,7 @@
 (defn page [data]
   [:<>
    [wrapper
-    
+
     [navigation
      [:a {:href "#"}
       [reclojure-symbol {:alt "re:Clojure Symbol"
@@ -179,13 +179,13 @@
       [:li [:a {:class disabled :href "#speakers"} "Speakers"]]
       [:li [:a {:class disabled :href "#instructions"} "Instructions"]]
       [:li [:a {:class disabled :href "#"} "Tickets"]]]]
-    
+
     [header
      [reclojure-title]
      [:div.info
       [:p "Virtual Conference"]
       [:p "Soon, 2021"]]
-     
+
      [:div.description
       [:p [highlight {:style {:text-shadow "0 0 .05em"}} ;FIXME Ornament bug
            "re:Clojure is a community-driven effort"]
@@ -194,13 +194,13 @@ topics on all things Clojure and ClojureScript."]
       [:p "It is our intention to keep the conferences lean, inclusive and
 rewarding to all attendees and to promote other Clojure conferences in
 Europe and worldwide."]]]]
-   
+
    [cfp {:id "cfp"}
     [:p "Want to be " [nowrap "part of the show?"]]
     [:p "Call for papers " [nowrap "are now open! 🥳"]]
-    [:a.apply {:href "https://share.hsforms.com/1OqUdBlJcSAC1CozoVZBpYQc5hb2"} "Apply"]
+    [:a.apply {:href "https://share.hsforms.com/1OqUdBlJcSAC1CozoVZBpYQc5hb2" :target "_blank"} "Apply"]
     [:small "Questions? Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"]]]]
-   
+
    ;; Keynotes
    ;; Speakers
    ;; Instructions
