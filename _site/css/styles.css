@@ -1,0 +1,7 @@
+@import url("../fonts/inter.css");
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    font-family: inter, sans-serif;
+}

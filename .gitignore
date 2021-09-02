@@ -26,5 +26,4 @@ pom.xml.asc
 build
 
 resources/secrets.edn
-_site/
 /resources/public/css/compiled.css
