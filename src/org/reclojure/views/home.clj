@@ -1,7 +1,7 @@
 (ns org.reclojure.views.home
   (:require [lambdaisland.ornament :refer [defstyled]]))
 
-(let [inter "inter, sans-serif"]
+(let [inter "Inter, sans-serif"]
   (def design-tokens
     {:font-regular {:font-family inter
                     :font-weight 400}
