@@ -184,7 +184,7 @@
      [reclojure-title]
      [:div.info
       [:p "Virtual Conference"]
-      [:p "Soon, 2021"]]
+      [:p "December, 2021"]]
 
      [:div.description
       [:p [highlight {:style {:text-shadow "0 0 .05em"}} ;FIXME Ornament bug
