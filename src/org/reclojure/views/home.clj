@@ -193,10 +193,10 @@
 
      [:div.description
       [:div
-       [:p "We are thrilled to announce the presence of"
+       [:p "We are thrilled to announce the presence of  "
         [:b [highlight {:style {:text-shadow "0 0 .05em"}} ;FIXME Ornament bug
-          "Gerald Jay Sussman"]]
-        "as keynote speaker this year"]
+          " Gerald Jay Sussman "]]
+        "  as keynote speaker this year"]
        [sussman-pic {:alt "Gerald Jay Sussman" :src "images/sussman-300x300.jpg"}]]
       [:div
        [:p [highlight {:style {:text-shadow "0 0 .05em"}} ;FIXME Ornament bug
