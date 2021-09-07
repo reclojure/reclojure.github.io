@@ -198,8 +198,8 @@ Europe and worldwide."]]]]
    [cfp {:id "cfp"}
     [:p "Want to be " [nowrap "part of the show?"]]
     [:p "Call for papers " [nowrap "are now open! 🥳"]]
-    [:a.apply {:href "https://share.hsforms.com/1OqUdBlJcSAC1CozoVZBpYQc5hb2" :target "_blank"} "Apply"]
-    [:small "Questions? Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"]]]]
+    [:a.apply {:href "https://docs.google.com/forms/d/1LSas3gB4rOmRAoQ_6QLcwiB3HgNeiBnyjhqppPRPpzE" :target "_blank"} "Apply"]
+    [:small "Questions? Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"]]]])
 
    ;; Keynotes
    ;; Speakers
@@ -207,4 +207,3 @@ Europe and worldwide."]]]]
    ;; Footer
    ;; [:p "Please review our code of conduct, relax and enjoy the conference! If
    ;; you have any questions, please do email us at info@reclojure.org"]
-   )
