@@ -275,7 +275,9 @@
     [navigation
      [:a {:href "#"}
       [reclojure-symbol {:alt "re:Clojure Symbol"
-                         :src "images/re-logo-white-bg.png"}]]
+                         :src "images/re-logo-white-bg.png"
+                         :width "324"
+                         :height "327"}]]
      [:ul
       [:li [:a {:href "#cfp"} "CFP"]]
       [:li [:a {:href "#speakers"} "Speakers (" [small-caps "WIP"]] ")"]
@@ -308,22 +310,34 @@ Europe and worldwide."]]]]
    [keynote {:id "speakers"}
     [:div.line]
     [:p.announcement "We are thrilled to announce the keynote speaker of this year"]
-    [:img.wizard {:src "images/wizard.png"}]
+    [:img.wizard {:src "images/wizard.png" :width "341" :height "660"}]
     [:div.core
      [:div.red]
-     [:img.gerald {:src "images/gerald-jay-sussman-300x300.jpg"}]
+     [:img.gerald {:src "images/gerald-jay-sussman-300x300.jpg" :width "300" :height "300"}]
      [:div.black]]
     [:p.announcement.sussman "Gerald Jay Sussman"]
-    [:img.sorceress {:src "images/sorceress.png"}]]
+    [:img.sorceress {:src "images/sorceress.png" :width "258" :height "591"}]]
    
    ;; Sponsors
    [sponsors {:id "sponsors"}
     [:h2 "Thanks to our lovely sponsors"]
     [logos
-     [:a {:href "https://www.juxt.pro" :target "_blank"} [:img.juxt {:src "images/sponsors/juxt-mod.svg"}]]
-     [:a {:href "https://cognitect.com" :target "_blank"} [:img.cognitect {:src "images/sponsors/cognitect.svg"}]]
-     [:a {:href "https://healthunlocked.com" :target "_blank"} [:img.healthunlocked {:src "images/sponsors/healthunlocked.svg"}]]
-     [:a {:href "https://gaiwan.co" :target "_blank"} [:img.gaiwan {:src "images/sponsors/gaiwan.png"}]]]]
+     [:a {:href "https://www.juxt.pro" :target "_blank"}
+      [:img.juxt {:src "images/sponsors/juxt-mod.svg"
+                  :width "375"
+                  :height "128"}]]
+     [:a {:href "https://cognitect.com" :target "_blank"}
+      [:img.cognitect {:src "images/sponsors/cognitect.svg"
+                       :width "645"
+                       :height "207"}]]
+     [:a {:href "https://healthunlocked.com" :target "_blank"}
+      [:img.healthunlocked {:src "images/sponsors/healthunlocked.svg"
+                            :width "862"
+                            :height "113"}]]
+     [:a {:href "https://gaiwan.co" :target "_blank"}
+      [:img.gaiwan {:src "images/sponsors/gaiwan.png"
+                    :width "435"
+                    :height "111"}]]]]
    ;; Instructions
    ;; Footer
    ;; [:p "Please review our code of conduct, relax and enjoy the conference! If
