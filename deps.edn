@@ -1,0 +1,53 @@
+{:paths ["src" "resources"]
+
+ :deps
+ {org.clojure/clojure        {:mvn/version "1.10.3"}
+  lambdaisland/data-printers {:mvn/version "0.0.22"}
+
+  ;; App setup & config
+  integrant/integrant {:mvn/version "0.8.0"}
+  integrant/repl      {:mvn/version "0.3.2"}
+  aero/aero           {:mvn/version "1.1.6"}
+
+  ;; Logging
+  com.lambdaisland/glogi         {:mvn/version "1.0.128"}
+  io.pedestal/pedestal.log       {:mvn/version "0.5.8"}
+  ch.qos.logback/logback-classic {:mvn/version "1.2.3"}
+
+  ;; HTTP
+  ring/ring-defaults          {:mvn/version "0.3.2"}
+  metosin/reitit-ring         {:mvn/version "0.5.12"}
+  metosin/reitit-http         {:mvn/version "0.5.12"}
+  metosin/reitit-interceptors {:mvn/version "0.5.12"}
+  ring/ring-jetty-adapter     {:mvn/version "1.9.0"}
+
+  ;; HTTP / CSS (Server-side)
+  lambdaisland/webstuff {:git/url "https://github.com/lambdaisland/webstuff"
+                         :sha     "5623e5c30c7caa2fc41f5e84043df983a697a5da"}
+
+  ;; Static site generation
+  #_#_lambdaisland/reitit-jaatya {:local/root "../../reitit-jaatya"}
+  lambdaisland/reitit-jaatya {:git/url "https://github.com/lambdaisland/reitit-jaatya"
+                              :sha     "47c95a08a03cebb04ff932fa2404751fe8f011df"}
+
+  ;; ClojureScript
+  reagent/reagent            {:mvn/version "1.0.0"}
+  applied-science/js-interop {:mvn/version "0.2.7"}
+  mhuebert/kitchen-async     {:mvn/version "0.1.0"}
+  lambdaisland/fetch         {:mvn/version "0.0.23"}
+  }
+
+ :aliases
+ {:dev
+  {:extra-paths ["dev"]
+   :extra-deps  {thheller/shadow-cljs {:mvn/version "2.14.2"}
+                 djblue/portal        {:mvn/version "RELEASE"}}}
+
+  :test
+  {:extra-paths ["test"]
+   :extra-deps  {lambdaisland/kaocha          {:mvn/version "1.0.861"}
+                 com.lambdaisland/kaocha-cljs {:mvn/version "1.0.93"}}}
+
+  :freeze
+  {:exec-fn org.reclojure.freeze/build
+   :exec-args {}}}}
