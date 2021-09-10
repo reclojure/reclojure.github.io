@@ -10,7 +10,7 @@
   (freeze/iced (http/build-handler)))
 
 (comment
-  ;; this will create a `_site` folder in `reclojure`
+  ;; this will create a `docs` folder in `reclojure`
   ;; to browse it locally run
-  ;; cd _site && python3 -m http.server
+  ;; cd docs && python3 -m http.server
   (build))

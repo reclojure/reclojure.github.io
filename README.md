@@ -21,16 +21,16 @@ To build the project, run the following command:
 make build
 ```
 
-This command creates and populates the `_site` directory with the
+This command creates and populates the `docs` directory with the
 result of running the build process merged with the files that are in
-`resources/public`. `_site` is the directory that should be published.
+`resources/public`. `docs` is the directory that should be published.
 
 ## Local server to inspect build results
 
 To test the output of the build process locally before deploying, run
 a local dev server with `make server` and visit `localhost:8080`.
 
-Note that this currently uses Python 3, but from within `_site`, any
+Note that this currently uses Python 3, but from within `docs`, any
 other local web server will probably do.
 
 ## Deploy
