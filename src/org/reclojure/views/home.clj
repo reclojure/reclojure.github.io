@@ -178,7 +178,7 @@
            :font-size "1.5rem"}]
   [:at-media {:min-width "40em"}
    {:margin "10vmin 2rem 10vmin"}]
-  [:at-media {:min-width "80em"}
+  [:at-media {:min-width "80em" :min-height "62rem"}
    {:position "absolute"
     :left "5vmin"
     :bottom "5vmin"
