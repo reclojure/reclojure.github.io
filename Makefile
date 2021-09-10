@@ -5,6 +5,8 @@ clean:
 	rm -f "resources/public/css/compiled.css"
 
 build: clean
+	mkdir -p _site
+	cp -r old_site/ _site/
 	clj -A:dev -X:freeze
 	cp -r resources/public/* _site/
 
