@@ -310,32 +310,45 @@ Europe and worldwide."]]]]
    [keynote {:id "speakers"}
     [:div.line]
     [:p.announcement "We are thrilled to announce the keynote speaker of this year"]
-    [:img.wizard {:src "images/wizard.png" :width "341" :height "660"}]
+    [:img.wizard {:alt "A Wizard in awe shoots laser beams through his eyes while holding an orb with the words Eval and Apply."
+                  :src "images/wizard.png"
+                  :width "341"
+                  :height "660"}]
     [:div.core
      [:div.red]
-     [:img.gerald {:src "images/gerald-jay-sussman-300x300.jpg" :width "300" :height "300"}]
+     [:img.gerald {:alt "A picture of Gerald Jay Sussman."
+                   :src "images/gerald-jay-sussman-300x300.jpg"
+                   :width "300"
+                   :height "300"}]
      [:div.black]]
     [:p.announcement.sussman "Gerald Jay Sussman"]
-    [:img.sorceress {:src "images/sorceress.png" :width "258" :height "591"}]]
+    [:img.sorceress {:alt "A Sorceress who is wearing boss glasses points at a book she holds with the acronym JVM in its cover."
+                     :src "images/sorceress.png"
+                     :width "258"
+                     :height "591"}]]
    
    ;; Sponsors
    [sponsors {:id "sponsors"}
     [:h2 "Thanks to our lovely sponsors"]
     [logos
-     [:a {:href "https://www.juxt.pro" :target "_blank"}
-      [:img.juxt {:src "images/sponsors/juxt-mod.svg"
+     [:a {:href "https://www.juxt.pro" :target "_blank" :rel "noopener"}
+      [:img.juxt {:alt "The logo for JUXT."
+                  :src "images/sponsors/juxt-mod.svg"
                   :width "375"
                   :height "128"}]]
-     [:a {:href "https://cognitect.com" :target "_blank"}
-      [:img.cognitect {:src "images/sponsors/cognitect.svg"
+     [:a {:href "https://cognitect.com" :target "_blank" :rel "noopener"}
+      [:img.cognitect {:alt "Logo for Cognitect."
+                       :src "images/sponsors/cognitect.svg"
                        :width "645"
                        :height "207"}]]
-     [:a {:href "https://healthunlocked.com" :target "_blank"}
-      [:img.healthunlocked {:src "images/sponsors/healthunlocked.svg"
+     [:a {:href "https://healthunlocked.com" :target "_blank" :rel "noopener"}
+      [:img.healthunlocked {:alt "Logo for HealthUnlocked."
+                            :src "images/sponsors/healthunlocked.svg"
                             :width "862"
                             :height "113"}]]
-     [:a {:href "https://gaiwan.co" :target "_blank"}
-      [:img.gaiwan {:src "images/sponsors/gaiwan.png"
+     [:a {:href "https://gaiwan.co" :target "_blank" :rel "noopener"}
+      [:img.gaiwan {:alt "Logo for Gaiwan."
+                    :src "images/sponsors/gaiwan.png"
                     :width "435"
                     :height "111"}]]]]
    ;; Instructions
