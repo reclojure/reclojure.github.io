@@ -11,6 +11,7 @@ build: clean
 	clj -A:dev -X:freeze
 	cp -r resources/public/* docs/
 	cp _site/index.html docs/
+	cp CNAME docs/
 
 server:
 	cd docs && python3 -m http.server 8080 --bind 127.0.0.1
