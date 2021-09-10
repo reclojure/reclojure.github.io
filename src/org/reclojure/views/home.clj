@@ -55,11 +55,6 @@
    :transform "rotate(-10deg)"
    :filter "drop-shadow(0px 0px 1px hsla(0,0%,0%,0.15))"})
 
-(defstyled sussman-pic :img
-  {:height "15.25rem"
-   :width "15.25rem"
-   :max-width "unset"})
-
 (defstyled reclojure-title :h1
   {:margin-left "-0.05em"
    :display "grid"
@@ -296,20 +291,13 @@
       [:p "Virtual Conference"]
       [:p "December 3-4, 2021"]]
      [:div.description
-      [:div
-       [:p "We are thrilled to announce the presence of  "
-        [:b [highlight {:style {:text-shadow "0 0 .05em"}} ;FIXME Ornament bug
-          " Gerald Jay Sussman "]]
-        "  as keynote speaker this year"]
-       [sussman-pic {:alt "Gerald Jay Sussman" :src "images/sussman-300x300.jpg"}]]
-      [:div
-       [:p [highlight {:style {:text-shadow "0 0 .05em"}} ;FIXME Ornament bug
-                 "re:Clojure is a community-driven effort"]
-             " to bring together knowledgeable speakers to present new and exciting
+      [:p [highlight {:style {:text-shadow "0 0 .05em"}} ;FIXME Ornament bug
+           "re:Clojure is a community-driven effort"]
+       " to bring together knowledgeable speakers to present new and exciting
              topics on all things Clojure and ClojureScript."]
-       [:p "It is our intention to keep the conferences lean, inclusive and
+      [:p "It is our intention to keep the conferences lean, inclusive and
            rewarding to all attendees and to promote other Clojure conferences in
-           Europe and worldwide."]]]]]
+           Europe and worldwide."]]]]
 
    [cfp {:id "cfp"}
     [:p "Want to be " [nowrap "part of the show?"]]
