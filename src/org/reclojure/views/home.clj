@@ -267,6 +267,76 @@
   [:.freshcode {:max-height "13rem"}]
   [:.gaiwan {:max-height "7rem"}])
 
+(defstyled speaker-card :li
+  {:font-family "inter, sans-serif"}
+  [:.speaker {:cursor "pointer"}]
+  [:.speaker-image {:position "relative"}
+   [:img {:display "inline-block"
+          :transition "all .3s linear"
+          :width "90%"
+          :position "relative"
+          :top ".5rem"
+          :left "-.5rem"
+          :z-index "5"
+          :border ".75rem solid transparent"}
+    ["&:hover" {:border ".75rem solid white"
+                :transform "translateX(-2%) translateY(-2%)"}]]
+   [:.shadow {:position "absolute"
+              :z-index "3"
+              :top "4.1rem"
+              :left "2rem"
+              :width "85%"
+              :height "90%"
+              :background-color "blue"
+              :box-shadow "0 1.5rem 4rem -1.5rem #101820"}]]
+  [:.speaker-info
+   [:.name {:font-size "3rem"
+            :font-weight 900
+            :color "#64ff00"
+            :margin "0 0 0 2.5rem"
+            :position "relative"
+            :line-height "3rem"
+            :z-index 5}]
+   [:.description {:font-size "1.25rem"
+                   :font-weight 300
+                   :color "blue"
+                   :letter-spacing ".2px"
+                   :line-height "1.5rem"
+                   :z-index 3
+                   :margin ".75rem 0 0 2.5rem"}]]
+  ([speaker]
+   [:<>
+    [:a.speaker {:href "#"}
+     [:div.speaker-image
+      [:img.speaker-image__img {:src "images/gerald-jay-sussman-300x300.jpg" :width "300" :height "300"}]
+      [:noscript
+       [:img.speaker-image__img {:src "images/gerald-jay-sussman-300x300.jpg"} :width "300" :height "300"]]
+      [:span.shadow]]
+     [:div.speaker-info
+      [:p.name (:name speaker)]
+      [:p.description (:brief speaker)]]]]))
+
+(defstyled speakers :section
+  {}
+  [:h2 {:text-align "center"
+        :font-size "3.5rem"
+        :font-weight 700
+        :font-family "inter, sans-serif"
+        :margin "5vh 0"}]
+  [:.speaker-list {:display "grid"
+                   :grid-template-columns "repeat(3, 1fr)"
+                   :grid-gap "2.5rem"
+                   :list-style "none"
+                   :margin "0 auto"
+                   :padding "0"
+                   :max-width "1100px"}]
+  ([_ speakers-list]
+   [:<>
+    [:h2 "Speakers"]
+    [:ul.speaker-list
+     (for [speaker speakers-list]
+       (speaker-card speaker))]]))
+
 ;;; Main
 
 (defn page [data]
@@ -308,7 +378,7 @@
                :rel "noopener"} "Apply"]
     [:small "Questions? Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"]]]
 
-   ;; Keynotes
+   ;; Keynotes & Speakers
    [keynote {:id "speakers"}
     [:div.line]
     [:p.announcement "We are thrilled to announce the keynote speaker of this year"]
@@ -328,6 +398,8 @@
                      :src "images/sorceress.png"
                      :width "258"
                      :height "591"}]]
+
+   [speakers [{}]]
 
    ;; Sponsors
    [sponsors {:id "sponsors"}
