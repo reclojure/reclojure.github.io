@@ -327,7 +327,7 @@
                      :src "images/sorceress.png"
                      :width "258"
                      :height "591"}]]
-   
+
    ;; Sponsors
    [sponsors {:id "sponsors"}
     [:h2 "Thanks to our lovely sponsors"]
@@ -351,7 +351,12 @@
       [:img.gaiwan {:alt "Logo for Gaiwan."
                     :src "images/sponsors/gaiwan.png"
                     :width "435"
-                    :height "111"}]]]]
+                    :height "111"}]]
+     [:a {:href "https://freshcodeit.com/" :target "_blank" :rel "noopener"}
+      [:img.gaiwan {:alt "Logo for Freshcode."
+                    :src "images/sponsors/freshcode.png"
+                    :width "675"
+                    :height "142"}]]]]
    ;; Instructions
    ;; Footer
    ;; [:p "Please review our code of conduct, relax and enjoy the conference! If
