@@ -292,8 +292,8 @@
       [:p "December 3-4, 2021"]]
      [:div.description
       [:p [highlight {:style {:text-shadow "0 0 .05em"}} ;FIXME Ornament bug
-           "re:Clojure is a community-driven effort"]
-       " to bring together knowledgeable speakers to present new and exciting
+           "re:Clojure is a *free*, community-driven conference"]
+       " that brings together knowledgeable speakers to present new and exciting
              topics on all things Clojure and ClojureScript."]
       [:p "It is our intention to keep the conferences lean, inclusive and
            rewarding to all attendees and to promote other Clojure conferences in
