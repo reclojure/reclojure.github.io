@@ -264,6 +264,7 @@
   [:.juxt {}]
   [:.cognitect {:max-height "13rem"}]
   [:.healthunlocked {}]
+  [:.freshcode {:max-height "13rem"}]
   [:.gaiwan {:max-height "7rem"}])
 
 ;;; Main
@@ -353,10 +354,8 @@
                     :width "435"
                     :height "111"}]]
      [:a {:href "https://freshcodeit.com/" :target "_blank" :rel "noopener"}
-      [:img.gaiwan {:alt "Logo for Freshcode."
-                    :src "images/sponsors/freshcode.png"
-                    :width "675"
-                    :height "142"}]]]]
+      [:img.freshcode {:alt "Logo for Freshcode."
+                    :src "images/sponsors/freshcode.png"}]]]]
    ;; Instructions
    ;; Footer
    ;; [:p "Please review our code of conduct, relax and enjoy the conference! If
