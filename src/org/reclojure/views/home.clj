@@ -1,5 +1,6 @@
 (ns org.reclojure.views.home
-  (:require [lambdaisland.ornament :refer [defstyled]]))
+  (:require [lambdaisland.ornament :refer [defstyled]]
+            [org.reclojure.views.-colors :as c]))
 
 (let [inter "Inter, sans-serif"]
   (def design-tokens
@@ -10,26 +11,16 @@
      :font-small "1.3rem"
      :font-medium "1.5rem"
      :font-large "3rem"
-     :font-extra-large "10rem"
-     :colors {:light-green "#5bdc00"
-              :dark-green "#005300"
-              :darker-green "#0c2900"
-              :light-blue "#6864e6"
-              :dark-blue "#22207b"
-              :disabled-blue "#e4ddff"
-              :disabled-green "#cadbcb"
-              :white "white"}}))
-
-(def colors (:colors design-tokens))
+     :font-extra-large "10rem"}))
 
 ;;; Helpers
 
 (defstyled disabled :div
-  {:color (str (:disabled-green colors) " !important")
+  {:color [[c/dark-blue " !important"]]
    :cursor "default"
    :text-decoration "line-through"}
   [:at-media {:min-width "60em"}
-   {:color (str (:disabled-blue colors) " !important")}])
+   {:color [[c/disabled-blue "!important"]]}])
 
 (defstyled highlight :mark
   {:margin "0 -0.4em"
@@ -61,14 +52,14 @@
    :grid-template-areas [["text"]]}
   [:.title {:grid-area "text"
             :z-index "3"}
-   [:span:first-child {:color (:light-green colors)}]
-   [:span:last-child {:color (:light-blue colors)}]]
+   [:span:first-child {:color c/light-green}]
+   [:span:last-child {:color c/light-blue}]]
   ["&::before" {:background "no-repeat linear-gradient(white, white) 15% 50%/45% 40%"
                 :content "\"re:Clojure\""
-                :color (colors :white)
+                :color c/white
                 :filter "drop-shadow(0px 0px 1px hsla(0, 0%, 0%, 0.15))"
                 :grid-area "text"
-                :-webkit-text-stroke (str "0.25em " (colors :white))
+                :-webkit-text-stroke (str "0.25em " c/white)
                 :z-index "2"}]
   ["&::after" {:content "\"re:Clojure\""
                :grid-area "text"
@@ -76,24 +67,25 @@
                :z-index "1"}
    [:at-media {:min-width "60em"}
     {:text-shadow "3px 2px 25px black, -5px 1px 25px"}]]
-  ;; [:at-media {:min-width "60em"}
-  ;;  {:-webkit-text-stroke "2px white"}]
   ([_]
    [:<> [:span.title [:span "re:"] [:span "Clojure"]]]))
 
 ;;; Globals
 
-(defstyled wrapper :div
+(defstyled page-wrapper :div
+  {})
+
+;;; Components
+
+(defstyled header :header
   [:h1
    (:font-bold design-tokens)
    {:font-size "15vmin"}]
-  [:p :a {:color (:darker-green colors)}]
+  [:p :a {:color c/darker-green}]
   [:at-media {:min-width "60em"}
-   {:background-image "url(/images/liquid-cheese.svg)"
+   {;; :background-image "url(/images/liquid-cheese.svg)"
     :background-size "cover"
     :min-height "100vh"}])
-
-;;; Components
 
 (defstyled navigation :nav
   (:font-bold design-tokens)
@@ -115,7 +107,7 @@
     (:font-bold design-tokens)
     {:font-size (:font-small design-tokens)
      :margin-bottom "2rem"}
-    [:a {:color (:dark-blue colors)}]
+    [:a {:color c/dark-blue}]
     [:&:last-child {:margin-bottom 0}]]
    ;; The following is only necessary because Safari doesn't support
    ;; flexbox gap yet
@@ -127,7 +119,7 @@
    [:at-media {:min-width "80em"}
     [:li:first-child {:display "none"}]]])
 
-(defstyled header :header
+(defstyled banner :div
   {:margin "0 auto"
    :padding "10vmin 2.5rem"
    :width "100%"
@@ -154,13 +146,13 @@
   (:font-regular design-tokens)
   {:text-align "center"
    :margin "4rem 2rem"
-   :color (:darker-green colors)}
+   :color c/darker-green}
   [:p {:font-size "2rem"
        :font-weight 700
        :margin-top "1rem"
        :margin-bottom "1rem"
        :line-height 1.2}]
-  [:a {:color (colors :light-blue)}]
+  [:a {:color c/light-blue}]
   [:.apply {:display "inline-block"
             :padding ".8rem 2rem"
             :background-image "linear-gradient(to bottom right, lime, lightgreen)"
@@ -172,7 +164,7 @@
             :box-shadow "0 1rem 4rem -1.5rem transparent"
             :margin "1rem 0 0"
             :font-size "1.5rem"
-            :color (:dark-green colors)}]
+            :color c/dark-green}]
   [:small {:display "block"
            :margin "1.5rem"
            :font-size "1.5rem"}]
@@ -199,12 +191,12 @@
                          ["intro" "intro" "intro"   "intro"   "intro"   "."]
                          ["."     "core"  "core"    "core"    "core"    "."]
                          ["."     "."     "sussman" "sussman" "sussman" "."]]}
-  [:.line {:background-color (:light-green colors)
+  [:.line {:background-color c/light-green
            :height "10px"
            :grid-area "line"}]
   [:.announcement
    (:font-bold design-tokens)
-   {:color (:white colors)
+   {:color c/white
     :max-width "15ch"
     :font-size "2.5rem"
     :grid-area "intro"
@@ -218,7 +210,7 @@
            :max-width "100vw"
            :justify-self "center"
            :margin-top "3rem"}
-   [:.red {:background-color (:light-green colors)
+   [:.red {:background-color c/light-green
            :grid-area "1 / 1 / -3 / -3"}]
    [:.gerald {:grid-area "2 / 2 / -2 / -2"
               :z-index 1}]
@@ -269,69 +261,43 @@
 
 (defstyled speaker-card :li
   {:font-family "inter, sans-serif"}
-  [:.speaker {:cursor "pointer"}]
-  [:.speaker-image {:position "relative"}
-   [:img {:display "inline-block"
-          :transition "all .3s linear"
-          :width "90%"
-          :position "relative"
-          :top ".5rem"
-          :left "-.5rem"
-          :z-index "5"
-          :border ".75rem solid transparent"}
-    ["&:hover" {:border ".75rem solid white"
-                :transform "translateX(-2%) translateY(-2%)"}]]
-   [:.shadow {:position "absolute"
-              :z-index "3"
-              :top "4.1rem"
-              :left "2rem"
-              :width "85%"
-              :height "90%"
-              :background-color "blue"
-              :box-shadow "0 1.5rem 4rem -1.5rem #101820"}]]
   [:.speaker-info
-   [:.name {:font-size "3rem"
-            :font-weight 900
-            :color "#64ff00"
-            :margin "0 0 0 2.5rem"
-            :position "relative"
-            :line-height "3rem"
-            :z-index 5}]
-   [:.description {:font-size "1.25rem"
-                   :font-weight 300
-                   :color "blue"
-                   :letter-spacing ".2px"
-                   :line-height "1.5rem"
-                   :z-index 3
-                   :margin ".75rem 0 0 2.5rem"}]]
+   [:.name
+    (:font-bold design-tokens)
+    {:font-size (:font-large design-tokens)
+     :line-height 1
+     :margin "1.5rem 0 1.3rem"}]
+   [:.description {:font-size (:font-small design-tokens)
+                   :line-height 1.3}]]
   ([speaker]
    [:<>
     [:a.speaker {:href "#"}
      [:div.speaker-image
-      [:img.speaker-image__img {:src "images/gerald-jay-sussman-300x300.jpg" :width "300" :height "300"}]
-      [:noscript
-       [:img.speaker-image__img {:src "images/gerald-jay-sussman-300x300.jpg"} :width "300" :height "300"]]
-      [:span.shadow]]
+      [:img.speaker-image__img {:src "images/gerald-jay-sussman-300x300.jpg"
+                                :width "300"
+                                :height "300"}]]
      [:div.speaker-info
       [:p.name (:name speaker)]
       [:p.description (:brief speaker)]]]]))
 
 (defstyled speakers :section
-  {}
-  [:h2 {:text-align "center"
-        :font-size "3.5rem"
+  {:display "grid"
+   :margin "13vh auto 5vh"
+   :max-width "62.25rem"}
+  [:.pre-title {:font-size (:font-small design-tokens)
+                :color c/gray
+                :font-variant "all-small-caps"}]
+  [:h2 {:font-size "3.5rem"
         :font-weight 700
         :font-family "inter, sans-serif"
-        :margin "5vh 0"}]
+        :margin "0 0 3rem"}]
   [:.speaker-list {:display "grid"
-                   :grid-template-columns "repeat(3, 1fr)"
-                   :grid-gap "2.5rem"
-                   :list-style "none"
-                   :margin "0 auto"
-                   :padding "0"
-                   :max-width "1100px"}]
+                   :grid-template-columns "repeat(auto-fill, minmax(300px, 1fr))"
+                   :grid-gap "3rem"
+                   :list-style "none"}]
   ([_ speakers-list]
    [:<>
+    [:p.pre-title "Awesome"]
     [:h2 "Speakers"]
     [:ul.speaker-list
      (for [speaker speakers-list]
@@ -341,7 +307,7 @@
 
 (defn page [data]
   [:<>
-   [wrapper
+   [header
 
     [navigation
      [:a {:href "#"}
@@ -356,7 +322,7 @@
       [:li [:a {:class disabled :href "#instructions"} "Instructions"]]
       [:li [:a {:class disabled :href "#"} "Tickets"]]]]
 
-    [header
+    [banner
      [reclojure-title]
      [:div.info
       [:p "Virtual Conference"]
