@@ -1,17 +1,15 @@
 (ns org.reclojure.views.home
   (:require [lambdaisland.ornament :refer [defstyled]]
-            [org.reclojure.views.-colors :as c]))
+            [org.reclojure.db :as db]
+            [garden.selectors :as gsels]
+            [org.reclojure.views.-colors :as c]
+            [org.reclojure.views.-sizes :as s]))
 
-(let [inter "Inter, sans-serif"]
-  (def design-tokens
-    {:font-regular {:font-family inter
-                    :font-weight 400}
-     :font-bold {:font-family inter
-                 :font-weight 700}
-     :font-small "1.3rem"
-     :font-medium "1.5rem"
-     :font-large "3rem"
-     :font-extra-large "10rem"}))
+(def design-tokens
+  {:font-small "1.3rem"
+   :font-medium "1.6rem"
+   :font-large "3rem"
+   :font-extra-large "10rem"})
 
 ;;; Helpers
 
@@ -40,14 +38,14 @@
 ;;; "Assets"
 
 (defstyled reclojure-symbol :img
-  {:height "6.25rem"
-   :width "6.25rem"
+  {:height "5rem"
+   :width "5rem"
    :max-width "unset"
    :transform "rotate(-10deg)"
    :filter "drop-shadow(0px 0px 1px hsla(0,0%,0%,0.15))"})
 
 (defstyled reclojure-title :h1
-  {:margin-left "-0.05em"
+  {:margin "0 0 0 -0.05em"
    :display "grid"
    :grid-template-areas [["text"]]}
   [:.title {:grid-area "text"
@@ -78,17 +76,15 @@
 ;;; Components
 
 (defstyled header :header
+  {:margin-bottom "10vh"}
   [:h1
-   (:font-bold design-tokens)
-   {:font-size "15vmin"}]
+   {:font-size "15vmin"
+    :font-weight 700}]
   [:p :a {:color c/darker-green}]
   [:at-media {:min-width "60em"}
-   {;; :background-image "url(/images/liquid-cheese.svg)"
-    :background-size "cover"
-    :min-height "100vh"}])
+   {:background-size "cover"}])
 
 (defstyled navigation :nav
-  (:font-bold design-tokens)
   {:display "flex"
    :justify-content "space-between"
    :align-items "center"
@@ -96,16 +92,19 @@
    :margin "0 auto"
    :padding "1.5rem"
    :width "100%"
-   :max-width "1100px"}
+   :max-width "1100px"
+
+   :font-weight 700}
   [:at-media {:min-width "40em"}
    {:padding "2.5rem"}]
   [:ul {:display "flex"
         :flex-wrap "wrap"
         :flex-direction "column"
-        :align-items "flex-end"}
+        :align-items "flex-end"
+        :list-style "none"}
    [:li
-    (:font-bold design-tokens)
     {:font-size (:font-small design-tokens)
+     :font-weight 700
      :margin-bottom "2rem"}
     [:a {:color c/dark-blue}]
     [:&:last-child {:margin-bottom 0}]]
@@ -121,31 +120,31 @@
 
 (defstyled banner :div
   {:margin "0 auto"
-   :padding "10vmin 2.5rem"
+   :padding "5vmin 2.5rem"
    :width "100%"
    :max-width "1100px"}
   [:.info
-   {:font-family "inter, sans-serif"
-    :font-size (:font-medium design-tokens)
+   {:font-size (:font-medium design-tokens)
     :margin-top "2rem"
     :margin-bottom "4rem"}
+   [:p {:margin 0}]
    [:p:last-child {:font-weight 700
                    :font-size (:font-large design-tokens)}]]
   [:.description
-   (:font-regular design-tokens)
    {:display "grid"
     :grid-template-columns "1fr"}
-   [:p {:font-size (:font-medium design-tokens)
+   [:p {:font-size (:font-small design-tokens)
         :line-height 1.6}
-    [:&:first-child {:margin-bottom "1rem"}]]
+    [:&:last-child {:margin-bottom 0}]]
    [:at-media {:min-width "40em"}
-    {:grid-template-columns "40% 1fr"}
-    [:p {:grid-column-start "2"}]]])
+    {:grid-template-columns "40% 1fr"
+     :grid-column-gap "2rem"}
+    [:p {:grid-column-end "2"}]]])
 
-(defstyled cfp :section
-  (:font-regular design-tokens)
+(defstyled cfp :div
   {:text-align "center"
-   :margin "4rem 2rem"
+   :border ["1px" "solid" c/light-green]
+   :box-shadow [["1rem" "1rem" c/light-green]]
    :color c/darker-green}
   [:p {:font-size "2rem"
        :font-weight 700
@@ -169,16 +168,7 @@
            :margin "1.5rem"
            :font-size "1.5rem"}]
   [:at-media {:min-width "40em"}
-   {:margin "10vmin 2rem 10vmin"}]
-  [:at-media {:min-width "80em" :min-height "62rem"}
-   {:position "absolute"
-    :left "5vmin"
-    :bottom "5vmin"
-    :background-image "linear-gradient(to bottom right, #ebfdeb, #ebfbeb, white)"
-    :padding "2rem"
-    :border-radius "2rem"
-    :box-shadow "2px 2px 0px 2px lightgreen"
-    :margin 0}])
+   {:grid-column "span 2"}])
 
 (defstyled keynote :section
   {:background-color "#6864e6"
@@ -190,24 +180,24 @@
                          ["line"  "line"  "line"    "line"    "line"    "."]
                          ["intro" "intro" "intro"   "intro"   "intro"   "."]
                          ["."     "core"  "core"    "core"    "core"    "."]
-                         ["."     "."     "sussman" "sussman" "sussman" "."]]}
+                         ["."     "."     "sussman" "sussman" "sussman" "."]]
+   :overflow "hidden"}
   [:.line {:background-color c/light-green
-           :height "10px"
+           :height "0.7rem"
            :grid-area "line"}]
   [:.announcement
-   (:font-bold design-tokens)
    {:color c/white
-    :max-width "15ch"
+    :max-width "22.3rem"
     :font-size "2.5rem"
+    :font-weight 700
     :grid-area "intro"
     :justify-self "end"
     :padding-left "2rem"}]
   [:.core {:grid-area "core"
            :display "grid"
            :grid-template-columns "20fr 4fr 11fr 14fr 4fr"
-           :grid-template-rows "3rem auto 3rem 3rem 2rem"
-           :width "764px"
-           :max-width "100vw"
+           :grid-template-rows "3rem 13rem 3rem 3rem 2rem"
+           :width "47.75rem"
            :justify-self "center"
            :margin-top "3rem"}
    [:.red {:background-color c/light-green
@@ -249,7 +239,7 @@
    :max-width "max-content"
    :margin "0 auto"
    :place-items "center"}
-  [:at-media {:min-width "40rem"}
+  [:at-media {:min-width "40em"}
    {:grid-template-columns "1fr 1fr"}]
   [:img {:padding "1rem"
          :max-height "8rem"}]
@@ -346,6 +336,33 @@
                  :rel "noopener"} "Apply"]
       [:small "Questions? Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"]]]]]))
 
+(defstyled news :article
+  {:background-color c/white
+   :grid-area "1 / 2 / 3"
+   :padding "2rem"
+   :border ["1px" "solid" c/light-blue]
+   :box-shadow [["1rem" "1rem" 0 c/light-blue]]}
+  [:ol {:list-style-type "\"🔹 \""
+        :padding-left "1rem"
+        :display "flex"
+        :flex-direction "column-reverse"
+        :gap "1rem"}]
+  [":where(p, small, h2)" {:margin 0}]
+  [":is(p, #id)" {:line-height 1.4}]
+  [:time {:font-size "1rem"
+          :color c/gray
+          :font-varient "all-small-caps"}]
+  ([_]
+   [:<>
+    [:h2 "News"]
+    [:ol {:reversed true}
+     [:li
+      [:p [:a {:href "#keynote"} "Keynote"] " announcement, " [:a {:href "#cfp"} "CFP"] " begins"]
+      [:small [:time {:datetime "2021-09-10"} "Friday Sept. 10"]]]
+     [:li
+      [:p "First " [:a {:href "#speakers"} "speakers"] " announced! 🎉 " [:a {:href "#cfp"} "CFP"] " deadline is October 10!"]
+      [:small [:time {:datetime "2021-10-06"} "Wed. Oct. 06"]]]]]))
+
 ;;; Main
 
 (defn page [data]
@@ -360,6 +377,7 @@
                          :height "327"}]]
      [:ul
       [:li [:a {:href "#cfp"} "CFP"]]
+      [:li [:a {:href "#keynote"} "Keynote"]]
       [:li [:a {:href "#speakers"} "Speakers (" [small-caps "WIP"]] ")"]
       [:li [:a {:href "#sponsors"} "Sponsors"]]
       [:li [:a {:class disabled :href "#instructions"} "Instructions"]]
@@ -375,20 +393,15 @@
            "re:Clojure is a *free*, community-driven conference"]
        " that brings together knowledgeable speakers to present new and exciting
              topics on all things Clojure and ClojureScript."]
-      [:p "It is our intention to keep the conferences lean, inclusive and
+       [:p "It is our intention to keep the conferences lean, inclusive and
            rewarding to all attendees and to promote other Clojure conferences in
-           Europe and worldwide."]]]]
+           Europe and worldwide."]]
+      [news]]]]
 
-   [cfp {:id "cfp"}
-    [:p "Want to be " [nowrap "part of the show?"]]
-    [:p "Call for papers " [nowrap "are now open! 🥳"]]
-    [:a.apply {:href "https://docs.google.com/forms/d/1LSas3gB4rOmRAoQ_6QLcwiB3HgNeiBnyjhqppPRPpzE"
-               :target "_blank"
-               :rel "noopener"} "Apply"]
-    [:small "Questions? Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"]]]
+   
 
    ;; Keynotes & Speakers
-   [keynote {:id "speakers"}
+   [keynote {:id "keynote"}
     [:div.line]
     [:p.announcement "We are thrilled to announce the keynote speaker of this year"]
     [:img.wizard {:alt "A Wizard in awe shoots laser beams through his eyes while holding an orb with the words Eval and Apply."
@@ -398,7 +411,7 @@
     [:div.core
      [:div.red]
      [:img.gerald {:alt "A picture of Gerald Jay Sussman."
-                   :src "images/gerald-jay-sussman-300x300.jpg"
+                   :src "images/speakers/gerald-jay-sussman-300x300.jpg"
                    :width "300"
                    :height "300"}]
      [:div.black]]
