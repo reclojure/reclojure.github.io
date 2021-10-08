@@ -13,7 +13,7 @@
     :handle "draganrocks"
     :link "https://dragan.rocks/"
     :picture "dragan_djuric-400x400.jpg"
-    :brief "Professor at the University of Belgrade."
+    :brief "Author of Uncomplicate libraries and Professor at the University of Belgrade."
     :description "Dragan Djuric is a professor at the Department of Software Engineering, FON, University of Belgrade, Serbia. He passionately uses Clojure as a primary language since 2009, and teaches Clojure-based courses at the university since 2010. He published his Clojure-based research in leading scientific journals, but does not skip contributing to the community through open-source Clojure projects (www.uncomplicate.org). His main interests are in the area of software engineering and intelligent systems, but programming in Clojure is the activity he enjoys the most. When he is not working in Emacs, he likes doing his daily dose of long-distance running, gym, and Cuban salsa dancing."}
    {:name "Kathi Fisler"
     :slug "kathi-fisler"
