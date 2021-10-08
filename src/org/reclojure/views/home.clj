@@ -54,19 +54,19 @@
             :z-index "3"}
    [:span:first-child {:color c/light-green}]
    [:span:last-child {:color c/light-blue}]]
-  ["&::before" {:background "no-repeat linear-gradient(white, white) 15% 50%/45% 40%"
-                :content "\"re:Clojure\""
-                :color c/white
-                :filter "drop-shadow(0px 0px 1px hsla(0, 0%, 0%, 0.15))"
-                :grid-area "text"
-                :-webkit-text-stroke (str "0.25em " c/white)
-                :z-index "2"}]
-  ["&::after" {:content "\"re:Clojure\""
-               :grid-area "text"
-               :text-shadow "0px 0px 1px black, -5px 1px 9px black"
-               :z-index "1"}
-   [:at-media {:min-width "60em"}
-    {:text-shadow "3px 2px 25px black, -5px 1px 25px"}]]
+  ;; ["&::before" {:background "no-repeat linear-gradient(white, white) 15% 50%/45% 40%"
+  ;;               :content "\"re:Clojure\""
+  ;;               :color c/white
+  ;;               :filter "drop-shadow(0px 0px 1px hsla(0, 0%, 0%, 0.15))"
+  ;;               :grid-area "text"
+  ;;               :-webkit-text-stroke (str "0.25em " c/white)
+  ;;               :z-index "2"}]
+  ;; ["&::after" {:content "\"re:Clojure\""
+  ;;              :grid-area "text"
+  ;;              :text-shadow "0px 0px 1px black, -5px 1px 9px black"
+  ;;              :z-index "1"}
+  ;;  [:at-media {:min-width "60em"}
+  ;;   {:text-shadow "3px 2px 25px black, -5px 1px 25px"}]]
   ([_]
    [:<> [:span.title [:span "re:"] [:span "Clojure"]]]))
 
@@ -260,48 +260,91 @@
   [:.gaiwan {:max-height "7rem"}])
 
 (defstyled speaker-card :li
-  {:font-family "inter, sans-serif"}
-  [:.speaker-info
-   [:.name
-    (:font-bold design-tokens)
-    {:font-size (:font-large design-tokens)
-     :line-height 1
-     :margin "1.5rem 0 1.3rem"}]
-   [:.description {:font-size (:font-small design-tokens)
-                   :line-height 1.3}]]
+  {"--card-gradient" [[c/light-blue "15%"] c/light-green]
+
+   :background-image (str "linear-gradient("
+                          "var(--card-gradient),"
+                          "white min(30vh, 61.5%));")
+   :background-color c/white
+   ;; :border-radius "0.5rem"
+   :box-shadow [["1rem 1rem " c/light-blue]]
+   :border ["1px" "solid" c/light-blue]
+   ;; :padding-bottom "1rem"
+   }
+
+  [:a {:color "initial"}]
+  
+  ["> :last-child" {:padding-bottom 0}]
+  
+  [:img {:border-radius "0.5rem 0.5rem 0 0"
+         :width "100%"
+         :object-fit "cover"
+         :aspect-ratio "1/1"
+         :mix-blend-mode "overlay"
+         :max-height "max(10rem, 30vh)"}
+   ["~ *" {:margin-left "1rem"
+           :margin-right "1rem"}]]
+  
+  [:h3 {:font-size "2rem"
+        :font-weight 700
+        :line-height 1
+        :margin-top "1.3rem"
+        :margin-bottom "1.3rem"}]
+  
+  [:p {:font-size "1rem"
+       :line-height 1.3
+       :margin-bottom "2rem"}]
   ([speaker]
    [:<>
-    [:a.speaker {:href "#"}
-     [:div.speaker-image
-      [:img.speaker-image__img {:src "images/gerald-jay-sussman-300x300.jpg"
-                                :width "300"
-                                :height "300"}]]
-     [:div.speaker-info
-      [:p.name (:name speaker)]
-      [:p.description (:brief speaker)]]]]))
+    [:a {:href (str "/2021/speaker/" (:slug speaker))}                     ;FIXME
+     [:img {:src (str "images/speakers/" (:picture speaker))
+            :alt (str "A picture of " (:name speaker) ".")
+            :width "300"
+            :height "300"}]
+     [:h3 (:name speaker)]
+     [:p (:brief speaker)]]]))
 
 (defstyled speakers :section
   {:display "grid"
-   :margin "13vh auto 5vh"
-   :max-width "62.25rem"}
+   :margin "13vh auto 20vh"
+   :max-width "62.25rem"
+   :padding-left "2rem"
+   :padding-right "2rem"}
   [:.pre-title {:font-size (:font-small design-tokens)
                 :color c/gray
-                :font-variant "all-small-caps"}]
+                :font-variant "all-small-caps"
+                :margin 0}]
   [:h2 {:font-size "3.5rem"
         :font-weight 700
         :font-family "inter, sans-serif"
         :margin "0 0 3rem"}]
   [:.speaker-list {:display "grid"
-                   :grid-template-columns "repeat(auto-fill, minmax(300px, 1fr))"
+                   :grid-template-columns "repeat(auto-fill, minmax(16rem, 1fr))"
                    :grid-gap "3rem"
-                   :list-style "none"}]
+                   :list-style "none"
+                   :padding 0}]
   ([_ speakers-list]
    [:<>
-    [:p.pre-title "Awesome"]
+    [:p.pre-title "Confirmed"]
     [:h2 "Speakers"]
     [:ul.speaker-list
      (for [speaker speakers-list]
-       (speaker-card speaker))]]))
+       (speaker-card speaker))
+     [:div {:style {:border [["1px" "solid" c/light-blue]]
+                    :box-shadow [["1rem" "1rem" 0 c/light-blue]]}}
+      [:p {:style {:font-size "11rem"
+                   :line-height "1.5"
+                   :text-align "center"
+                   :color c/light-blue
+                   :margin 0
+                   :transform "rotate(-11deg)"}} "?"]]
+     [cfp {:id "cfp"}
+      [:p "Want to be " [nowrap "part of the show?"]]
+      [:p "CFP " [nowrap "ends October 10! ⏳"]]
+      [:a.apply {:href "https://docs.google.com/forms/d/1LSas3gB4rOmRAoQ_6QLcwiB3HgNeiBnyjhqppPRPpzE"
+                 :target "_blank"
+                 :rel "noopener"} "Apply"]
+      [:small "Questions? Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"]]]]]))
 
 ;;; Main
 
@@ -365,7 +408,7 @@
                      :width "258"
                      :height "591"}]]
 
-   [speakers [{}]]
+   [speakers {:id "speakers"} db/speakers-data]
 
    ;; Sponsors
    [sponsors {:id "sponsors"}

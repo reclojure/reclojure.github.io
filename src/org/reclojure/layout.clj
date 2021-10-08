@@ -52,7 +52,7 @@
      [:link {:rel "stylesheet" :href "/css/styles.css"}] ;FIXME
      (if (io/resource "public/css/compiled.css")
        [:link {:rel "stylesheet" :href "/css/compiled.css"}]
-       [:style {:type "text/css" :id "ornament"} (ornament/defined-styles {:preflight? true})])
+       [:style {:type "text/css" :id "ornament"} (ornament/defined-styles {:preflight? false})])
      head]
     [:body
      [:div#app
