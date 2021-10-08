@@ -92,7 +92,7 @@
    :margin "0 auto"
    :padding "1.5rem"
    :width "100%"
-   :max-width "1100px"
+   :max-width "69rem"
 
    :font-weight 700}
   [:at-media {:min-width "40em"}
@@ -122,7 +122,7 @@
   {:margin "0 auto"
    :padding "5vmin 2.5rem"
    :width "100%"
-   :max-width "1100px"}
+   :max-width "69rem"}
   [:.info
    {:font-size (:font-medium design-tokens)
     :margin-top "2rem"
@@ -250,27 +250,17 @@
   [:.gaiwan {:max-height "7rem"}])
 
 (defstyled speaker-card :li
-  {"--card-gradient" [[c/light-blue "15%"] c/light-green]
-
-   :background-image (str "linear-gradient("
-                          "var(--card-gradient),"
-                          "white min(30vh, 61.5%));")
-   :background-color c/white
-   ;; :border-radius "0.5rem"
+  {:background-color c/white
    :box-shadow [["1rem 1rem " c/light-blue]]
-   :border ["1px" "solid" c/light-blue]
-   ;; :padding-bottom "1rem"
-   }
+   :border ["1px" "solid" c/light-blue]}
 
   [:a {:color "initial"}]
   
   ["> :last-child" {:padding-bottom 0}]
   
-  [:img {:border-radius "0.5rem 0.5rem 0 0"
-         :width "100%"
+  [:img {:width "100%"
          :object-fit "cover"
          :aspect-ratio "1/1"
-         :mix-blend-mode "overlay"
          :max-height "max(10rem, 30vh)"}
    ["~ *" {:margin-left "1rem"
            :margin-right "1rem"}]]
@@ -297,7 +287,7 @@
 (defstyled speakers :section
   {:display "grid"
    :margin "13vh auto 20vh"
-   :max-width "62.25rem"
+   :max-width "69rem"
    :padding-left "2rem"
    :padding-right "2rem"}
   [:.pre-title {:font-size (:font-small design-tokens)
