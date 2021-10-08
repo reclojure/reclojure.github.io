@@ -52,19 +52,6 @@
             :z-index "3"}
    [:span:first-child {:color c/light-green}]
    [:span:last-child {:color c/light-blue}]]
-  ;; ["&::before" {:background "no-repeat linear-gradient(white, white) 15% 50%/45% 40%"
-  ;;               :content "\"re:Clojure\""
-  ;;               :color c/white
-  ;;               :filter "drop-shadow(0px 0px 1px hsla(0, 0%, 0%, 0.15))"
-  ;;               :grid-area "text"
-  ;;               :-webkit-text-stroke (str "0.25em " c/white)
-  ;;               :z-index "2"}]
-  ;; ["&::after" {:content "\"re:Clojure\""
-  ;;              :grid-area "text"
-  ;;              :text-shadow "0px 0px 1px black, -5px 1px 9px black"
-  ;;              :z-index "1"}
-  ;;  [:at-media {:min-width "60em"}
-  ;;   {:text-shadow "3px 2px 25px black, -5px 1px 25px"}]]
   ([_]
    [:<> [:span.title [:span "re:"] [:span "Clojure"]]]))
 
@@ -173,7 +160,6 @@
 (defstyled keynote :section
   {:background-color "#6864e6"
    :display "grid"
-   ;; :grid "\"preview\" minmax(56.25%,auto) \"content\" auto/minmax(0,100%)"
    :grid-template-columns "repeat(6, 1fr)"
    :grid-template-rows "10vh auto auto auto"
    :grid-template-areas [["."     "."     "."       "."       "."       "."]
