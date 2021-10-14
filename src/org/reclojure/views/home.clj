@@ -62,7 +62,7 @@
      :column-gap "2rem"}
     [:p {:grid-column-end "2"}]]])
 
-(defstyled cfp :div
+#_(defstyled cfp :div
   {:text-align "center"
    :border ["1px" "solid" c/light-green]
    :box-shadow [["1rem" "1rem" c/light-green]]
@@ -175,22 +175,22 @@
    :border ["1px" "solid" c/light-blue]}
 
   [:a {:color "initial"}]
-  
+
   ["> :last-child" {:padding-bottom 0}]
-  
+
   [:img {:width "100%"
          :object-fit "cover"
          :aspect-ratio "1/1"
          :max-height "max(10rem, 30vh)"}
    ["~ *" {:margin-left "1rem"
            :margin-right "1rem"}]]
-  
+
   [:h3 {:font-size "2rem"
         :font-weight 700
         :line-height 1
         :margin-top "1.3rem"
         :margin-bottom "1.3rem"}]
-  
+
   [:p {:font-size "1rem"
        :line-height 1.3
        :margin-bottom "2rem"}]
@@ -238,7 +238,7 @@
                    :color c/light-blue
                    :margin 0
                    :transform "rotate(-11deg)"}} "?"]]
-     [cfp {:id "cfp"}
+     #_[cfp {:id "cfp"}
       [:p "Want to be " [utils/nowrap "part of the show?"]]
       [:p "CFP " [utils/nowrap "ends October 10! ⏳"]]
       [:a.apply {:href "https://docs.google.com/forms/d/1LSas3gB4rOmRAoQ_6QLcwiB3HgNeiBnyjhqppPRPpzE"
@@ -267,11 +267,11 @@
     [:h2 "News"]
     [:ol {:reversed true}
      [:li
-      [:p [:a {:href "#keynote"} "Keynote"] " announcement, " [:a {:href "#cfp"} "CFP"] " begins"]
+      [:p [:a {:href "#keynote"} "Keynote"] " announcement, CFP begins"]
       [:small [:time {:datetime "2021-09-10"} "Friday Sept. 10"]]]
      [:li
-      [:p "First " [:a {:href "#speakers"} "speakers"] " announced! 🎉 " [:a {:href "#cfp"} "CFP"] " deadline is October 10!"]
-      [:small [:time {:datetime "2021-10-06"} "Wed. Oct. 06"]]]]]))
+      [:p "First " [:a {:href "#speakers"} "speakers"] " announced! 🎉. The CfP is now closed."]
+      [:small [:time {:datetime "2021-10-06"} "Thu Oct. 14"]]] ]]))
 
 ;;; Main
 
@@ -297,7 +297,7 @@
            Europe and worldwide."]]
       [news]]]]
 
-   
+
 
    ;; Keynotes & Speakers
    [keynote {:id "keynote"}

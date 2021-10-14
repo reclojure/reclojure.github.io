@@ -1,9 +1,0 @@
-{
-"version":3,
-"file":"goog.debug.logbuffer.js",
-"lineCount":14,
-"mappings":"AAYA,IAAA,CAAA,UAAA,CAAA,QAAA,CAAA,OAAA,CAAA;AAAA,cAAA;AAAAA,MAAKC,CAAAA,MAAL,CAAY,sBAAZ,CAAA;AACAD,MAAKC,CAAAA,MAAOC,CAAAA,sBAAZ,EAAA;AAEA,QAAMC,YAAYH,IAAKI,CAAAA,OAAL,CAAa,oBAAb,CAAlB;AAMAC,SAAQC,CAAAA,WAAR,GAAsB,EAAAC,IAAM;AAC1B,WAAOJ,SAAUG,CAAAA,WAAV,EAAP;AAD0B,GAA5B;AAQAD,SAAQG,CAAAA,kBAAR,GAA6B,EAAAC,IAAM;AACjC,WAAON,SAAUG,CAAAA,WAAV,EAAwBE,CAAAA,kBAAxB,EAAP;AADiC,GAAnC;AAjBA,SAAA,OAAA;AAAA,CAAA,CAAA;;",
-"sources":["goog/debug/logbuffer.js"],
-"sourcesContent":["/**\n * @license\n * Copyright The Closure Library Authors.\n * SPDX-License-Identifier: Apache-2.0\n */\n\n/**\n * @fileoverview An API compatibility layer for goog.log.LogBuffer.\n * TODO(user): Delete this file once all references to it have been\n *   removed.\n */\n\ngoog.module('goog.debug.LogBuffer');\ngoog.module.declareLegacyNamespace();\n\nconst LogBuffer = goog.require('goog.log.LogBuffer');\n\n/**\n * Gets the current LogBuffer instance, creating it if it doesn't exist.\n * @return {!LogBuffer}\n */\nexports.getInstance = () => {\n  return LogBuffer.getInstance();\n};\n\n/**\n * Returns whether buffering is enabled.\n * @return {boolean}\n */\nexports.isBufferingEnabled = () => {\n  return LogBuffer.getInstance().isBufferingEnabled();\n};\n"],
-"names":["goog","module","declareLegacyNamespace","LogBuffer","require","exports","getInstance","exports.getInstance","isBufferingEnabled","exports.isBufferingEnabled"]
-}

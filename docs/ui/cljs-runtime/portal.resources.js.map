@@ -1,1 +1,0 @@
-{"version":3,"sources":["portal/resources.cljc"],"mappings":"","names":[],"sourcesContent":["(ns portal.resources\n  #?(:cljs (:require-macros portal.resources))\n  #?(:clj (:require [clojure.java.io :as io])))\n\n#?(:clj\n   (defmacro resource [resource-name]\n     (slurp (io/resource resource-name))))\n"]}
