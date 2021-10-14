@@ -10,7 +10,7 @@ build: clean
 	cp -r old_site/ docs/
 	clj -A:dev -X:freeze
 	cp -r resources/public/* docs/
-	cp _site/index.html docs/
+	cp -r _site/* docs/
 	cp CNAME docs/
 
 server:

@@ -6,7 +6,7 @@
 (def css-file "resources/public/css/compiled.css")
 
 (defn build [& args]
-  (spit css-file (o/defined-styles {:preflight? true}))
+  (spit css-file (o/defined-styles {:preflight? false}))
   (freeze/iced (http/build-handler)))
 
 (comment
