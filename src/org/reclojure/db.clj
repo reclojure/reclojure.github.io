@@ -21,4 +21,11 @@
     :link "https://cs.brown.edu/~kfisler/"
     :picture "kathi_fisler-324x372.jpg"
     :brief "Research Professor at Brown. Co-director of Bootstrap."
-    :description "Kathi Fisler is a Research Professor of Computer Science at Brown University and co-director of Bootstrap, an outreach program that integrates computing and data science into existing classes in middle- and high-schools."}])
+    :description "Kathi Fisler is a Research Professor of Computer Science at Brown University and co-director of Bootstrap, an outreach program that integrates computing and data science into existing classes in middle- and high-schools."}
+   {:name "Alexander Oloo"
+    :slug "alexander-oloo"
+    :handle "alekcz"
+    :link "https://alexanderoloo.com/"
+    :picture "alexander_oloo-300x300.png"
+    :brief "Design Director at Absa Design."
+    :description "Alexander is an engineer, designer, jack of all trades, great at Product, Clojure, coaching and debugging, currently a Design Director at the Absa Design Office. His primary focus is the design, analysis, and optimization of apps on the web."}])
