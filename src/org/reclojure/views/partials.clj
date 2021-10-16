@@ -56,7 +56,7 @@
                                :height "327"}]]
     [:ul
      [:li [:a {:href "/#cfp"} "CFP"]]
-     [:li [:a {:href "/#keynote"} "Keynote"]]
+     [:li [:a {:href "/#keynote"} "Keynotes"]]
      [:li [:a {:href "/#speakers"} "Speakers (" [utils/small-caps "WIP"] ")"]]
      [:li [:a {:href "/#sponsors"} "Sponsors"]]
      [:li [:a {:class utils/disabled :href "/#instructions"} "Instructions"]]

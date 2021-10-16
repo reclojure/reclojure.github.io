@@ -122,12 +122,64 @@
            :margin-top "3rem"}
    [:.red {:background-color c/light-green
            :grid-area "1 / 1 / -3 / -3"}]
-   [:.gerald {:grid-area "2 / 2 / -2 / -2"
+   [:.gerald {:grid-area "2 / 2 / -1 / -2"
               :z-index 1}]
    [:.black {:background-color "black"
              :grid-area "3 / -4 / -1 / -1"}]]
   [:.sussman {:grid-area "sussman"
-              :margin-top "3rem"
+              :margin-top "5rem"
+              :font-size "3.5rem"
+              :padding-left 0
+              :padding-bottom "10vh"
+              :justify-self "center"}]
+  [:.wizard {:z-index 2
+             :grid-area "3 / 1 / 6 / 3"
+             :justify-self "center"
+             :align-self "center"}]
+  [:.sorceress {:z-index 2
+                :grid-area "3 / -1 / 6 / -3"
+                :justify-self "center"
+                :align-self "center"}
+   [:at-media {:max-width "60em"}
+    {:display "none"}]])
+
+(defstyled keynote-wolfram :section
+  {:background-color "#6864e6"
+   :display "grid"
+   :grid-template-columns "repeat(6, 1fr)"
+   :grid-template-rows "10vh auto auto auto"
+   :grid-template-areas [["."     "."     "."       "."       "."       "."]
+                         ["line"  "line"  "line"    "line"    "line"    "."]
+                         ["intro" "intro" "intro"   "intro"   "intro"   "."]
+                         ["."     "core"  "core"    "core"    "core"    "."]
+                         ["."     "."     "wolfram" "wolfram" "wolfram" "."]]
+   :overflow "hidden"}
+  [:.line {:background-color c/light-green
+           :height "0.7rem"
+           :grid-area "line"}]
+  [:.announcement
+   {:color c/white
+    :max-width "22.3rem"
+    :font-size "2.5rem"
+    :font-weight 700
+    :grid-area "intro"
+    :justify-self "end"
+    :padding-left "2rem"}]
+  [:.core {:grid-area "core"
+           :display "grid"
+           :grid-template-columns "20fr 4fr 11fr 14fr 4fr"
+           :grid-template-rows "3rem 13rem 3rem 3rem 2rem"
+           :width "47.75rem"
+           :justify-self "center"
+           :margin-top "1rem"}
+   [:.red {:background-color c/light-green
+           :grid-area "1 / 1 / -3 / -3"}]
+   [:.stephen {:grid-area "3 / 1 / -2 / -1"
+              :z-index 1}]
+   [:.black {:background-color "black"
+             :grid-area "3 / -4 / -1 / -1"}]]
+  [:.wolfram {:grid-area "wolfram"
+              :margin-top "5rem"
               :font-size "3.5rem"
               :padding-left 0
               :padding-bottom "10vh"
@@ -302,7 +354,7 @@
    ;; Keynotes & Speakers
    [keynote {:id "keynote"}
     [:div.line]
-    [:p.announcement "We are thrilled to announce the keynote speaker of this year"]
+    [:p.announcement "We are thrilled to announce the keynote speakers of this year"]
     [:img.wizard {:alt "A Wizard in awe shoots laser beams through his eyes while holding an orb with the words Eval and Apply."
                   :src "images/wizard.png"
                   :width "341"
@@ -317,6 +369,24 @@
     [:p.announcement.sussman "Gerald Jay Sussman"]
     [:img.sorceress {:alt "A Sorceress who is wearing boss glasses points at a book she holds with the acronym JVM in its cover."
                      :src "images/sorceress.png"
+                     :width "258"
+                     :height "591"}]]
+
+  [keynote-wolfram {:id "keynote-wolfram"}
+    [:img.wizard {:alt "A Wizard in awe shoots laser beams through his eyes while holding an orb with the words Eval and Apply."
+                  :src "images/wl.png"
+                  :width "341"
+                  :height "660"}]
+    [:div.core
+     [:div.red]
+     [:img.stephen {:alt "A picture of Wolfram"
+                   :src "images/speakers/stephen-wolfram.png"
+                   :width "300"
+                   :height "300"}]
+     [:div.black]]
+    [:p.announcement.wolfram "Stephen Wolfram"]
+    [:img.sorceress {:alt "A Sorceress who is wearing boss glasses points at a book she holds with the acronym JVM in its cover."
+                     :src "images/mathematica.png"
                      :width "258"
                      :height "591"}]]
 
