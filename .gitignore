@@ -27,3 +27,4 @@ build
 
 resources/secrets.edn
 /resources/public/css/compiled.css
+/_site/
