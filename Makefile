@@ -8,7 +8,7 @@ clean:
 build: clean
 	mkdir -p docs
 	cp -r old_site/ docs/
-	clj -A:dev -X:freeze
+	clojure -A:dev -X:freeze
 	cp -r resources/public/* docs/
 	cp -r _site/* docs/
 	cp CNAME docs/
