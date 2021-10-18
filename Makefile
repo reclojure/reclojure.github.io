@@ -5,6 +5,7 @@ clean:
 	rm -f "resources/public/css/compiled.css"
 
 build: clean
+	mkdir -p _site/old_site
 	cp -r old_site _site/old_site
 	clojure -A:dev -X:freeze
 	cp -r resources/public/* _site/
