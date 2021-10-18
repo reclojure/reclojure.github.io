@@ -19,12 +19,12 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'temurin'
-          java-version: '11'
+          java-version: '17'
 
-      - name: Install clojure tools
-        uses: DeLaGuardo/setup-clojure@3.5
+      - name: Setup Clojure
+        uses: DeLaGuardo/setup-clojure@master
         with:
-          cli: 1.10.1.693 # Clojure CLI based on tools.deps
+          tools-deps: 'latest'
 
       - name: Execute clojure code on Linux and MacOS
         run: make build
