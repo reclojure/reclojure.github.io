@@ -1,0 +1,37 @@
+name: "Build and deploy the re:Clojure website"
+# Triggered when code is pushed to any branch in a repository
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  library-build:
+    runs-on: ubuntu-latest
+    name: "A job to build the latest re:Clojure website"
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Prepare java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Clojure
+        uses: DeLaGuardo/setup-clojure@master
+        with:
+          tools-deps: 'latest'
+
+      - name: Execute clojure code on Linux and MacOS
+        run: make build
+        shell: bash
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
