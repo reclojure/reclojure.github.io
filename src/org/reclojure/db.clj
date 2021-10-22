@@ -28,7 +28,15 @@
     :link "https://alexanderoloo.com/"
     :picture "alexander_oloo-300x300.png"
     :brief "Design Director at Absa Design."
-    :description "Alexander is an engineer, designer, jack of all trades, great at Product, Clojure, coaching and debugging, currently a Design Director at the Absa Design Office. His primary focus is the design, analysis, and optimization of apps on the web."}])
+    :description "Alexander is an engineer, designer, jack of all trades, great at Product, Clojure, coaching and debugging, currently a Design Director at the Absa Design Office. His primary focus is the design, analysis, and optimization of apps on the web."}
+   {:name "Paula Gearon"
+    :slug "paula-gearon"
+    :handle "quoll"
+    :link "https://github.com/quoll"
+    :picture "paula-gearon.jpg"
+    :brief "An avid Clojure developer, Paula has been the technical lead on several open source projects with a focus on data storage and processing."
+    :description "An avid Clojure developer, Paula likes to work in the most technical parts of a system building the infrastructure that lets other developers do their jobs. She has been the technical lead on several commercial and open source projects, with a focus on data storage and processing, and was a lead editor for the SPARQL standard for accessing RDF databases. When not coding, she does triathlons, cooks, helps her children with homework, and mentors and supports young members of Women Who Code. Originally from Australia, she currently lives with her family in Virginia, in the USA."}])
+
 (def workshops
   (let [fastmath {:name "Fastmath" :href "https://github.com/generateme/fastmath"}
         tablecloth {:name "Tablecloth" :href "https://github.com/scicloj/tablecloth"}
