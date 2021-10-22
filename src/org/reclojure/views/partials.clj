@@ -7,9 +7,7 @@
 
 (defstyled header :header
   {:margin-bottom "10vh"}
-  [:h1
-   {:font-size "15vmin"
-    :font-weight 700}]
+  
   [:p :a {:color c/darker-green}]
   [:at-media {:min-width "60em"}
    {:background-size "cover"}])
@@ -56,8 +54,9 @@
                                :height "327"}]]
     [:ul
      [:li [:a {:href "/#cfp"} "CFP"]]
-     [:li [:a {:href "/#keynote"} "Keynote"]]
-     [:li [:a {:href "/#speakers"} "Speakers (" [utils/small-caps "WIP"] ")"]]
+     [:li [:a {:href "/#keynote"} "Keynotes"]]
+     [:li [:a {:href "/#speakers"} "Speakers"]]
+     [:li [:a {:href "/#workshops"} "Workshops"]]
      [:li [:a {:href "/#sponsors"} "Sponsors"]]
      [:li [:a {:class utils/disabled :href "/#instructions"} "Instructions"]]
      [:li [:a {:class utils/disabled :href "#"} "Tickets"]]]]))
