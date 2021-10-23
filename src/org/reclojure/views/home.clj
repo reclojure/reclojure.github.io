@@ -300,7 +300,7 @@
       [:a {:href "https://freshcodeit.com/" :target "_blank" :rel "noopener"}
        [:img.freshcode {:alt "Logo for Freshcode."
                         :src "images/sponsors/freshcode.png"}]]
-      [:a {:href "" :target "_blank" :rel "noopener"}
+      [:a {:href "https://www.hyde-housing.co.uk/" :target "_blank" :rel "noopener"}
        [:img.hyde {:alt "Logo for Hyde"
                    :src "images/sponsors/hyde-logo.png"}]]]]
     ;; Instructions
