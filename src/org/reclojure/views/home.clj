@@ -227,8 +227,14 @@
      [:li
       [:p "First " [:a {:href "#speakers"} "speakers"] " announced! 🎉. The CFP is now closed."]
       [:small [:time {:datetime "2021-10-06"} "Thu Oct. 14"]]]
+     [:li
+      [:p "New " [:a {:href "#workshops"} "workshops"] " section available."]
+      [:small [:time {:datetime "2021-10-06"} "Thu Oct. 14"]]]
     [:li
-      [:p "New keynote announced! Please welcome " [:a {:href "#wolfram"} "Stephen Wolfram"] "!"]
+      [:p "New " [:a {:href "#speakers"} "speaker"] ": " [:a {:href "2021/speaker/paula-gearon"} "Paula Gearon"] "!"]
+      [:small [:time {:datetime "2021-10-06"} "Thu Oct. 14"]]]
+    [:li
+      [:p "New keynote! Please welcome " [:a {:href "#wolfram"} "Stephen Wolfram"] "!"]
       [:small [:time {:datetime "2021-10-06"} "Sun Oct. 23"]]] ]]))
 
 ;;; Main
