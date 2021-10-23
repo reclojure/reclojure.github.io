@@ -33,7 +33,7 @@
   [:h3 {:border-bottom [[".5rem" "solid" "var(--highlight)"]]}]
   [:img
    ["&:nth-of-type(2)" {:box-shadow [["-1rem" "1rem" 0 "var(--highlight)"]]}]]
-  
+
   [:at-media {:min-width "60em"}
    {:grid-template-columns "repeat(2, 1fr)"}])
 
@@ -94,7 +94,7 @@
     [:p.pre-title "Confirmed"]
     [:h2 "Keynote " [:span "Speakers"]]
     [speakers
-     
+
      ;; Sussman
      [sussman
       [name {:class "sussman"} "Gerald Jay Sussman"]
@@ -134,7 +134,7 @@
          Panasonic Professor of Electrical Engineering at the " MIT "."])]
 
      ;; Wolfram
-     [wolfram
+     [wolfram {:id "wolfram"}
       [name "Stephen Wolfram"]
       [wolfram-symbols {:alt "Symbol for Wolfram's Mathematica."
                         :src "images/mathematica.png"}]

@@ -226,7 +226,10 @@
       [:small [:time {:datetime "2021-09-10"} "Friday Sept. 10"]]]
      [:li
       [:p "First " [:a {:href "#speakers"} "speakers"] " announced! 🎉. The CFP is now closed."]
-      [:small [:time {:datetime "2021-10-06"} "Thu Oct. 14"]]] ]]))
+      [:small [:time {:datetime "2021-10-06"} "Thu Oct. 14"]]]
+    [:li
+      [:p "New keynote announced! Please welcome " [:a {:href "#wolfram"} "Stephen Wolfram"] "!"]
+      [:small [:time {:datetime "2021-10-06"} "Sun Oct. 23"]]] ]]))
 
 ;;; Main
 
@@ -298,6 +301,6 @@
     ;; Footer
     ;; [:p "Please review our code of conduct, relax and enjoy the conference! If
     ;; you have any questions, please do email us at info@reclojure.org"]
-    
-    
+
+
     ]])
