@@ -118,11 +118,12 @@
    {:grid-template-columns "1fr 1fr"}]
   [:img {:padding "1rem"
          :max-height "8rem"}]
-  [:.juxt {}]
+  [:.juxt {:max-height "7rem"}]
   [:.cognitect {:max-height "13rem"}]
   [:.healthunlocked {}]
   [:.freshcode {:max-height "13rem"}]
-  [:.gaiwan {:max-height "7rem"}])
+  [:.gaiwan {:max-height "7rem"}]
+  [:.hyde {:max-height "11rem"}])
 
 (defstyled speaker-card :li
   {:background-color c/white
@@ -302,7 +303,7 @@
                         :src "images/sponsors/freshcode.png"}]]
       [:a {:href "https://www.hyde-housing.co.uk/" :target "_blank" :rel "noopener"}
        [:img.hyde {:alt "Logo for Hyde"
-                   :src "images/sponsors/hyde-logo.png"}]]]]
+                   :src "images/sponsors/hyde-logo-mod.png"}]]]]
     ;; Instructions
     ;; Footer
     ;; [:p "Please review our code of conduct, relax and enjoy the conference! If
