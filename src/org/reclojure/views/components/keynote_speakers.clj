@@ -38,7 +38,7 @@
    {:grid-template-columns "repeat(2, 1fr)"}])
 
 (o/defstyled name :h3
-  {:font-size "clamp(2rem, 2.5rem, 3rem)"
+  {:font-size "clamp(1.6rem, 4.5vw, 3rem)"
    :width "min(max-content, 80%)"
    :padding-bottom "2rem"
    :grid-column "span 2"

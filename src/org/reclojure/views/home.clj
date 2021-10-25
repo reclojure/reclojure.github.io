@@ -52,8 +52,8 @@
    {:display "flex"
     :flex-wrap "wrap"
     :row-gap "2rem"}
-   [":first-child" {:flex 4
-                    :min-width "20rem"}]
+   [:div [:p {:min-width "40vw"}]]
+   [":first-child" {:flex 4}]
    [:article {:flex 5
               :overflow-y "scroll"
               :max-height "20rem"
