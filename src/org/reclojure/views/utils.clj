@@ -23,3 +23,7 @@
 
 (defstyled small-caps :span
   {:font-variant "all-small-caps"})
+
+(defn external-link [attrs & content]
+  `[:a ~(merge {:target "_blank"
+                :rel "noopener"} attrs) ~@content])
