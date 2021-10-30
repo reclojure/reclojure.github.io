@@ -147,17 +147,21 @@
     [table
      [head
       [row
+       [th "Event"]
        [th "Date"]
+       [th "Length"]
        [th "Title"]
+       [th "Description"]
        [th "Presenter"]
        [th "Libraries"]]]
      [body
       (->> db/workshops
            arrange-by-datetime
-           (map (fn [{:keys [link datetime title description libraries presenter]}]
+           (map (fn [{:keys [link datetime length title description libraries presenter]}]
                   [row
                    [td [event-link link]]
                    [td {:class "datetime"} (datetime-view datetime)]
+                   [td {:class "length"} length]
                    [td {:class "title"} [workshop-title title]]
                    [td {:class "description"} [workshop-title description]]
                    [td {:class "presenter"} [utils/nowrap presenter]]
