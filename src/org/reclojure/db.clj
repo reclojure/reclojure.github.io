@@ -105,8 +105,19 @@
       :length    "120min",
       :datetimes ["2021-11-06-15:00"
                   "2021-11-20-15:00"]}
-     {:title       "Structure and Interpretation of Clojure Transducers",
-      :description "",
+     {:title       "Structure and Interpretation of Transducers",
+      :description "Transducers are a powerful abstraction added relatively recently to Clojure.
+In spite of this and the noticeable performance benefits, they remain a
+daunting subject for many Clojurians.
+
+There is no reason such an important subject remain impenetrable.
+
+We will approach them in this workshop from first principles and see how
+they emerge naturally as a general property in many places.
+
+By the end of the workshop, participants will have a better
+understanding of transducers, their use cases, and will be comfortable
+writing their own simple transducers when the need arises.",
       :libraries   [clojurecore],
       :presenter   "Ben Sless",
       :length      "120min",
@@ -220,3 +231,4 @@ Any questions? hello@xtdb.com",
       :length "",
       :datetimes ["2021-12-02-16:00"]
       :link "https://www.eventbrite.com/e/xtdb-workshop-reclojure-tickets-191330985127"}]))
+
