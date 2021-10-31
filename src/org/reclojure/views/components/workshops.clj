@@ -3,7 +3,8 @@
             [org.reclojure.db :as db]
             [garden.selectors :as gs]
             [org.reclojure.views.utils :as utils]
-            [org.reclojure.views.-colors :as c]))
+            [org.reclojure.views.-colors :as c]
+            [clojure.string :as string]))
 
 (o/defstyled table :table
   {:border-collapse "collapse"})
@@ -66,11 +67,66 @@
   cell
   [:time {:font-style "italic"}])
 
-(o/defstyled workshop-title :h3
-  {:font-weight 400
-   :margin 0
+(o/defstyled a :a)
+
+(o/defstyled workshop-event-link :h3
+  {:font-weight   400
+   :margin        0
    :padding-block "0.5rem"
-   :font-size "1rem"})
+   :font-size     "1rem"})
+
+(o/defstyled workshop-title :h3
+  {:font-weight   400
+   :margin        0
+   :padding-block "0.5rem"
+   :font-size     "1rem"})
+
+(o/defstyled workshop-description :h3
+  {:font-weight   400
+   :margin        0
+   :padding-block "0.5rem"
+   :font-size     "1rem"})
+
+(def month-names ["Jan" "Feb" "Mar" "Apr"
+                  "May" "Jun" "Jul" "Aug"
+                  "Sep" "Oct" "Nov" "Dec"])
+
+(defn event-link [link]
+  (when link
+    [a {:href link}
+     "Event link"]))
+
+(defn datetime-view [datetime]
+  (if datetime
+    (let [[year month day hour-minute] (string/split datetime #"-")
+          month-name                   (-> month
+                         (Integer/parseInt)
+                         dec
+                         month-names)
+          [hour minute]                (string/split hour-minute #":")
+          url                          (format "https://time.is/%s%s_%s_%s_%s_in_UTC"
+                      hour minute day month-name year)
+          caption (format "%s. %s, %s UTC" month-name day hour-minute)]
+      [a {:href url} caption])
+    [utils/nowrap "To be scheduled"]))
+
+(defn arrange-by-datetime [workshops]
+  (->> workshops
+       (mapcat (fn [{:keys [datetimes]
+                     :as workshop}]
+                 (if datetimes
+                   (let [workshop-without-datetimes (dissoc workshop :datetimes)]
+                     (->> datetimes
+                          (map (fn [datetime]
+                                 (-> workshop-without-datetimes
+                                     (assoc
+                                       :datetime datetime))))))
+                   (do (println "DEBUG")
+                       [workshop]))))
+       (sort-by (fn [row] ; make sure rows with no datetime are last
+                  (-> row
+                      :datetime
+                      (or "a"))))))
 
 (o/defstyled workshops :section
   ;; Section boilerplate to be abstracted
@@ -91,23 +147,35 @@
     [table
      [head
       [row
+       [th "Event"]
        [th "Date"]
+       [th "Length"]
        [th "Title"]
+       [th "Description"]
        [th "Presenter"]
        [th "Libraries"]]]
      [body
-      (for [{:keys [#_datetime title libraries presenter]}
-            (filter :confirmed db/workshops)]
-        [row
-         [td {:class "datetime"} [:time {:datetime ""}
-                                  [utils/nowrap "To be defined"]]]
-         [td {:class "title"} [workshop-title title]]
-         [td {:class "presenter"} [utils/nowrap presenter]]
-         [td {:class "libs"}
-          (let [lib-link (fn [{:keys [href name]}]
-                           (utils/external-link {:href href} name))
-                linked-libraries (map lib-link libraries)]
-            (-> ", "
-                repeat
-                (interleave linked-libraries)
-                rest))]])]]]))
+      (->> db/workshops
+           arrange-by-datetime
+           (map (fn [{:keys [link datetime length title description libraries presenter]}]
+                  [row
+                   [td [event-link link]]
+                   [td {:class "datetime"} (datetime-view datetime)]
+                   [td {:class "length"} length]
+                   [td {:class "title"} [workshop-title title]]
+                   [td {:class "description"} [workshop-title description]]
+                   [td {:class "presenter"} [utils/nowrap presenter]]
+                   [td {:class "libs"}
+                    (let [lib-link (fn [{:keys [href name]}]
+                                     (utils/external-link {:href href} name))
+                          linked-libraries (map lib-link libraries)]
+                      (-> ", "
+                          repeat
+                          (interleave linked-libraries)
+                          rest))]])))]]]))
+
+
+
+
+
+
