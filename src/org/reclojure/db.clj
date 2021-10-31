@@ -63,7 +63,8 @@
         cpython {:name "CPython" :href "https://github.com/python/cpython"}
         lucene-grep {:name "Lucene-grep" :href "https://github.com/dainiusjocas/lucene-grep"}
         xtdb-core {:name "xtdb-core" :href "https://xtdb.com"}
-        clojurecore {:name "clojure.core" :href "https://clojure.github.io/clojure/clojure.core-api.html"}]
+        clojurecore {:name "clojure.core" :href "https://clojure.github.io/clojure/clojure.core-api.html"}
+        clerk {:name "Clerk" :href "github.com/nextjournal/clerk-demo"}]
     [{:title "How to Talk with Data Scientists?"
       :description "Engineers and Data Scientists work towards the same business goals, but sometimes have different concerns to get there. In this workshop, we'll review situations showcasing what data scientists need to be successful, and by consequence how engineers can better cope with those requests. Bring your stories and your questions!",
       :libraries [],
@@ -178,8 +179,14 @@
       :length "120min"
       :datetimes ["2021-11-27-14:00"],}
      {:title "Computing Derivatives and Automatic Differentiation"
-      :description "",
-      :libraries [sicmutils],
+      :description "Have you seen a Math or Physics Equation and wanted to work with them using your computer, but thought that you need some special language such as Matlab or Python?
+This talk will show that it is possible to accomplish this in Clojure using the SICMUtils Library.
+This talk will show how to do automatic differentiation in Clojure using the SICMUtils Library.
+I will explain what a derivative is, show how you can transcribe equations to a Clojure using the SICM and provide some background on auto differentiation.
+We will also demonstrate a nice workflow for these types of investigations using two other Clojure libraries: 
+    Clerk - a notebook that connects to your editor
+    Hanami - a charting tool built on Vega ",
+      :libraries [sicmutils hanami clerk],
       :presenter "Tovieye Moses Ozi",
       :length " 60min  ",
       :datetimes [
