@@ -141,13 +141,14 @@
       "Oz is a Swiss Army Knife for data visualization, scientific documentation, and \"namespace as a notebook\" style analysis workflows. However, its versatility can make it easy to miss the full scope of its capabilities. In this workshop, we'll briefly go over all of its features, and then work through a series of illustrative examples based on participant interest.",
       :libraries [oz],
       :presenter "Christopher Small",
-      :length    " 120min ",}
+      :length    " 120min "
+      :datetimes ["2021-11-29-17:00"],}
      {:title "Your Namespace as a Notebook"
       :description "Notespace is a tool that allows for creating visual documents without leaving the comfort of the familiar Clojure editor, REPL, and namespace. It has evolved through the usage at the Scicloj comminitie's group sessions and individual projects. We will practice basic use of Notespace, discuss its design choices and relationship to other projects, and chat about future challenges.",
       :libraries [notespace],
       :presenter "Daniel Slutsky",
       :length "90min",
-      :datetimes ["2021-11-19-14:00" "2021-11-29-18:30"]}
+      :datetimes ["2021-11-19-14:00" "2021-11-28-16:00"]}
      {:title "Writing Web Apps with Fulcro"
       :description "Fulcro is unique among Clojure web frameworks in providing a complete, integrated, full-stack solution for creating non-trivial web applications. It is based on a few simple ideas with far-reaching consequences, it is unusually malleable, and we love it for its focus on creating maintainable, developer-friendly code.
       In this workshop you will get a brief introduction to Fulcro and then get your hands dirty exploring the concepts in practice on an existing application in a series of guided exercises. We will use the excellent Fulcro Inspect tooling and mess up with the code.
