@@ -58,13 +58,12 @@
         sicmutils {:name "Sicmutils" :href "https://github.com/sicmutils/sicmutils"}
         sicmutils {:name "Sicmutils" :href "https://github.com/sicmutils/sicmutils"}
         libpython-clj {:name "libpython-clj" :href "https://github.com/clj-python/libpython-clj"}
-        techmldatatype {:name "tech.ml.datatype" :href ""} ;FIXME could only find tech.ml.dataset
         graalvm {:name "GraalVM" :href "https://www.graalvm.org/"}
         cpython {:name "CPython" :href "https://github.com/python/cpython"}
         lucene-grep {:name "Lucene-grep" :href "https://github.com/dainiusjocas/lucene-grep"}
         xtdb-core {:name "xtdb-core" :href "https://xtdb.com"}
         clojurecore {:name "clojure.core" :href "https://clojure.github.io/clojure/clojure.core-api.html"}
-        clerk {:name "Clerk" :href "github.com/nextjournal/clerk-demo"}]
+        clerk {:name "Clerk" :href "https://github.com/nextjournal/clerk-demo"}]
     [{:title "How to Talk with Data Scientists?"
       :description "Engineers and Data Scientists work towards the same business goals, but sometimes have different concerns to get there. In this workshop, we'll review situations showcasing what data scientists need to be successful, and by consequence how engineers can better cope with those requests. Bring your stories and your questions!",
       :libraries [],
@@ -183,9 +182,7 @@
 This talk will show that it is possible to accomplish this in Clojure using the SICMUtils Library.
 This talk will show how to do automatic differentiation in Clojure using the SICMUtils Library.
 I will explain what a derivative is, show how you can transcribe equations to a Clojure using the SICM and provide some background on auto differentiation.
-We will also demonstrate a nice workflow for these types of investigations using two other Clojure libraries: 
-    Clerk - a notebook that connects to your editor
-    Hanami - a charting tool built on Vega ",
+We will also demonstrate a nice workflow for these types of investigations using two other Clojure libraries: Clerk - a notebook that connects to your editor; Hanami - a charting tool built on Vega.",
       :libraries [sicmutils hanami clerk],
       :presenter "Tovieye Moses Ozi",
       :length " 60min  ",
