@@ -83,7 +83,8 @@
       :libraries [dtype-next],
       :presenter "Ethan Miller",
       :length "120min",
-      :datetimes ["2021-11-04-09:00"]}
+      :datetimes ["2021-11-04-09:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/281822613/"}
      {:title     "Wrangling Arrays with dtype-next"
       :description
       "This workshop will introduce dtype-next, explain its position in the Clojure data science ecosystem, and introduce the key concepts and techniques necessary for working with its performant buffers/arrays.",
