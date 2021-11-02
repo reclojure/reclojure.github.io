@@ -63,7 +63,8 @@
         lucene-grep {:name "Lucene-grep" :href "https://github.com/dainiusjocas/lucene-grep"}
         xtdb-core {:name "xtdb-core" :href "https://xtdb.com"}
         clojurecore {:name "clojure.core" :href "https://clojure.github.io/clojure/clojure.core-api.html"}
-        clerk {:name "Clerk" :href "https://github.com/nextjournal/clerk-demo"}]
+        clerk {:name "Clerk" :href "https://github.com/nextjournal/clerk-demo"}
+        neanderthal {:name "Neanderthal" :href "https://neanderthal.uncomplicate.org"}]
     [{:title "How to Talk with Data Scientists?"
       :description "Engineers and Data Scientists work towards the same business goals, but sometimes have different concerns to get there. In this workshop, we'll review situations showcasing what data scientists need to be successful, and by consequence how engineers can better cope with those requests. Bring your stories and your questions!",
       :libraries [],
@@ -230,5 +231,10 @@ Any questions? hello@xtdb.com",
       :presenter "Jeremy Taylor",
       :length "",
       :datetimes ["2021-12-02-16:00"]
-      :link "https://www.eventbrite.com/e/xtdb-workshop-reclojure-tickets-191330985127"}]))
+      :link "https://www.eventbrite.com/e/xtdb-workshop-reclojure-tickets-191330985127"}
+     {:title       "Linear Algebra with Neanderthal"
+      :description "",
+      :libraries [neanderthal],
+      :presenter "David Pham",
+      :length    "",}]))
 
