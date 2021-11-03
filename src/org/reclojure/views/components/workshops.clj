@@ -67,19 +67,13 @@
   cell
   [:time {:font-style "italic"}])
 
-(o/defstyled workshop-event-link :h3
-  {:font-weight   400
-   :margin        0
-   :padding-block "0.5rem"
-   :font-size     "1rem"})
-
 (o/defstyled workshop-title :h3
   {:font-weight   400
    :margin        0
    :padding-block "0.5rem"
    :font-size     "1rem"})
 
-(o/defstyled workshop-description :h3
+(o/defstyled workshop-description :p
   {:font-weight   400
    :margin        0
    :padding-block "0.5rem"
@@ -161,7 +155,7 @@
                    [td {:class "datetime"} (datetime-view datetime)]
                    [td {:class "length"} length]
                    [td {:class "title"} [workshop-title title]]
-                   [td {:class "description"} [workshop-title description]]
+                   [td {:class "description"} [workshop-description description]]
                    [td {:class "presenter"} [utils/nowrap presenter]]
                    [td {:class "libs"}
                     (let [lib-link (fn [{:keys [href name]}]
