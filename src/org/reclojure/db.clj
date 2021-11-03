@@ -76,7 +76,8 @@
       :libraries [tablecloth],
       :presenter "Mey Beisaron",
       :length "120min",
-      :datetimes ["2021-11-07-16:00"]}
+      :datetimes ["2021-11-07-16:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/281854686/"}
      {:title "Wrangling Arrays with dtype-next"
       :description
       "This workshop will introduce dtype-next, explain its position in the Clojure data science ecosystem, and introduce the key concepts and techniques necessary for working with its performant buffers/arrays.",
@@ -105,9 +106,16 @@
       :libraries [dtype-next],
       :presenter "David Sletten",
       :length    "120min",
-      :datetimes ["2021-11-06-15:00"
-                  "2021-11-20-15:00"]}
-     {:title       "Structure and Interpretation of Transducers",
+      :datetimes ["2021-11-06-15:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/281854619/"}
+     {:title     "Wrangling Arrays with dtype-next"
+      :description
+      "This workshop will introduce dtype-next, explain its position in the Clojure data science ecosystem, and introduce the key concepts and techniques necessary for working with its performant buffers/arrays.",
+      :libraries [dtype-next],
+      :presenter "David Sletten",
+      :length    "120min",
+      :datetimes ["2021-11-20-15:00"]}
+     {:title       "Structure and Interpretation of Clojure Transducers",
       :description "Transducers are a powerful abstraction added relatively recently to Clojure.
 In spite of this and the noticeable performance benefits, they remain a
 daunting subject for many Clojurians.
@@ -126,7 +134,7 @@ writing their own simple transducers when the need arises.",
       :datetimes ["2021-11-15-17:30"]}
      {:title     "Wrangling Sequences Like a Cowboy with Injest",
       :description
-      "Note: This workshop covers material that is best understood by reviewing a prior workshop: “The Structure and Interpretation of Transducers” Summary: Injest provides thread macros (e.g. x>>, =>>) that lower the bar to higher performance by letting you compose transducers in the same way as you would with ->>. In this workshop we will introduce you to injest’s three main features: path threads, auto transducification and auto parallelization. Then, we’ll go over some real world examples of transforming (wrangling) data sequences. We’ll spend the remaining time of the workshop in an open session, answering questions and trying things out at the REPL. I might even wear a cowboy hat, in further jest 🤠",
+      "Note: This workshop covers material that is best understood by reviewing a prior workshop: “The Structure and Interpretation of Clojure Transducers” Summary: Injest provides thread macros (e.g. x>>, =>>) that lower the bar to higher performance by letting you compose transducers in the same way as you would with ->>. In this workshop we will introduce you to injest’s three main features: path threads, auto transducification and auto parallelization. Then, we’ll go over some real world examples of transforming (wrangling) data sequences. We’ll spend the remaining time of the workshop in an open session, answering questions and trying things out at the REPL. I might even wear a cowboy hat, in further jest 🤠",
       :libraries [injest],
       :presenter "John Newman",
       :length    " 120min ",
