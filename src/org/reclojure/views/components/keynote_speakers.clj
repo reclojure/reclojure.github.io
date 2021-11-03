@@ -115,7 +115,6 @@
       (let [sussman [utils/external-link
                      {:href "https://www.csail.mit.edu/person/gerald-sussman"}
                      "Gerald Jay Sussman"]
-            birthday [:time {:datetime "1947-02-08"} "February 8, 1947"]
             MIT [:<>
                  [utils/external-link {:href "https://web.mit.edu/"}
                   "Massachusetts Institute of Technology"] " ("
@@ -129,7 +128,7 @@
                     {:href "http://groups.csail.mit.edu/mac/projects/scheme/"}
                     "Scheme"]]
         [description
-         sussman " (born " birthday ") is cocreator of the programming
+         sussman " is cocreator of the programming
          language " scheme ", coauthor of the book " SICP ", and the
          Panasonic Professor of Electrical Engineering at the " MIT "."])]
 
