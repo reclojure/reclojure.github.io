@@ -67,8 +67,6 @@
   cell
   [:time {:font-style "italic"}])
 
-(o/defstyled a :a)
-
 (o/defstyled workshop-event-link :h3
   {:font-weight   400
    :margin        0
@@ -93,21 +91,21 @@
 
 (defn event-link [link]
   (when link
-    [a {:href link}
-     "Event link"]))
+    [utils/external-link {:href link}
+     [utils/nowrap "Event link"]]))
 
 (defn datetime-view [datetime]
   (if datetime
     (let [[year month day hour-minute] (string/split datetime #"-")
           month-name                   (-> month
-                         (Integer/parseInt)
-                         dec
-                         month-names)
+                                           (Integer/parseInt)
+                                           dec
+                                           month-names)
           [hour minute]                (string/split hour-minute #":")
           url                          (format "https://time.is/%s%s_%s_%s_%s_in_UTC"
-                      hour minute day month-name year)
+                                               hour minute day month-name year)
           caption (format "%s. %s, %s UTC" month-name day hour-minute)]
-      [a {:href url} caption])
+      [utils/external-link {:href url} [utils/nowrap caption]])
     [utils/nowrap "To be scheduled"]))
 
 (defn arrange-by-datetime [workshops]
