@@ -98,16 +98,18 @@
   [:li {:display "inline"}])
 
 (o/defstyled workshop-title :h3
-  {:font-weight   400
-   :margin        0
+  {:margin        0
    :padding-block "0.5rem"
-   :font-size     "1rem"})
+   :font-size     "1rem"
+   :font-weight   700
+   :max-width     "21rem"})
 
 (o/defstyled workshop-description :p
   {:font-weight   400
    :margin        0
    :padding-block "0.5rem"
-   :font-size     "1rem"})
+   :font-size     "1rem"
+   :max-width     "30rem"})
 
 (def month-names ["Jan" "Feb" "Mar" "Apr"
                   "May" "Jun" "Jul" "Aug"
