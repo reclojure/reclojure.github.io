@@ -47,6 +47,10 @@
     :border "revert"}
    [:> [(gs/nth-child "2n+1") {:background-color "revert"}]]])
 
+;; (defn event-link [link]
+;;   [utils/external-link {:href link}
+;;    [utils/nowrap "Join"]])
+
 (def cell {:flex-basis "2rem"
            :line-height 1.4
            :padding-inline "1.5rem"
@@ -90,11 +94,6 @@
 (def month-names ["Jan" "Feb" "Mar" "Apr"
                   "May" "Jun" "Jul" "Aug"
                   "Sep" "Oct" "Nov" "Dec"])
-
-(defn event-link [link]
-  (when link
-    [utils/external-link {:href link}
-     [utils/nowrap "Event link"]]))
 
 (defn datetime-view [datetime]
   (if datetime
@@ -159,7 +158,10 @@
            arrange-by-datetime
            (map (fn [{:keys [link datetime length title description libraries presenter]}]
                   [row
-                   [td [event-link link]]
+                   [td (when link
+                         [utils/external-link {:class "event"
+                                               :href link}
+                          [utils/nowrap "Join"]])]
                    [td {:class "datetime"} (datetime-view datetime)]
                    [td {:class "duration"} length]
                    [td {:class "title"} [workshop-title title]]
