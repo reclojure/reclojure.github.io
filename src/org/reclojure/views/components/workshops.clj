@@ -22,14 +22,32 @@
   [:a {:color "black"
        :text-decoration "underline 0.1em"}]
   [:at-media {:min-width "60rem"}
+   [:.event {:font-weight 700
+             :background-color c/white
+             :padding ".5rem 1rem"
+             :border-radius "2px"
+             :font-variant "all-small-caps"
+             :text-decoration "none"}]
    [:> [(gs/nth-child "4n+1")
         {:background-color c/lighter-blue
          :color c/copy-blue}
-        [:a {:color c/copy-blue}]]]
+        [:.event {:color c/copy-blue
+                  :font-weight 700
+                  :background-color c/white
+                  :padding ".5rem 1rem"
+                  :border-radius "2px"
+                  :font-variant "all-small-caps"
+                  :text-decoration "none"}]]]
    [:> [(gs/nth-child "4n+3")
         {:background-color c/lighter-green
          :color c/darker-green}
-        [:a {:color c/darker-green}]]]])
+        [:.event {:color c/darker-green
+                  :font-weight 700
+                  :background-color c/white
+                  :padding ".5rem 1rem"
+                  :border-radius "2px"
+                  :font-variant "all-small-caps"
+                  :text-decoration "none"}]]]])
 
 (o/defstyled row :tr
   {:display "flex"
