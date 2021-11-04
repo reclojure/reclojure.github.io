@@ -149,7 +149,7 @@
       [row
        [th "Event"]
        [th "Date"]
-       [th "Length"]
+       [th "Duration"]
        [th "Title"]
        [th "Description"]
        [th "Presenter"]
@@ -161,7 +161,7 @@
                   [row
                    [td [event-link link]]
                    [td {:class "datetime"} (datetime-view datetime)]
-                   [td {:class "length"} length]
+                   [td {:class "duration"} length]
                    [td {:class "title"} [workshop-title title]]
                    [td {:class "description"} [workshop-description description]]
                    [td {:class "presenter"} [utils/nowrap presenter]]
