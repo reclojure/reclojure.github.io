@@ -65,10 +65,6 @@
     :border "revert"}
    [:> [(gs/nth-child "2n+1") {:background-color "revert"}]]])
 
-;; (defn event-link [link]
-;;   [utils/external-link {:href link}
-;;    [utils/nowrap "Join"]])
-
 (def cell {:flex-basis "2rem"
            :line-height 1.4
            :padding-inline "1.5rem"
@@ -83,7 +79,8 @@
   [:at-media {:min-width "60rem"}
    {:line-height 2
     :font-style "revert"
-    :font-variant "all-small-caps"}])
+    :font-variant "all-small-caps"}
+   [:&:first-child {:text-align "center"}]])
 
 (o/defstyled td :td
   cell
@@ -166,7 +163,7 @@
     [table
      [head
       [row
-       [th "Event"]
+       [th {:class "event"} "Event"]
        [th "Date"]
        [th "Duration"]
        [th "Title"]
