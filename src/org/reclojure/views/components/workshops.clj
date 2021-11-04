@@ -67,6 +67,14 @@
   cell
   [:time {:font-style "italic"}])
 
+(o/defstyled libs :td
+  cell
+  [:ul {:max-width "20rem"
+        :list-style "none"
+        :padding 0
+        :margin 0}]
+  [:li {:display "inline"}])
+
 (o/defstyled workshop-title :h3
   {:font-weight   400
    :margin        0
@@ -157,17 +165,12 @@
                    [td {:class "title"} [workshop-title title]]
                    [td {:class "description"} [workshop-description description]]
                    [td {:class "presenter"} [utils/nowrap presenter]]
-                   [td {:class "libs"}
-                    (let [lib-link (fn [{:keys [href name]}]
-                                     (utils/external-link {:href href} name))
-                          linked-libraries (map lib-link libraries)]
-                      (-> ", "
-                          repeat
-                          (interleave linked-libraries)
-                          rest))]])))]]]))
-
-
-
-
-
-
+                   [libs
+                    [:ul
+                     (let [lib-link (fn [{:keys [href name]}]
+                                      [:li [utils/external-link {:href href} [utils/nowrap name]]])
+                           linked-libraries (map lib-link libraries)]
+                       (-> ", "
+                           repeat
+                           (interleave linked-libraries)
+                           rest))]]])))]]]))
