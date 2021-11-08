@@ -206,7 +206,7 @@ I will explain what a derivative is, show how you can transcribe equations to a 
 We will also demonstrate a nice workflow for these types of investigations using two other Clojure libraries: Clerk - a notebook that connects to your editor; Hanami - a charting tool built on Vega.",
       :libraries [sicmutils hanami clerk],
       :presenter "Tovieye Moses Ozi",
-      :length " 60min  ",
+      :length " 90min  ",
       :datetimes [
       "2021-11-13-12:00"]}
      {:title "The Devil’s Interop: Invoking Clojure from Python Natively with GraalVM, and Other Such Matters as Related to Clojure Polyglot Blood Magick"
