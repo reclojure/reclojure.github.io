@@ -106,7 +106,14 @@
    :margin        0
    :padding-block "0.5rem"
    :font-size     "1rem"
-   :max-width     "30rem"})
+   :max-width     "30rem"
+   :cursor        "pointer"}
+  ["&[aria-checked='on']" {:overflow-block "clip"
+                           :display "-webkit-box"
+                           :-webkit-line-clamp 1
+                           :-webkit-box-orient "vertical"
+                           :padding-block-end 0
+                           :margin-block-end ".5rem"}])
 
 (def month-names ["Jan" "Feb" "Mar" "Apr"
                   "May" "Jun" "Jul" "Aug"
@@ -182,7 +189,10 @@
                    [td {:class "datetime"} (datetime-view datetime)]
                    [td {:class "duration"} length]
                    [td {:class "title"} [workshop-title title]]
-                   [td {:class "description"} [workshop-description description]]
+                   [td {:class "description"}
+                    [workshop-description {:role "switch"
+                                           :aria-checked "off"
+                                           :tabindex 0} description]]
                    [td {:class "presenter"} [utils/nowrap presenter]]
                    [libs
                     [:ul
