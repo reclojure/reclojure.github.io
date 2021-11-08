@@ -68,7 +68,7 @@
     [{:title "How to Talk with Data Scientists?"
       :description "Engineers and Data Scientists work towards the same business goals, but sometimes have different concerns to get there. In this workshop, we'll review situations showcasing what data scientists need to be successful, and by consequence how engineers can better cope with those requests. Bring your stories and your questions!",
       :libraries [],
-      :presenter "Joao Santiago",
+      :presenter "João Santiago",
       :length "90min",
       :datetimes ["2021-11-13-14:00"]}
      {:title "Wrangling Datasets with Tablecloth"
@@ -175,8 +175,8 @@ writing their own simple transducers when the need arises.",
       In this workshop you will get a brief introduction to Fulcro and then get your hands dirty exploring the concepts in practice on an existing application in a series of guided exercises. We will use the excellent Fulcro Inspect tooling and mess up with the code.
       Please do the preparation described at https://github.com/holyjak/fulcro-intro-wshop#prerequisites before the workshop."
       :libraries [fulcro],
-      :presenter "Jakub Holy",
-      :length    "        ",
+      :presenter "Jakub Holý",
+      :length    "120 min",
       :link "https://www.eventbrite.se/e/reclojure-introduction-to-fulcro-workshop-tickets-188718210247",
       :datetimes ["2021-12-01-15:00"]}
      {:title "An Intro to Statistical Inference"
