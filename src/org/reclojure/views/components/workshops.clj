@@ -154,7 +154,7 @@
 (o/defstyled workshops :section
   ;; Section boilerplate to be abstracted
   {:margin ["13vh" "auto" "20vh"]
-   :width "min(82%, 76.75rem)"}
+   :max-width "max-content"}
   [:.pre-title {:font-size "1.3rem"
                 :color c/gray
                 :font-variant "all-small-caps"
