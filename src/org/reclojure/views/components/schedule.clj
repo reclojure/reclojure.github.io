@@ -123,7 +123,7 @@
                          ["picture1" "duration"]
                          ["picture2" "."]]
    :grid-column-gap "2rem"}
-  [:h4 {:font-size "1.6rem"
+  [:h4 {:font-size "clamp(1.125rem, 5vw, 1.6rem)"
         :max-width "29rem"
         :margin 0
         :grid-area "title"}]
