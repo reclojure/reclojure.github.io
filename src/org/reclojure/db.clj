@@ -138,7 +138,7 @@ writing their own simple transducers when the need arises.",
       :libraries [injest],
       :presenter "John Newman",
       :length    " 120min ",
-      :datetimes ["2021-11-22-17:30"]}
+      :datetimes ["2021-11-22-17:00"]}
      {:title     "Visualizing Data with Hanami",
       :description
       "In this workshop we will explore how to visualize simple datasets using Hanami, a Clojure library for creating interactive visualizations built on top of Vega-Lite and Vega. There will be a brief explanation of how these tools work to start but we will spend most of our time exploring together, so it will be helpful to have a Clojure environment set up on your computer already.",
