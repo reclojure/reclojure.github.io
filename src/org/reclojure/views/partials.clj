@@ -56,6 +56,7 @@
      [:li [:a {:href "/#cfp"} "CFP"]]
      [:li [:a {:href "/#keynote"} "Keynotes"]]
      [:li [:a {:href "/#speakers"} "Speakers"]]
+     [:li [:a {:href "/#schedule"} "Schedule"]]
      [:li [:a {:href "/#workshops"} "Workshops"]]
      [:li [:a {:href "/#sponsors"} "Sponsors"]]
      [:li [:a {:class utils/disabled :href "/#instructions"} "Instructions"]]

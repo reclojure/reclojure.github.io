@@ -1,4 +1,5 @@
-(ns org.reclojure.db)
+(ns org.reclojure.db
+  (:require [clojure.string :as str]))
 
 (def speakers-data
   [{:name "Christophe Grand"
@@ -35,7 +36,35 @@
     :link "https://github.com/quoll"
     :picture "paula-gearon.jpg"
     :brief "An avid Clojure developer, Paula has been the technical lead on several open source projects with a focus on data storage and processing."
-    :description "An avid Clojure developer, Paula likes to work in the most technical parts of a system building the infrastructure that lets other developers do their jobs. She has been the technical lead on several commercial and open source projects, with a focus on data storage and processing, and was a lead editor for the SPARQL standard for accessing RDF databases. When not coding, she does triathlons, cooks, helps her children with homework, and mentors and supports young members of Women Who Code. Originally from Australia, she currently lives with her family in Virginia, in the USA."}])
+    :description "An avid Clojure developer, Paula likes to work in the most technical parts of a system building the infrastructure that lets other developers do their jobs. She has been the technical lead on several commercial and open source projects, with a focus on data storage and processing, and was a lead editor for the SPARQL standard for accessing RDF databases. When not coding, she does triathlons, cooks, helps her children with homework, and mentors and supports young members of Women Who Code. Originally from Australia, she currently lives with her family in Virginia, in the USA."}
+   {:name "Martin Kavalar"
+    :slug "martin-kavalar"
+    :handle ""
+    :link ""
+    :picture "martin-kavalar.jpg"
+    :brief ""
+    :description "Martin Kavalar and his small team have been building and running Sauspiel, an online community for the traditional German card game Schafkopf, for fifteen years. They are now leveraging that experience to build NextJournal, a computational notebook designed to facilitate collaboration, reproducibility, and reuse in the sciences."}
+   {:name "David Vujic"
+    :slug "david-vujic"
+    :handle ""
+    :link ""
+    :picture "david-vujic.jpg"
+    :brief ""
+    :description "My name is David and I'm a software developer. Colleagues and friends may know me as an early adopter of agile ideas and test driven development. I am passionate about things like that, and share the things I learn regularly to the community and the people I work with. I have participated as speaker at conferences and meetups like PyCon Sweden, Func Prog Sweden, dotNetConf, jDays, DevSum and NDC Oslo."}
+   {:name "Johanna Antonelli"
+    :slug "johanna-antonelli"
+    :handle ""
+    :link ""
+    :picture "johanna-antonelli.jpg"
+    :brief ""
+    :description ""}])
+
+;; (first 
+;;  (for [speaker ["John Doe"]]
+;;    (if-let [[{:keys [name slug link picture] :as spooker}]
+;;             (filter #(= (:name %) speaker) speakers-data)]
+;;      (str name slug link picture)
+;;      (str "damn"))))
 
 (def workshops
   (let [fastmath {:name "Fastmath" :href "https://github.com/generateme/fastmath"}
@@ -239,3 +268,210 @@ Any questions? hello@xtdb.com",
       :presenter "David Pham",
       :length    "",}]))
 
+;; (require '[clojure.spec.alpha :as s])
+
+;; (s/def ::index int?)
+;; (s/def ::type keyword?)
+;; (s/def ::time-start string?)
+;; (s/def ::time-end string?)
+;; (s/def ::duration int?)
+;; (s/def ::title string?)
+;; (s/def ::speakers (s/coll-of string? :kind vector?))
+;; (s/def ::tags (s/coll-of keyword? :kind vector?))
+;; (s/def ::abstract string?)
+
+;; (s/def ::talk (s/keys :req [::index ::type ::time-start ::time-end ::duration ::title ::speakers ::tags ::abstract]))
+
+;; (count (map #(s/conform ::talk %) (filter #(= (::type %) :Talk) (:friday schedule-2021))))
+
+(def schedule-2021
+  {:friday
+   [{:index 1
+     :type :Talk
+     :time-start "10:00"
+     :time-end "10:25"
+     :duration 25
+     :title "Clerk: Local-First Notebooks for Clojure"
+     :speakers ["Martin Kavalar"]
+     :tags [:data-science]
+     :abstract ""}
+    {:index 2
+     :type :Talk
+     :time-start "10:30"
+     :time-end "10:55"
+     :duration 25
+     :title "Component Driven ClojureScript with Storybook"
+     :speakers ["David Vujic"]
+     :tags [:web]
+     :abstract ""}
+    {:index 3
+     :type :Panel
+     :time-start "11:00"
+     :time-end "11:25"
+     :duration 25}
+    {:index 4
+     :type :Break
+     :time-start "11:30"
+     :time-end "12:00"
+     :duration 30}
+    {:index 5
+     :type :Talk
+     :time-start "12:00"
+     :time-end "12:25"
+     :duration 25
+     :title "Firetomic: Replacing Datomic with Datahike and Firebase"
+     :speakers ["Alexander Oloo"]
+     :tags [:web :invited]
+     :abstract ""}
+    {:index 6
+     :type :Talk
+     :time-start "12:30"
+     :time-end "12:55"
+     :duration 25
+     :title "Schema driven development with graphql"
+     :speakers ["Johanna Antonelli"]
+     :tags [:web]
+     :abstract ""}
+    {:index 7
+     :type :Panel
+     :time-start "13:00"
+     :time-end "13:25"
+     :duration 25}
+    {:index 8
+     :type :Break
+     :time-start "13:30"
+     :time-end "14:00"
+     :duration 30}
+    {:index 9
+     :type :Talk
+     :time-start "14:00"
+     :time-end "14:25"
+     :duration 25
+     :title "Clojure Tooling - a Huge Advantage or a Problem?"
+     :speakers ["Artem Barmin"]
+     :tags []
+     :abstract ""}
+    {:index 10
+     :type :Talk
+     :time-start "14:30"
+     :time-end "14:55"
+     :duration 25
+     :title "Vlojure - A new way to write ClojureScript"
+     :speakers ["Ella Hoeppner"]
+     :tags [:web]
+     :abstract ""}
+    {:index 11
+     :type :Panel
+     :time-start "15:00"
+     :time-end "15:25"
+     :duration 25}
+    {:index 12
+     :type :Break
+     :time-start "15:30"
+     :time-end "16:00"
+     :duration 30}
+    {:index 13
+     :type :Talk
+     :time-start "16:00"
+     :time-end "16:40"
+     :duration 40
+     :title "Clojure's Emerging Data Ecosystem: An Incomplete Tour at the REPL"
+     :speakers ["Sami Kallinen" "Ethan Miller"]
+     :tags []
+     :abstract ""}
+    {:index 14
+     :type :Talk
+     :time-start "16:45"
+     :time-end "17:10"
+     :duration 25
+     :title "Just-in-time features in machine learning models: why not Clojure?"
+     :speakers ["João Santiago"]
+     :tags [:data-science]
+     :abstract ""}
+    {:index 15
+     :type :Panel
+     :time-start "17:15"
+     :time-end "17:40"
+     :duration 25}
+    {:index 16
+     :type :Interlude
+     :time-start "17:45"
+     :time-end "18:00"
+     :duration 15
+     :title "Sponsors Pitches"
+     :description ""}
+    {:index 17
+     :type :Talk
+     :time-start "18:00"
+     :time-end "18:25"
+     :duration 25
+     :title "More Clojure, Less Complication"
+     :speakers ["Dragan Djuric"]
+     :tags [:invited]
+     :abstract ""}
+    {:index 18
+     :type :Talk
+     :time-start "18:30"
+     :time-end "18:55"
+     :duration 25
+     :title "Data-Centricity: Rethinking Introductory Computing to Support Data Science"
+     :speakers ["Kathi Fisler"]
+     :tags [:invited]
+     :abstract "On a growing number of campuses, data science programs offer introductory courses that include a non-trivial amount of programming. The content of such courses overlaps that of traditional computer science introductory courses, but neither course subsumes the other. This talk argues that a common introductory course that covers both data science and data structures supports students and provides curricular flexibility, while also bringing social impacts of computing into the early curriculum. We'll discuss both the design and implementation of such a course, with particular focus on programming language features that support it."}
+    {:index 19
+     :type :Panel
+     :time-start "19:00"
+     :time-end "19:25"
+     :duration 25}
+    {:index 20
+     :type :Keynote
+     :time-start "19:30"
+     :time-end "21:00"
+     :duration 90
+     :speaker "Stephen Wolfram"}]})
+
+(def friday "2021-12-03")
+(def saturday "2021-12-04")
+(def time-zone "+00:00")
+
+(defn make-datetime [time-zone date]
+  (fn [event]
+    (letfn [(datetime [time]
+              (str date "T" time time-zone))]
+      (-> event
+          (update :time-start datetime)
+          (update :time-end datetime)))))
+
+(def make-datetime-with-tz (partial make-datetime time-zone))
+
+(def friday-2021
+  (let [times->datetimes (make-datetime-with-tz friday)]
+    (map times->datetimes (:friday schedule-2021))))
+
+(def saturday-2021
+  (let [times->datetimes (make-datetime-with-tz saturday)]
+    (map times->datetimes (:saturday schedule-2021))))
+
+(comment
+  ;; Sort talks by index
+  (sort-by :index (filter #(= (:type %) :Talk) (:friday schedule-2021)))
+
+  ;; Sort all by index
+  (sort-by :index (:friday schedule-2021))
+
+  ;; Get the keys in a talk map
+  (sequence (comp (filter #(= (:type %) :Keynote))
+                  (mapcat keys)
+                  (distinct))
+            (:friday schedule-2021)))
+
+;; Talk:
+;; => (:tags
+;;     :index
+;;     :abstract
+;;     :type
+;;     :duration
+;;     :title
+;;     :time-end
+;;     :speaker
+;;     :time-start)

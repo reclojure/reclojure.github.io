@@ -6,7 +6,8 @@
             [org.reclojure.views.-colors :as c]
             [org.reclojure.views.assets :as assets]
             [org.reclojure.views.components.keynote-speakers :as keynotes]
-            [org.reclojure.views.components.workshops :as workshops]))
+            [org.reclojure.views.components.workshops :as workshops]
+            [org.reclojure.views.components.schedule :as schedule]))
 
 (def design-tokens
   {:font-small "1.3rem"
@@ -272,6 +273,8 @@
     [keynotes/keynotes {:id "keynote"}]
 
     [speakers {:id "speakers"} db/speakers-data]
+
+    [schedule/schedule {:id "schedule"}]
 
     [workshops/workshops {:id "workshops"}]
 
