@@ -70,7 +70,8 @@
       :libraries [],
       :presenter "João Santiago",
       :length "90min",
-      :datetimes ["2021-11-13-14:00"]}
+      :datetimes ["2021-11-13-14:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282011179/"}
      {:title "Wrangling Datasets with Tablecloth"
       :description "",
       :libraries [tablecloth],
@@ -186,14 +187,15 @@ writing their own simple transducers when the need arises.",
       :presenter "Rohit Thadani",
       :length " 90min  ",
       :datetimes ["2021-11-16-19:00" "2021-11-21-03:00"]}
-     {:title "Modeling with Probability"
-      :description "We will explore a data modeling problem through Bayesian Inference. Our main tool will be the Inferme library by Tomasz Sulej. We will see how it is possible to model our data through a 'forward' probabilistic process, and infer the unknowns by running it 'backwards'.",
+     {:title "Modelling with Probability"
+      :description "We will explore a data modelling problem through Bayesian Inference. Our main tool will be the Inferme library by Tomasz Sulej. We will see how it is possible to model our data through a 'forward' probabilistic process, and infer the unknowns by running it 'backwards'.",
       :libraries [fastmath inferme],
       :presenter "Daniel Slutsky",
       :length "120min"
-      :datetimes ["2021-11-12-14:00"],}
+      :datetimes ["2021-11-12-14:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282011112/",}
      {:title "Machine Learning Through Pipelines"
-      :description "Scicloj.ml is a Clojure library by Carsten Behring that connects many aspects of machine learning workflows into one coherent stack. It is based on a certain notion of a pipeline, implemented in the libraries Metamorph and Metamorph.ml. In this session we will discuss some of the core ideas behind these libraries and look into solving a data modeling problem using Scicloj.ml.",
+      :description "Scicloj.ml is a Clojure library by Carsten Behring that connects many aspects of machine learning workflows into one coherent stack. It is based on a certain notion of a pipeline, implemented in the libraries Metamorph and Metamorph.ml. In this session we will discuss some of the core ideas behind these libraries and look into solving a data modelling problem using Scicloj.ml.",
       :libraries [sciclojml metamorphml metamorph],
       :presenter "Daniel Slutsky",
       :length "120min"
@@ -207,8 +209,8 @@ We will also demonstrate a nice workflow for these types of investigations using
       :libraries [sicmutils hanami clerk],
       :presenter "Tovieye Moses Ozi",
       :length " 90min  ",
-      :datetimes [
-      "2021-11-13-12:00"]}
+      :datetimes ["2021-11-13-12:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282011140/"}
      {:title "The Devil’s Interop: Invoking Clojure from Python Natively with GraalVM, and Other Such Matters as Related to Clojure Polyglot Blood Magick"
       :description
       "This is a workshop that demonstrates when, why, and how to compile Clojure code into a shared library that can be called natively by CPython (no runtime JVM required!), in the same way that Clojure code can be compiled into a Jar which can be used natively by Java.",
@@ -217,7 +219,7 @@ We will also demonstrate a nice workflow for these types of investigations using
       :length " 120min ",
       :datetimes ["2021-11-13-17:00"]}
      {:title "A Data Science Walkthrough"
-      :description "In this session, we will get to know some of the main parts of the emerging Clojure data science stack. We will do that through the exploration of a real-world data modeling problem.",
+      :description "In this session, we will get to know some of the main parts of the emerging Clojure data science stack. We will do that through the exploration of a real-world data modelling problem.",
       :libraries [tablecloth metamorphml fastmath vizclj notespace],
       :presenter "Daniel Slutsky",
       :length "120min"
