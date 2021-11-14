@@ -132,7 +132,8 @@ writing their own simple transducers when the need arises.",
       :libraries   [clojurecore],
       :presenter   "Ben Sless",
       :length      "120min",
-      :datetimes ["2021-11-15-17:30"]}
+      :datetimes ["2021-11-15-17:30"]
+      :link "https://www.meetup.com/London-Clojurians/events/282077258/"}
      {:title     "Wrangling Sequences Like a Cowboy with Injest",
       :description
       "Note: This workshop covers material that is best understood by reviewing a prior workshop: “The Structure and Interpretation of Clojure Transducers” Summary: Injest provides thread macros (e.g. x>>, =>>) that lower the bar to higher performance by letting you compose transducers in the same way as you would with ->>. In this workshop we will introduce you to injest’s three main features: path threads, auto transducification and auto parallelization. Then, we’ll go over some real world examples of transforming (wrangling) data sequences. We’ll spend the remaining time of the workshop in an open session, answering questions and trying things out at the REPL. I might even wear a cowboy hat, in further jest 🤠",
@@ -147,17 +148,6 @@ writing their own simple transducers when the need arises.",
       :presenter "Kira McLean",
       :length    "90min",
       :datetimes ["2021-11-21-16:00"]} 
-     {:title     "Visualizing Data with Hanami",
-      :description
-      "In this workshop we will explore how to visualize simple datasets using Hanami, a Clojure library for creating interactive visualizations built on top of Vega-Lite and Vega. There will be a brief explanation of how these tools work to start but we will spend most of our time exploring together, so it will be helpful to have a Clojure environment set up on your computer already."
-      :libraries [hanami],
-      :presenter "Thomas Clark",
-      :length    "90min"}
-     {:title "Using Clojurescript to Extend the Logseq Knowledge Base"
-      :description "",
-      :libraries [logseq],
-      :presenter "Tienson Qin",
-      :length "",}
      {:title     "Touring Oz: Notebooks, Visualizations, and Webapps, Oh My!",
       :description
       "Oz is a Swiss Army Knife for data visualization, scientific documentation, and \"namespace as a notebook\" style analysis workflows. However, its versatility can make it easy to miss the full scope of its capabilities. In this workshop, we'll briefly go over all of its features, and then work through a series of illustrative examples based on participant interest.",
@@ -186,7 +176,8 @@ writing their own simple transducers when the need arises.",
       :libraries [clojurecore],
       :presenter "Rohit Thadani",
       :length " 90min  ",
-      :datetimes ["2021-11-16-19:00" "2021-11-21-03:00"]}
+      :datetimes ["2021-11-16-19:00" "2021-11-21-03:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282077318/"}
      {:title "Modelling with Probability"
       :description "We will explore a data modelling problem through Bayesian Inference. Our main tool will be the Inferme library by Tomasz Sulej. We will see how it is possible to model our data through a 'forward' probabilistic process, and infer the unknowns by running it 'backwards'.",
       :libraries [fastmath inferme],
@@ -225,10 +216,10 @@ We will also demonstrate a nice workflow for these types of investigations using
       :length "120min"
       :datetimes ["2021-11-26-15:00"] ,}
      {:title "Full-text Search Query Log Analysis"
-      :description "",
+      :description "In this workshop we are going to dive into the search query log analysis similar to what search engineers are doing day to day. I'll use tools written mostly in Clojure that helps to do a semantic query analysis with the goal of getting query templates. The examples are going to be relevant for E-Commerce search applications.",
       :libraries [lucene-grep],
       :presenter "Dainius Jocas",
-      :length "",
+      :length "90min",
       :datetimes ["2021-11-24-18:00"]}
      {:title "A Gentle Dive into XTDB"
       :description "Configure your database, wield Datalog queries, and travel through time with the experts.
