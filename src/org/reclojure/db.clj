@@ -208,7 +208,8 @@ We will also demonstrate a nice workflow for these types of investigations using
       :libraries [libpython-clj dtype-next graalvm cpython],
       :presenter "James J. Tolton",
       :length " 120min ",
-      :datetimes ["2021-11-13-17:00"]}
+      :datetimes ["2021-11-13-17:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282038936/"}
      {:title "A Data Science Walkthrough"
       :description "In this session, we will get to know some of the main parts of the emerging Clojure data science stack. We will do that through the exploration of a real-world data modelling problem.",
       :libraries [tablecloth metamorphml fastmath vizclj notespace],
