@@ -13,6 +13,14 @@ Also, make sure you have done `npm install` at least once.
 Run `cider-jack-in-clj&cljs` and then eval `(go)` at the REPL to start
 the development http server at http://localhost:7070
 
+### Other environments
+
+    clojure -M:dev:cider-nrepl
+    (go)
+    (cljs-repl)
+
+Open http://localhost:7070
+
 ## Build
 
 To build the project, run the following command:
