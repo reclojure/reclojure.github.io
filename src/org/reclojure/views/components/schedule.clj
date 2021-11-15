@@ -37,7 +37,6 @@
    :margin-bottom "2rem"
    :color "var(--black-color)"}
   [:.time {:background-color c/white
-          ;; :box-shadow (str "0 5px 0 " c/dark-green)
           :padding "0.8rem 2.5rem"}]
   ([_ [event1 event2] speakers]
    (let [time-start1 (:time-start event1)
@@ -104,10 +103,8 @@
    :border-radius "50%" 
    :object-fit "cover"
    :width "6rem"
-   ;; :grid-area "picture"
    :align-self "start"
    :justify-self "center"
-   ;; :box-shadow "inset 0 0 0 1px hsla(0, 0%, 0%, 0.1)"
    :background-color c/white
 
    :border-right (str "0.1px solid " c/white)
@@ -120,8 +117,6 @@
 (defn make-pic [speaker index speakers-data]
   (let [picture (:picture (get-speaker-data speaker speakers-data))]
     (if (str/blank? picture)
-      ;; (let [alt "A placeholder image that represents a person, used while we don't have a speaker picture."
-      ;;       src "images/person_placeholder.svg"])
       [assets/placeholder-picture {:class pic} (str "picture" (inc index))]
       [pic {:alt (str "A picture of the speaker " speaker ".")
             :src (str "images/speakers/" picture)
@@ -177,13 +172,6 @@
    [:<>
     [:p.event (case event-type :Panel "Panel" :Break "Break")]
     [:p [:time {:datetime duration} (duration-str duration)]]]))
-
-;; (defstyled break :li
-;;   {:border "1px solid red"}
-;;   ([{:keys [duration]}]
-;;    [:<>
-;;     [:p "Break"]
-;;     [:time {:datetime duration} (duration-str duration)]]))
 
 (defstyled interlude :li
   {:background-color "var(--background-color)"
