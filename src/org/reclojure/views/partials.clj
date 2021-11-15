@@ -7,7 +7,7 @@
 
 (defstyled header :header
   {:margin-bottom "10vh"}
-  
+
   [:p :a {:color c/darker-green}]
   [:at-media {:min-width "60em"}
    {:background-size "cover"}])
@@ -56,7 +56,8 @@
      [:li [:a {:href "/#cfp"} "CFP"]]
      [:li [:a {:href "/#keynote"} "Keynotes"]]
      [:li [:a {:href "/#speakers"} "Speakers"]]
+     [:li [:a {:href "/#schedule"} "Schedule"]]
      [:li [:a {:href "/#workshops"} "Workshops"]]
      [:li [:a {:href "/#sponsors"} "Sponsors"]]
-     [:li [:a {:class utils/disabled :href "/#instructions"} "Instructions"]]
-     [:li [:a {:class utils/disabled :href "#"} "Tickets"]]]]))
+     [:li [:a {:target "_blank" :href "https://www.meetup.com/London-Clojurians/events/281970268/"} "Tickets"]]
+     [:li [:a {:class utils/disabled :href "/#instructions"} "Instructions"]]]]))
