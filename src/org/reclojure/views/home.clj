@@ -245,7 +245,10 @@
       [:small [:time {:datetime "2021-10-06"} "Thu Oct. 14"]]]
     [:li
       [:p "New keynote! Please welcome " [:a {:href "#wolfram"} "Stephen Wolfram"] "!"]
-      [:small [:time {:datetime "2021-10-06"} "Sun Oct. 23"]]] ]]))
+      [:small [:time {:datetime "2021-10-06"} "Sun Oct. 23"]]]
+   [:li
+      [:p "The final schedule is now " [:a {:href "#schedule"} "available"] "! Time to grab your " [:a {:target "_blank" :href "https://www.meetup.com/London-Clojurians/events/281970268/"} "ticket"] "!"]
+      [:small [:time {:datetime "2021-11-15"} "Mon Nov. 15"]]] ]]))
 
 ;;; Main
 
