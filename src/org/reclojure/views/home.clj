@@ -7,7 +7,8 @@
             [org.reclojure.views.assets :as assets]
             [org.reclojure.views.components.keynote-speakers :as keynotes]
             [org.reclojure.views.components.workshops :as workshops]
-            [org.reclojure.views.components.schedule :as schedule]))
+            [org.reclojure.views.components.schedule :as schedule]
+            [clojure.string :as str]))
 
 (def design-tokens
   {:font-small "1.3rem"
@@ -133,6 +134,8 @@
 
   [:a {:color "initial"}]
 
+  [:figure {:margin 0}]
+
   ["> :last-child" {:padding-bottom 0}]
 
   [:img {:width "100%"
@@ -153,13 +156,17 @@
        :margin-bottom "2rem"}]
   ([speaker]
    [:<>
-    [:a {:href (str "/2021/speaker/" (:slug speaker))}                     ;FIXME
-     [:img {:src (str "images/speakers/" (:picture speaker))
-            :alt (str "A picture of " (:name speaker) ".")
-            :width "300"
-            :height "300"}]
-     [:h3 (:name speaker)]
-     [:p (:brief speaker)]]]))
+    [:a {:href (str "/2021/speaker/" (:slug speaker))}
+     [:figure
+      [:img {:src (str "images/speakers/" (:picture speaker))
+             :alt (str "A picture of " (:name speaker) ".")
+             :width "300"
+             :height "300"}]
+      [:figcaption [:h3 (:name speaker)]]]
+     ;; TODO most of the speakers don't have a short brief, so while
+     ;; we don't have this data, it's best to make the cards look the
+     ;; same.
+     #_[:p (:brief speaker)]]]))
 
 (defstyled speakers :section
   {:display "grid"
@@ -185,8 +192,9 @@
     [:p.pre-title "Confirmed"]
     [:h2 "Speakers"]
     [:ul.speaker-list
-     (for [speaker speakers-list]
-       (speaker-card speaker))
+     (for [{:keys [picture] :as speaker} speakers-list]
+       (when-not (str/blank? picture)
+         (speaker-card speaker)))
      [:div {:style {:border [["1px" "solid" c/light-blue]]
                     :box-shadow [["1rem" "1rem" 0 c/light-blue]]}}
       [:p {:style {:font-size "11rem"
