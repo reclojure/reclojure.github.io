@@ -138,7 +138,7 @@
 
 
 
-;; (first 
+;; (first
 ;;  (for [speaker ["John Doe"]]
 ;;    (if-let [[{:keys [name slug link picture] :as spooker}]
 ;;             (filter #(= (:name %) speaker) speakers-data)]
@@ -245,7 +245,7 @@ writing their own simple transducers when the need arises.",
       :libraries [hanami],
       :presenter "Kira McLean",
       :length    "90min",
-      :datetimes ["2021-11-21-16:00"]} 
+      :datetimes ["2021-11-21-16:00"]}
      {:title     "Visualizing Data with Hanami",
       :description
       "In this workshop we will explore how to visualize simple datasets using Hanami, a Clojure library for creating interactive visualizations built on top of Vega-Lite and Vega. There will be a brief explanation of how these tools work to start but we will spend most of our time exploring together, so it will be helpful to have a Clojure environment set up on your computer already."
@@ -514,10 +514,10 @@ Any questions? hello@xtdb.com",
      :time-start "10:00"
      :time-end "10:25"
      :duration 25
-     :title "To be confirmed"
-     :speakers [""]
+     :title "How I got tricked into writing a Clojure port"
+     :speakers ["Christophe Grand"]
      :tags []
-     :abstract ""}
+     :abstract "My business partner (Baptiste Dupuch) identified Dart+Flutter as an interesting platform for mobile dev. For months (maybe it was just weeks or days but definitely felt like months) he was delusional about the idea of compiling Clojure to Dart and nagged me to join forces and start this project until, one day, he decided to take on this endeavor alone. Now I had to stop him. It was a trap!"}
     {:index 2
      :type :Talk
      :time-start "10:30"
@@ -570,10 +570,10 @@ Any questions? hello@xtdb.com",
      :time-start "14:00"
      :time-end "14:25"
      :duration 25
-     :title "To be confirmed"
-     :speakers [""]
+     :title "Not your mother's Datalog"
+     :speakers ["Paula Gearon"]
      :tags [:invited]
-     :abstract ""}
+     :abstract "There have been a number of Clojure graph databases introduced since Datomic was first released in 2012. They each share a \"Datalog based query language\" which has been the first time many people have heard of Datalog. However, as the developer of a Clojure graph database (Asami) I get very frustrated when I hear that these databases are queried with \"Datalog\". Because their query language is not Datalog. Although it is. Sort of.  Datalog is a logic programming language for databases that was developed in academia in the 1980s. But if the academics who invented this system were to approach a Clojure graph database they would not recognize much at all. This talk will explore how graph databases align with Datalog, and how the graph query languages both meet and fall short of the expectations of Datalog. It will also demonstrate how Datalog also maps to other systems, such as relational databases with SQL."}
     {:index 10
      :type :Talk
      :time-start "14:30"
@@ -607,10 +607,10 @@ Any questions? hello@xtdb.com",
      :time-start "16:30"
      :time-end "16:55"
      :duration 25
-     :title "To be confirmed"
-     :speakers [""]
+     :title "The Art of Domain Modeling"
+     :speakers ["Eric Normand"]
      :tags [:data-science]
-     :abstract ""}
+     :abstract "After you've mastered immutable data and higher-order functions, what's next in functional programming? Domain modeling is the next-level skill that few functional programmers learn. But a good domain model can mean the difference between a painful codebase and a joyful one. And it's not just programmer morale that hangs in the balance. A better model can help the business deliver more value. In this talk, you will explore the art of domain modeling. You will learn to see past software design rules of thumb. Instead, you will discover an analytical framework for building and improving software models of a domain. That framework will help you in functional programming or in whatever paradigm or language you are using."}
     {:index 15
      :type :Panel
      :time-start "17:00"
