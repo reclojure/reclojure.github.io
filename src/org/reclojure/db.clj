@@ -39,9 +39,9 @@
     :description "An avid Clojure developer, Paula likes to work in the most technical parts of a system building the infrastructure that lets other developers do their jobs. She has been the technical lead on several commercial and open source projects, with a focus on data storage and processing, and was a lead editor for the SPARQL standard for accessing RDF databases. When not coding, she does triathlons, cooks, helps her children with homework, and mentors and supports young members of Women Who Code. Originally from Australia, she currently lives with her family in Virginia, in the USA."}
    {:name "Martin Kavalar"
     :slug "martin-kavalar"
+    :picture "martin-kavalar.jpg"
     :handle ""
     :link ""
-    :picture "martin-kavalar.jpg"
     :brief ""
     :description "Martin Kavalar and his small team have been building and running Sauspiel, an online community for the traditional German card game Schafkopf, for fifteen years. They are now leveraging that experience to build NextJournal, a computational notebook designed to facilitate collaboration, reproducibility, and reuse in the sciences."}
    {:name "David Vujic"
@@ -76,7 +76,7 @@
     :slug "sami-kallinen"
     :handle ""
     :link ""
-    :picture ""
+    :picture "sami-kallinen.jpg"
     :brief ""
     :description ""}
    {:name "Ethan Miller"
@@ -598,6 +598,11 @@ Any questions? hello@xtdb.com",
      :time-start "16:00"
      :time-end "16:25"
      :duration 25
+     :handle ""
+     :link ""
+     :brief ""
+     :slug "ashima-panjwani"
+     :picture "ashima-panjwani.jpg"
      :title "Viz.clj - A Clojure data visualization library for beginners"
      :speakers ["Ashima Panjwani"]
      :tags [:data-science]
@@ -607,10 +612,15 @@ Any questions? hello@xtdb.com",
      :time-start "16:30"
      :time-end "16:55"
      :duration 25
-     :title "The Art of Domain Modeling"
-     :speakers ["Eric Normand"]
+     :title "Scaling deliberation with data science (and Clojure)"
+     :speakers ["Christopher Small"]
+     :picture "christopher-small.jpg"
+     :slug "christopher-small"
+     :handle ""
+     :link ""
+     :brief ""
      :tags [:data-science]
-     :abstract "After you've mastered immutable data and higher-order functions, what's next in functional programming? Domain modeling is the next-level skill that few functional programmers learn. But a good domain model can mean the difference between a painful codebase and a joyful one. And it's not just programmer morale that hangs in the balance. A better model can help the business deliver more value. In this talk, you will explore the art of domain modeling. You will learn to see past software design rules of thumb. Instead, you will discover an analytical framework for building and improving software models of a domain. That framework will help you in functional programming or in whatever paradigm or language you are using."}
+     :abstract "This talk is a story about how we've used Clojure to build Polis, a data science system for scalable deliberation, and how it can help us shape healthier democracies. One part quixotic fever dream, one part experience report, we'll look at both what Clojure has to offer data science, and what data science has to offer the world of  civic engagement. Please join us and learn how you can help resolve conflict and elevate the public's voice in governance."}
     {:index 15
      :type :Panel
      :time-start "17:00"
