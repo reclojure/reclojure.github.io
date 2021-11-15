@@ -176,15 +176,17 @@
     [{:title "How to Talk with Data Scientists?"
       :description "Engineers and Data Scientists work towards the same business goals, but sometimes have different concerns to get there. In this workshop, we'll review situations showcasing what data scientists need to be successful, and by consequence how engineers can better cope with those requests. Bring your stories and your questions!",
       :libraries [],
-      :presenter "Joao Santiago",
+      :presenter "João Santiago",
       :length "90min",
-      :datetimes ["2021-11-13-14:00"]}
+      :datetimes ["2021-11-13-14:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282011179/"}
      {:title "Wrangling Datasets with Tablecloth"
       :description "",
       :libraries [tablecloth],
       :presenter "Mey Beisaron",
       :length "120min",
-      :datetimes ["2021-11-07-16:00"]}
+      :datetimes ["2021-11-07-16:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/281854686/"}
      {:title "Wrangling Arrays with dtype-next"
       :description
       "This workshop will introduce dtype-next, explain its position in the Clojure data science ecosystem, and introduce the key concepts and techniques necessary for working with its performant buffers/arrays.",
@@ -213,9 +215,16 @@
       :libraries [dtype-next],
       :presenter "David Sletten",
       :length    "120min",
-      :datetimes ["2021-11-06-15:00"
-                  "2021-11-20-15:00"]}
-     {:title       "Structure and Interpretation of Transducers",
+      :datetimes ["2021-11-06-15:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/281854619/"}
+     {:title     "Wrangling Arrays with dtype-next"
+      :description
+      "This workshop will introduce dtype-next, explain its position in the Clojure data science ecosystem, and introduce the key concepts and techniques necessary for working with its performant buffers/arrays.",
+      :libraries [dtype-next],
+      :presenter "David Sletten",
+      :length    "120min",
+      :datetimes ["2021-11-20-15:00"]}
+     {:title       "Structure and Interpretation of Clojure Transducers",
       :description "Transducers are a powerful abstraction added relatively recently to Clojure.
 In spite of this and the noticeable performance benefits, they remain a
 daunting subject for many Clojurians.
@@ -231,14 +240,15 @@ writing their own simple transducers when the need arises.",
       :libraries   [clojurecore],
       :presenter   "Ben Sless",
       :length      "120min",
-      :datetimes ["2021-11-15-17:30"]}
+      :datetimes ["2021-11-15-17:30"]
+      :link "https://www.meetup.com/London-Clojurians/events/282077258/"}
      {:title     "Wrangling Sequences Like a Cowboy with Injest",
       :description
-      "Note: This workshop covers material that is best understood by reviewing a prior workshop: “The Structure and Interpretation of Transducers” Summary: Injest provides thread macros (e.g. x>>, =>>) that lower the bar to higher performance by letting you compose transducers in the same way as you would with ->>. In this workshop we will introduce you to injest’s three main features: path threads, auto transducification and auto parallelization. Then, we’ll go over some real world examples of transforming (wrangling) data sequences. We’ll spend the remaining time of the workshop in an open session, answering questions and trying things out at the REPL. I might even wear a cowboy hat, in further jest 🤠",
+      "Note: This workshop covers material that is best understood by reviewing a prior workshop: “The Structure and Interpretation of Clojure Transducers” Summary: Injest provides thread macros (e.g. x>>, =>>) that lower the bar to higher performance by letting you compose transducers in the same way as you would with ->>. In this workshop we will introduce you to injest’s three main features: path threads, auto transducification and auto parallelization. Then, we’ll go over some real world examples of transforming (wrangling) data sequences. We’ll spend the remaining time of the workshop in an open session, answering questions and trying things out at the REPL. I might even wear a cowboy hat, in further jest 🤠",
       :libraries [injest],
       :presenter "John Newman",
       :length    " 120min ",
-      :datetimes ["2021-11-22-17:30"]}
+      :datetimes ["2021-11-22-17:00"]}
      {:title     "Visualizing Data with Hanami",
       :description
       "In this workshop we will explore how to visualize simple datasets using Hanami, a Clojure library for creating interactive visualizations built on top of Vega-Lite and Vega. There will be a brief explanation of how these tools work to start but we will spend most of our time exploring together, so it will be helpful to have a Clojure environment set up on your computer already.",
@@ -246,17 +256,6 @@ writing their own simple transducers when the need arises.",
       :presenter "Kira McLean",
       :length    "90min",
       :datetimes ["2021-11-21-16:00"]}
-     {:title     "Visualizing Data with Hanami",
-      :description
-      "In this workshop we will explore how to visualize simple datasets using Hanami, a Clojure library for creating interactive visualizations built on top of Vega-Lite and Vega. There will be a brief explanation of how these tools work to start but we will spend most of our time exploring together, so it will be helpful to have a Clojure environment set up on your computer already."
-      :libraries [hanami],
-      :presenter "Thomas Clark",
-      :length    "90min"}
-     {:title "Using Clojurescript to Extend the Logseq Knowledge Base"
-      :description "",
-      :libraries [logseq],
-      :presenter "Tienson Qin",
-      :length "",}
      {:title     "Touring Oz: Notebooks, Visualizations, and Webapps, Oh My!",
       :description
       "Oz is a Swiss Army Knife for data visualization, scientific documentation, and \"namespace as a notebook\" style analysis workflows. However, its versatility can make it easy to miss the full scope of its capabilities. In this workshop, we'll briefly go over all of its features, and then work through a series of illustrative examples based on participant interest.",
@@ -275,8 +274,8 @@ writing their own simple transducers when the need arises.",
       In this workshop you will get a brief introduction to Fulcro and then get your hands dirty exploring the concepts in practice on an existing application in a series of guided exercises. We will use the excellent Fulcro Inspect tooling and mess up with the code.
       Please do the preparation described at https://github.com/holyjak/fulcro-intro-wshop#prerequisites before the workshop."
       :libraries [fulcro],
-      :presenter "Jakub Holy",
-      :length    "        ",
+      :presenter "Jakub Holý",
+      :length    "120 min",
       :link "https://www.eventbrite.se/e/reclojure-introduction-to-fulcro-workshop-tickets-188718210247",
       :datetimes ["2021-12-01-15:00"]}
      {:title "An Intro to Statistical Inference"
@@ -285,15 +284,17 @@ writing their own simple transducers when the need arises.",
       :libraries [clojurecore],
       :presenter "Rohit Thadani",
       :length " 90min  ",
-      :datetimes ["2021-11-16-19:00" "2021-11-21-03:00"]}
-     {:title "Modeling with Probability"
-      :description "We will explore a data modeling problem through Bayesian Inference. Our main tool will be the Inferme library by Tomasz Sulej. We will see how it is possible to model our data through a 'forward' probabilistic process, and infer the unknowns by running it 'backwards'.",
+      :datetimes ["2021-11-16-19:00" "2021-11-21-03:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282077318/"}
+     {:title "Modelling with Probability"
+      :description "We will explore a data modelling problem through Bayesian Inference. Our main tool will be the Inferme library by Tomasz Sulej. We will see how it is possible to model our data through a 'forward' probabilistic process, and infer the unknowns by running it 'backwards'.",
       :libraries [fastmath inferme],
       :presenter "Daniel Slutsky",
       :length "120min"
-      :datetimes ["2021-11-12-14:00"],}
+      :datetimes ["2021-11-12-14:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282011112/",}
      {:title "Machine Learning Through Pipelines"
-      :description "Scicloj.ml is a Clojure library by Carsten Behring that connects many aspects of machine learning workflows into one coherent stack. It is based on a certain notion of a pipeline, implemented in the libraries Metamorph and Metamorph.ml. In this session we will discuss some of the core ideas behind these libraries and look into solving a data modeling problem using Scicloj.ml.",
+      :description "Scicloj.ml is a Clojure library by Carsten Behring that connects many aspects of machine learning workflows into one coherent stack. It is based on a certain notion of a pipeline, implemented in the libraries Metamorph and Metamorph.ml. In this session we will discuss some of the core ideas behind these libraries and look into solving a data modelling problem using Scicloj.ml.",
       :libraries [sciclojml metamorphml metamorph],
       :presenter "Daniel Slutsky",
       :length "120min"
@@ -306,27 +307,28 @@ I will explain what a derivative is, show how you can transcribe equations to a 
 We will also demonstrate a nice workflow for these types of investigations using two other Clojure libraries: Clerk - a notebook that connects to your editor; Hanami - a charting tool built on Vega.",
       :libraries [sicmutils hanami clerk],
       :presenter "Tovieye Moses Ozi",
-      :length " 60min  ",
-      :datetimes [
-                  "2021-11-13-12:00"]}
+      :length " 90min  ",
+      :datetimes ["2021-11-13-12:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282011140/"}
      {:title "The Devil’s Interop: Invoking Clojure from Python Natively with GraalVM, and Other Such Matters as Related to Clojure Polyglot Blood Magick"
       :description
       "This is a workshop that demonstrates when, why, and how to compile Clojure code into a shared library that can be called natively by CPython (no runtime JVM required!), in the same way that Clojure code can be compiled into a Jar which can be used natively by Java.",
       :libraries [libpython-clj dtype-next graalvm cpython],
       :presenter "James J. Tolton",
       :length " 120min ",
-      :datetimes ["2021-11-13-17:00"]}
+      :datetimes ["2021-11-13-17:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282038936/"}
      {:title "A Data Science Walkthrough"
-      :description "In this session, we will get to know some of the main parts of the emerging Clojure data science stack. We will do that through the exploration of a real-world data modeling problem.",
+      :description "In this session, we will get to know some of the main parts of the emerging Clojure data science stack. We will do that through the exploration of a real-world data modelling problem.",
       :libraries [tablecloth metamorphml fastmath vizclj notespace],
       :presenter "Daniel Slutsky",
       :length "120min"
       :datetimes ["2021-11-26-15:00"] ,}
      {:title "Full-text Search Query Log Analysis"
-      :description "",
+      :description "In this workshop we are going to dive into the search query log analysis similar to what search engineers are doing day to day. I'll use tools written mostly in Clojure that helps to do a semantic query analysis with the goal of getting query templates. The examples are going to be relevant for E-Commerce search applications.",
       :libraries [lucene-grep],
       :presenter "Dainius Jocas",
-      :length "",
+      :length "90min",
       :datetimes ["2021-11-24-18:00"]}
      {:title "A Gentle Dive into XTDB"
       :description "Configure your database, wield Datalog queries, and travel through time with the experts.
@@ -338,14 +340,15 @@ Q&A and frequent breaks throughout.
 Any questions? hello@xtdb.com",
       :libraries [xtdb-core],
       :presenter "Jeremy Taylor",
-      :length "",
+      :length "120min",
       :datetimes ["2021-12-02-16:00"]
       :link "https://www.eventbrite.com/e/xtdb-workshop-reclojure-tickets-191330985127"}
      {:title       "Linear Algebra with Neanderthal"
       :description "",
       :libraries [neanderthal],
       :presenter "David Pham",
-      :length    "",}]))
+      :length    "90min",
+      :datetimes ["2021-11-30-15:00"]}]))
 
 ;; (require '[clojure.spec.alpha :as s])
 
