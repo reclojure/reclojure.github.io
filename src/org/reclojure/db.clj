@@ -232,12 +232,13 @@ Q&A and frequent breaks throughout.
 Any questions? hello@xtdb.com",
       :libraries [xtdb-core],
       :presenter "Jeremy Taylor",
-      :length "",
+      :length "120min",
       :datetimes ["2021-12-02-16:00"]
       :link "https://www.eventbrite.com/e/xtdb-workshop-reclojure-tickets-191330985127"}
      {:title       "Linear Algebra with Neanderthal"
       :description "",
       :libraries [neanderthal],
       :presenter "David Pham",
-      :length    "",}]))
+      :length    "90min",
+      :datetimes ["2021-11-30-15:00"]}]))
 
