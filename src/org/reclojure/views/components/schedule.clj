@@ -1,5 +1,6 @@
 (ns org.reclojure.views.components.schedule
   (:require [lambdaisland.ornament :refer [defstyled]]
+            [org.reclojure.views.assets :as assets]
             [org.reclojure.views.-colors :as c]
             [org.reclojure.db :as db]
             [clojure.string :as str]
@@ -31,10 +32,10 @@
 (defstyled time-wrap :div
   {:background
    (str "linear-gradient(to right, transparent 80px, transparent 0, "
-        c/light-green
+        "var(--accent-color)"
         " 81px, transparent 0, transparent 100%)")
    :margin-bottom "2rem"
-   :color c/darker-green}
+   :color "var(--black-color)"}
   [:.time {:background-color c/white
           ;; :box-shadow (str "0 5px 0 " c/dark-green)
           :padding "0.8rem 2.5rem"}]
@@ -87,22 +88,6 @@
 
 ;; Smaller components
 
-(defstyled pic :img
-  {:aspect-ratio "1/1"
-   :border-radius "50%" 
-   :object-fit "cover"
-   :width "6rem"
-   ;; :grid-area "picture"
-   :align-self "start"
-   :justify-self "center"
-   ;; :box-shadow "inset 0 0 0 1px hsla(0, 0%, 0%, 0.1)"
-   :background-color c/white
-
-   :border (str "0.1px solid " c/light-green)
-   :box-shadow (str "1rem 1rem 0 0 " c/light-green)})
-
-;; Styled elements for each event type
-
 (defn get-speaker-data [speaker speakers-data]
   (let [[{:keys [link picture slug] :or {link ""
                                          picture ""
@@ -114,15 +99,46 @@
      :picture picture
      :slug slug}))
 
+(defstyled pic :img
+  {:aspect-ratio "1/1"
+   :border-radius "50%" 
+   :object-fit "cover"
+   :width "6rem"
+   ;; :grid-area "picture"
+   :align-self "start"
+   :justify-self "center"
+   ;; :box-shadow "inset 0 0 0 1px hsla(0, 0%, 0%, 0.1)"
+   :background-color c/white
+
+   :border-right (str "0.1px solid " c/white)
+   :border-bottom (str "0.1px solid " c/white)
+   :box-shadow (str "1rem 1rem 0 0 var(--accent-color)")})
+
+;; FIXME: This should work with `ornament` in the above `pic`
+;; `defstyled` but the map is being converted to a string. Possibly
+;; fixed in later versions.
+(defn make-pic [speaker index speakers-data]
+  (let [picture (:picture (get-speaker-data speaker speakers-data))]
+    (if (str/blank? picture)
+      ;; (let [alt "A placeholder image that represents a person, used while we don't have a speaker picture."
+      ;;       src "images/person_placeholder.svg"])
+      [assets/placeholder-picture {:class pic} (str "picture" (inc index))]
+      [pic {:alt (str "A picture of the speaker " speaker ".")
+            :src (str "images/speakers/" picture)
+            :style {:grid-area (str "picture" (inc index))}}])))
+
+;; Styled elements for each event type
+
 (defstyled talk :li
   {:padding "2rem 2rem"
    :display "grid"
    :grid-template-columns "6rem"
-   :grid-template-areas [["picture1" "title"]
-                         ["picture1" "name"]
-                         ["picture1" "duration"]
+   :grid-template-areas [["picture1" "content"]
+                         ["picture1" "content"]
+                         ["picture1" "content"]
                          ["picture2" "."]]
    :grid-column-gap "2rem"}
+  [:.content {:grid-area "content"}]
   [:h4 {:font-size "clamp(1.125rem, 5vw, 1.6rem)"
         :max-width "29rem"
         :margin 0
@@ -130,36 +146,27 @@
   [:.name {:grid-area "name"
            :margin ".5rem 0"
            :font-size "1.25rem"
-           :color c/dark-green}
-   [:a {:color c/dark-green
-        :text-decoration [["2px" "underline" c/dark-green]]}]]
+           :color "var(--dark-color)"}
+   [:a {:color "var(--dark-color)"
+        :text-decoration [["2px" "underline" "var(--dark-color)"]]}]]
   [:time {:display "block"
           :grid-area "duration"}]
   ([{:keys [duration title speakers #_tags #_abstract]} speakers-data]
    [:<>
-    [:h4 title]
-    [:p.name
-     (->> (map (fn [speaker]
-                 [:a {:href (str "/2021/speaker/" (make-slug speaker))} ;FIXME
-                  speaker])
-               speakers)
-          (interleave (repeat ", "))
-          rest)]
-    (let [[speaker1 & [speaker2]] speakers
-          picture1 (:picture (get-speaker-data speaker1 speakers-data))]
-      [:<>
-       [pic {:alt (str "A picture of the speaker " speaker1 ".")
-             :src (str "images/speakers/" picture1)
-             :style {:grid-area "picture1"}}]
-       (when (seq speaker2)
-         (let [picture2 (:picture (get-speaker-data speaker2 speakers-data))]
-           [pic {:alt (str "A picture of the speaker " speaker2 ".")
-                 :src (str "images/speakers/" picture2)
-                 :style {:grid-area "picture2"}}]))])
-    [:time {:datetime duration} (duration-str duration)]]))
+    [:<> (map make-pic speakers (range) (repeat speakers-data))]
+    [:div.content
+     [:h4 title]
+     [:p.name
+      (->> (map (fn [speaker]
+                  [:a {:href (str "/2021/speaker/" (make-slug speaker))}
+                   speaker])
+                speakers)
+           (interleave (repeat ", "))
+           rest)]
+     [:time {:datetime duration} (duration-str duration)]]]))
 
 (defstyled panel-and-break :li
-  {:background-color c/lighter-green
+  {:background-color "var(--background-color)"
    :padding "1rem 3.5rem"
    :margin "1rem 0"}
   [:p:first-child {:margin 0
@@ -179,19 +186,19 @@
 ;;     [:time {:datetime duration} (duration-str duration)]]))
 
 (defstyled interlude :li
-  {:background-color c/lighter-green
+  {:background-color "var(--background-color)"
    :padding "1rem 3.5rem"
    :margin "1rem 0"}
   [:p:first-child {:margin-top 0
                    :font-size "1.125rem"
                    :font-weight 700}]
   [:h4 {:font-size "1.25rem"
-        :font-weight 400}]
-  ([{:keys [duration title description]}]
+        :font-weight 400
+        :max-width "29rem"}]
+  ([{:keys [duration title _description]}]
    [:<>
     [:p "Interlude"]
     [:h4 title]
-    (when description [:p description])
     [:p [:time {:datetime duration} (duration-str duration)]]]))
 
 (defstyled keynote :li
@@ -220,12 +227,12 @@
         :margin 0}
    [:span {:display "block"
            :font-size "clamp(2rem, 8vw, 4.5rem)"
-           :color c/dark-green}]]
+           :color "var(--dark-color)"}]]
   [:p:last-child {:padding "0 3.3rem"}]
   [:.wolfram
    {:background-color c/lighter-green
     :color c/darker-green}
-   [:h4 [:span {:color c/dark-green}]]]
+   [:h4 [:span {:color "var(--dark-color)"}]]]
   [:.sussman
    {:background-color c/lighter-blue
     :color c/copy-blue}
@@ -267,13 +274,18 @@
     [:p.pre-title "2021"]
     [:h2 "Schedule"]
     [days
-     [day
+     [day {:style {"--background-color" c/lighter-green
+                   "--accent-color"     c/light-green
+                   "--dark-color"       c/dark-green
+                   "--black-color"      c/darker-green}}
       [:h3.friday {:style {:padding-left "1.5rem"}}
        [:time {:datetime "2021-12-03"} "Friday"]]
       [events
        (map time-wrap (partition 2 db/friday-2021) (repeat db/speakers-data))]]
-     [day 
+     [day {:style {"--background-color" c/lighter-blue
+                   "--accent-color"     c/light-blue
+                   "--dark-color"       c/dark-blue
+                   "--black-color"      c/copy-blue}}
       [:h3.saturday [:time {:datetime "2021-12-04"} "Saturday"]]
       [events
-       ;; FIXME
-       (map time-wrap (partition 2 db/friday-2021) (repeat db/speakers-data))]]]]))
+       (map time-wrap (partition 2 db/saturday-2021) (repeat db/speakers-data))]]]]))
