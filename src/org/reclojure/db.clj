@@ -64,7 +64,7 @@
     :link ""
     :picture "artem-barmin.jpg"
     :brief ""
-    :description ""}
+    :description "Co-founder at Freshcode, Clojure enthusiast, and functional programming adherent. Gathering people around the Clojurecentric ideas since 2012. Creating an environment where Clojure enthusiasts can succeed. Haskell and Common LISP under the hood of FP experience. Psychology explorer and product management adept."}
    {:name "Ella Hoeppner"
     :slug "ella-hoeppner"
     :handle ""
