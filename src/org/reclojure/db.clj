@@ -134,16 +134,22 @@
     :link ""
     :picture "markus-kloimwieder.jpg"
     :brief ""
-    :description "Prior to being a Clojure freelancer, Markus shared a desk with other traders (some of them fellow physicists) in an Austrian bank for 10 years. There he started to replace his Excel sheets with re-frame apps. Before that he was implementing trading systems in banks all over Europe whilst covering his lack of financial knowledge with a masters course in Oxford. At CERN in Geneva, he wrote his diploma thesis and got to know C++ but never really understood when to use which OO pattern."}])
-
-
-
-;; (first
-;;  (for [speaker ["John Doe"]]
-;;    (if-let [[{:keys [name slug link picture] :as spooker}]
-;;             (filter #(= (:name %) speaker) speakers-data)]
-;;      (str name slug link picture)
-;;      (str "damn"))))
+    :description "Prior to being a Clojure freelancer, Markus shared a desk with other traders (some of them fellow physicists) in an Austrian bank for 10 years. There he started to replace his Excel sheets with re-frame apps. Before that he was implementing trading systems in banks all over Europe whilst covering his lack of financial knowledge with a masters course in Oxford. At CERN in Geneva, he wrote his diploma thesis and got to know C++ but never really understood when to use which OO pattern."}
+   {:name "Christopher Small"
+    :slug "christopher-small"
+    :handle ""
+    :link ""
+    :picture "christopher-small.jpg"
+    :brief ""
+    :description "Chris is a math geek turned software engineer and data scientist. About a decade ago, Clojure graced Chris' life with the miracle of simplicity, and he has been a passionate devotee ever since. He is currently the Research Director at The Computational Democracy Project, a nonprofit which seeks to make governance a better reflection of the public will by using data science and machine learning (and Clojure) to map out and synthesize the opinion landscapes around complex issues, helping people better understand \"the other side\", overcome partisan divides and find consensus"}
+   {:name "Ashima Panjwani"
+    :slug "ashima-panjwani"
+    :handle ""
+    :link ""
+    :picture "ashima-panjwani.jpg"
+    :brief ""
+    :description "Ashima is a programmer with a degree in Pharmaceutical Sciences. An interest in using computational techniques to draw helpful insights from biological data led to her foray in computer science. She has since been working as a software engineer and loves dabbling in all things tech. She has contributed to various projects in the Clojure data science ecosystem."
+    }])
 
 (def workshops
   (let [fastmath {:name "Fastmath" :href "https://github.com/generateme/fastmath"}
@@ -601,11 +607,6 @@ Any questions? hello@xtdb.com",
      :time-start "16:00"
      :time-end "16:25"
      :duration 25
-     :handle ""
-     :link ""
-     :brief ""
-     :slug "ashima-panjwani"
-     :picture "ashima-panjwani.jpg"
      :title "Viz.clj - A Clojure data visualization library for beginners"
      :speakers ["Ashima Panjwani"]
      :tags [:data-science]
@@ -617,11 +618,6 @@ Any questions? hello@xtdb.com",
      :duration 25
      :title "Scaling deliberation with data science (and Clojure)"
      :speakers ["Christopher Small"]
-     :picture "christopher-small.jpg"
-     :slug "christopher-small"
-     :handle ""
-     :link ""
-     :brief ""
      :tags [:data-science]
      :abstract "This talk is a story about how we've used Clojure to build Polis, a data science system for scalable deliberation, and how it can help us shape healthier democracies. One part quixotic fever dream, one part experience report, we'll look at both what Clojure has to offer data science, and what data science has to offer the world of  civic engagement. Please join us and learn how you can help resolve conflict and elevate the public's voice in governance."}
     {:index 15
