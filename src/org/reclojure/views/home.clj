@@ -194,22 +194,7 @@
     [:ul.speaker-list
      (for [{:keys [picture] :as speaker} speakers-list]
        (when-not (str/blank? picture)
-         (speaker-card speaker)))
-     [:div {:style {:border [["1px" "solid" c/light-blue]]
-                    :box-shadow [["1rem" "1rem" 0 c/light-blue]]}}
-      [:p {:style {:font-size "11rem"
-                   :line-height "1.5"
-                   :text-align "center"
-                   :color c/light-blue
-                   :margin 0
-                   :transform "rotate(-11deg)"}} "?"]]
-     #_[cfp {:id "cfp"}
-      [:p "Want to be " [utils/nowrap "part of the show?"]]
-      [:p "CFP " [utils/nowrap "ends October 10! ⏳"]]
-      [:a.apply {:href "https://docs.google.com/forms/d/1LSas3gB4rOmRAoQ_6QLcwiB3HgNeiBnyjhqppPRPpzE"
-                 :target "_blank"
-                 :rel "noopener"} "Apply"]
-      [:small "Questions? Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"]]]]]))
+         (speaker-card speaker)))]]))
 
 (defstyled news :article
   {:background-color c/white
