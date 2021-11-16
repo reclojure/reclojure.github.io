@@ -207,7 +207,8 @@
       :libraries [dtype-next],
       :presenter "Ethan Miller",
       :length    "120min",
-      :datetimes [  "2021-11-18-05:30"]}
+      :datetimes [  "2021-11-18-05:30"]
+      :link "https://www.meetup.com/London-Clojurians/events/282128623/"}
      {:title     "Wrangling Arrays with dtype-next"
       :description
       "This workshop will introduce dtype-next, explain its position in the Clojure data science ecosystem, and introduce the key concepts and techniques necessary for working with its performant buffers/arrays.",
@@ -229,7 +230,8 @@
       :libraries [dtype-next],
       :presenter "David Sletten",
       :length    "120min",
-      :datetimes ["2021-11-20-15:00"]}
+      :datetimes ["2021-11-20-15:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282128936/"}
      {:title       "Structure and Interpretation of Clojure Transducers",
       :description "Transducers are a powerful abstraction added relatively recently to Clojure.
 In spite of this and the noticeable performance benefits, they remain a
@@ -270,11 +272,13 @@ writing their own simple transducers when the need arises.",
       :length    " 120min "
       :datetimes ["2021-11-29-17:00"],}
      {:title "Your Namespace as a Notebook"
-      :description "Notespace is a tool that allows for creating visual documents without leaving the comfort of the familiar Clojure editor, REPL, and namespace. It has evolved through the usage at the Scicloj comminitie's group sessions and individual projects. We will practice basic use of Notespace, discuss its design choices and relationship to other projects, and chat about future challenges.",
+      :description
+      "Notespace allows the creation of visual documents without leaving the comfort of the familiar Clojure editor, REPL, and namespace. It has evolved through usage in the Scicloj community. We will practice basic use of Notespace, discuss its design choices and relationship to other projects, and chat about future challenges."
       :libraries [notespace],
       :presenter "Daniel Slutsky",
       :length "90min",
-      :datetimes ["2021-11-19-14:00" "2021-11-28-16:00"]}
+      :datetimes ["2021-11-19-14:00" "2021-11-28-16:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282128800"}
      {:title "Writing Web Apps with Fulcro"
       :description "Fulcro is unique among Clojure web frameworks in providing a complete, integrated, full-stack solution for creating non-trivial web applications. It is based on a few simple ideas with far-reaching consequences, it is unusually malleable, and we love it for its focus on creating maintainable, developer-friendly code.
       In this workshop you will get a brief introduction to Fulcro and then get your hands dirty exploring the concepts in practice on an existing application in a series of guided exercises. We will use the excellent Fulcro Inspect tooling and mess up with the code.
@@ -290,8 +294,15 @@ writing their own simple transducers when the need arises.",
       :libraries [clojurecore],
       :presenter "Rohit Thadani",
       :length " 90min  ",
-      :datetimes ["2021-11-16-19:00" "2021-11-21-03:00"]
+      :datetimes ["2021-11-16-19:00"]
       :link "https://www.meetup.com/London-Clojurians/events/282077318/"}
+     {:title     "An Intro to Statistical Inference"
+      :description
+      "Useful inferential statistics does not have to be just the domain of data scientists. This workshop follows examples in the book \"Statistics is Easy\" to demonstrate concepts of fairness, p-value, confidence intervals, power using resampling and bootstrapping. All concepts will be explained purely using functions from the core clojure library",
+      :libraries [clojurecore],
+      :presenter "Rohit Thadani",
+      :length    " 90min  ",
+      :datetimes ["2021-11-21-03:00"]}
      {:title "Modelling with Probability"
       :description "We will explore a data modelling problem through Bayesian Inference. Our main tool will be the Inferme library by Tomasz Sulej. We will see how it is possible to model our data through a 'forward' probabilistic process, and infer the unknowns by running it 'backwards'.",
       :libraries [fastmath inferme],
