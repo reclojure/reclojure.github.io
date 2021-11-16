@@ -120,8 +120,8 @@
    {:grid-template-columns "1fr 1fr"}]
   [:img {:padding "1rem"
          :max-height "8rem"}]
-  [:.juxt {:max-height "7rem"}]
-  [:.cognitect {:max-height "13rem"}]
+  [:.juxt {:max-height "9rem"}]
+  [:.nu {:max-height "13rem"}]
   [:.healthunlocked {}]
   [:.freshcode {:max-height "13rem"}]
   [:.gaiwan {:max-height "7rem"}]
@@ -283,11 +283,11 @@
                    :src "images/sponsors/juxt-mod.svg"
                    :width "375"
                    :height "128"}]]
-      [:a {:href "https://cognitect.com" :target "_blank" :rel "noopener"}
-       [:img.cognitect {:alt "Logo for Cognitect."
-                        :src "images/sponsors/cognitect.svg"
-                        :width "645"
-                        :height "207"}]]
+      [:a {:href "https://nubank.com.br/en/" :target "_blank" :rel "noopener"}
+       [:img.nu {:alt "Logo for NuBank"
+                        :src "images/sponsors/nu.png"
+                        :width "320"
+                        :height "158"}]]
       [:a {:href "https://healthunlocked.com" :target "_blank" :rel "noopener"}
        [:img.healthunlocked {:alt "Logo for HealthUnlocked."
                              :src "images/sponsors/healthunlocked.svg"
