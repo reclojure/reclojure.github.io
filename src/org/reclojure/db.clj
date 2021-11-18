@@ -215,7 +215,8 @@
       :libraries [dtype-next],
       :presenter "Ethan Miller",
       :length    "120min",
-      :datetimes [  "2021-11-25-0:00"]}
+      :datetimes [  "2021-11-25-0:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282172366/"}
      {:title     "Wrangling Arrays with dtype-next"
       :description
       "This workshop will introduce dtype-next, explain its position in the Clojure data science ecosystem, and introduce the key concepts and techniques necessary for working with its performant buffers/arrays.",
@@ -256,21 +257,24 @@ writing their own simple transducers when the need arises.",
       :libraries [injest],
       :presenter "John Newman",
       :length    " 120min ",
-      :datetimes ["2021-11-22-17:00"]}
+      :datetimes ["2021-11-22-17:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282172984/"}
      {:title     "Visualizing Data with Hanami",
       :description
       "In this workshop we will explore how to visualize simple datasets using Hanami, a Clojure library for creating interactive visualizations built on top of Vega-Lite and Vega. There will be a brief explanation of how these tools work to start but we will spend most of our time exploring together, so it will be helpful to have a Clojure environment set up on your computer already.",
       :libraries [hanami],
       :presenter "Kira McLean",
       :length    "90min",
-      :datetimes ["2021-11-21-16:00"]}
+      :datetimes ["2021-11-21-16:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282171206/"}
      {:title     "Touring Oz: Notebooks, Visualizations, and Webapps, Oh My!",
       :description
       "Oz is a Swiss Army Knife for data visualization, scientific documentation, and \"namespace as a notebook\" style analysis workflows. However, its versatility can make it easy to miss the full scope of its capabilities. In this workshop, we'll briefly go over all of its features, and then work through a series of illustrative examples based on participant interest.",
       :libraries [oz],
       :presenter "Christopher Small",
       :length    " 120min "
-      :datetimes ["2021-11-29-17:00"],}
+      :datetimes ["2021-11-29-17:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282173022/",}
      {:title "Your Namespace as a Notebook"
       :description
       "Notespace allows the creation of visual documents without leaving the comfort of the familiar Clojure editor, REPL, and namespace. It has evolved through usage in the Scicloj community. We will practice basic use of Notespace, discuss its design choices and relationship to other projects, and chat about future challenges."
@@ -302,7 +306,8 @@ writing their own simple transducers when the need arises.",
       :libraries [clojurecore],
       :presenter "Rohit Thadani",
       :length    " 90min  ",
-      :datetimes ["2021-11-21-03:00"]}
+      :datetimes ["2021-11-21-03:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282170700/"}
      {:title "Modelling with Probability"
       :description "We will explore a data modelling problem through Bayesian Inference. Our main tool will be the Inferme library by Tomasz Sulej. We will see how it is possible to model our data through a 'forward' probabilistic process, and infer the unknowns by running it 'backwards'.",
       :libraries [fastmath inferme],
@@ -315,7 +320,8 @@ writing their own simple transducers when the need arises.",
       :libraries [sciclojml metamorphml metamorph],
       :presenter "Daniel Slutsky",
       :length "120min"
-      :datetimes ["2021-11-27-14:00"],}
+      :datetimes ["2021-11-27-14:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282173134/",}
      {:title "Computing Derivatives and Automatic Differentiation"
       :description "Have you seen a Math or Physics Equation and wanted to work with them using your computer, but thought that you need some special language such as Matlab or Python?
 This talk will show that it is possible to accomplish this in Clojure using the SICMUtils Library.
@@ -340,13 +346,15 @@ We will also demonstrate a nice workflow for these types of investigations using
       :libraries [tablecloth metamorphml fastmath vizclj notespace],
       :presenter "Daniel Slutsky",
       :length "120min"
-      :datetimes ["2021-11-26-15:00"] ,}
+      :datetimes ["2021-11-26-15:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282172414/",}
      {:title "Full-text Search Query Log Analysis"
       :description "In this workshop we are going to dive into the search query log analysis similar to what search engineers are doing day to day. I'll use tools written mostly in Clojure that helps to do a semantic query analysis with the goal of getting query templates. The examples are going to be relevant for E-Commerce search applications.",
       :libraries [lucene-grep],
       :presenter "Dainius Jocas",
       :length "90min",
-      :datetimes ["2021-11-24-18:00"]}
+      :datetimes ["2021-11-24-18:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282172284/"}
      {:title "A Gentle Dive into XTDB"
       :description "Configure your database, wield Datalog queries, and travel through time with the experts.
 
