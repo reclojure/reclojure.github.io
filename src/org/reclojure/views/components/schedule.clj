@@ -8,9 +8,6 @@
 
 ;; Utils
 
-(defn make-slug [name]
-  (-> name (str/replace #" " "-") str/lower-case))
-
 (defn time-str [datetime]
   (str/join " " [(last (re-find #"(\d+:\d+)" datetime)) "UTC"]))
 
@@ -153,7 +150,7 @@
      [:h4 title]
      [:p.name
       (->> (map (fn [speaker]
-                  [:a {:href (str "/2021/speaker/" (make-slug speaker))}
+                  [:a {:href (str "/2021/speaker/" (db/get-slug speaker))}
                    speaker])
                 speakers)
            (interleave (repeat ", "))

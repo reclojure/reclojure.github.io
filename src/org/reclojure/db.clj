@@ -86,7 +86,7 @@
     :picture "ethan-miller.jpg"
     :brief ""
     :description "Ethan Miller is a full-stack software engineer with interest in functional programming and Clojure in particular. For the past few years, he has tried to help build and organize the SciCloj community and contribute to the Clojure data science ecosystem."}
-   {:name "Joao Santiago"
+   {:name "João Santiago"
     :slug "joao-santiago"
     :handle ""
     :link ""
@@ -182,7 +182,7 @@
     [{:title "How to Talk with Data Scientists?"
       :description "Engineers and Data Scientists work towards the same business goals, but sometimes have different concerns to get there. In this workshop, we'll review situations showcasing what data scientists need to be successful, and by consequence how engineers can better cope with those requests. Bring your stories and your questions!",
       :libraries [],
-      :presenter "Joao Santiago",
+      :presenter "João Santiago",
       :length "90min",
       :datetimes ["2021-11-13-14:00"]
       :link "https://www.meetup.com/London-Clojurians/events/282011179/"}
@@ -484,7 +484,7 @@ Any questions? hello@xtdb.com",
      :time-end "17:10"
      :duration 25
      :title "Just-in-time features in machine learning models: why not Clojure?"
-     :speakers ["Joao Santiago"]
+     :speakers ["João Santiago"]
      :tags [:data-science]
      :abstract "It is common for real-time Machine Learning models to use transformed data, instead of raw inputs from a user or some other system. Currently, this critical step is embedded in frameworks such as sci-kit learn or tidymodels, extra code in the APIs that wrap the models or totally rewritten in another language such as Scala and served via Spark. Such practices lead to duplication of code, decrease reusability and introduce new points of friction. In this talk I want to further explore this problem so common among data science teams, and present Bulgogi, my idea for a Clojure system to fix it. Because if it's data, why not Clojure?"}
     {:index 15
@@ -696,6 +696,9 @@ Any questions? hello@xtdb.com",
 (def saturday-2021
   (let [times->datetimes (make-datetime-with-tz saturday)]
     (map times->datetimes (:saturday schedule-2021))))
+
+(defn get-slug [name]
+  (:slug (first (filter #(= name (:name %)) speakers-data))))
 
 (comment
   ;; Sort talks by index
