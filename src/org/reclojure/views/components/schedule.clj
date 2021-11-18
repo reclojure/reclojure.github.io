@@ -42,7 +42,7 @@
    (let [time-start1 (:time-start event1)
          time-end1 (:time-end event1)
          time-start2 (:time-start event2)
-         time-end2 (:time-start event2)]
+         time-end2 (:time-end event2)]
      (cond
        (or (and (= (:type event1) :Talk)
                 (= (:type event2) :Talk))
