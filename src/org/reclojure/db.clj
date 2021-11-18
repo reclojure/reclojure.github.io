@@ -697,6 +697,9 @@ Any questions? hello@xtdb.com",
   (let [times->datetimes (make-datetime-with-tz saturday)]
     (map times->datetimes (:saturday schedule-2021))))
 
+(defn get-slug [name]
+  (:slug (first (filter #(= name (:name %)) speakers-data))))
+
 (comment
   ;; Sort talks by index
   (sort-by :index (filter #(= (:type %) :Talk) (:friday schedule-2021)))
