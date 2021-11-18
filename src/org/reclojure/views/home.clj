@@ -8,7 +8,8 @@
             [org.reclojure.views.components.keynote-speakers :as keynotes]
             [org.reclojure.views.components.workshops :as workshops]
             [org.reclojure.views.components.schedule :as schedule]
-            [clojure.string :as str]))
+            [clojure.string :as str]
+            [garden.selectors :as gs]))
 
 (def design-tokens
   {:font-small "1.3rem"
@@ -132,28 +133,63 @@
            :height "100%"}])
 
 (defstyled speaker-card :li
-  {:background-color c/white
-   :box-shadow [["1rem 1rem " c/light-blue]]
-   :border ["1px" "solid" c/light-blue]}
+  {;;:background-color c/white
+   ;;:box-shadow [["1rem 1rem " c/light-blue]]
+   :border ["4px" "solid" c/copy-blue]
+   :position "relative"}
+  [(gs/& gs/after)
+   {:content "\"\""
+    :background c/lighter-blue
+    :position "absolute"
+    :display "block"
+    :width "100%"
+    :z-index "-1"
+    :height "100%"
+    :left "1.5rem"
+    :top "1.5rem"}]
+  [(gs/& (gs/nth-child "6n+4"))
+   (gs/& (gs/nth-child "6n+5"))
+   (gs/& (gs/nth-child "6n+6"))
+   {:border ["4px" "solid" c/darker-green]}
+   [:h3 {:color c/darker-green}]
+   [(gs/& gs/after)
+    {:content "\"\""
+     :background c/lighter-green
+     :position "absolute"
+     :display "block"
+     :width "100%"
+     :z-index "-1"
+     :height "100%"
+     :left "1.5rem"
+     :top "1.5rem"}]]
 
   [:a {:color "initial"}]
 
-  [:figure {:margin 0}]
+  [:figure {:display "flex"
+            :flex-direction "column"
+            :gap "0.5rem"               ;FIXME add fallback for Safari
+            :margin 0}]
 
   ["> :last-child" {:padding-bottom 0}]
 
-  [:img {:width "100%"
+  [:img {:width "calc(100% - 1.8rem)"
+         :margin-left "1.8rem"
+         :margin-top "1.8rem"
          :object-fit "cover"
          :aspect-ratio "1/1"
          :max-height "max(10rem, 30vh)"}
-   ["~ *" {:margin-left "1rem"
-           :margin-right "1rem"}]]
+   ["~ *" {;:margin-left "1rem"
+           ;:margin-right "1rem"
+           }]]
 
-  [:h3 {:font-size "2rem"
+  [:h3 {:font-size "1.7rem"
         :font-weight 700
         :line-height 1
+        :display "inline-block"
+        :padding-inline-start "1.8rem"
         :margin-top "1.3rem"
-        :margin-bottom "1.3rem"}]
+        :margin-bottom "1.3rem"
+        :color c/copy-blue}]
 
   [:p {:font-size "1rem"
        :line-height 1.3
