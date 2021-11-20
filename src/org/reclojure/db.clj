@@ -352,9 +352,7 @@ We will also demonstrate a nice workflow for these types of investigations using
       :description "In this workshop we are going to dive into the search query log analysis similar to what search engineers are doing day to day. I'll use tools written mostly in Clojure that helps to do a semantic query analysis with the goal of getting query templates. The examples are going to be relevant for E-Commerce search applications.",
       :libraries [lucene-grep],
       :presenter "Dainius Jocas",
-      :length "90min",
-      :datetimes ["2021-11-24-18:00"]
-      :link "https://www.meetup.com/London-Clojurians/events/282172284/"}
+      :length "90min"}
      {:title "A Gentle Dive into XTDB"
       :description "Configure your database, wield Datalog queries, and travel through time with the experts.
 
