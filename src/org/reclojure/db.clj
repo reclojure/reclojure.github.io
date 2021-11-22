@@ -367,11 +367,12 @@ Any questions? hello@xtdb.com",
       :datetimes ["2021-12-02-16:00"]
       :link "https://www.eventbrite.com/e/xtdb-workshop-reclojure-tickets-191330985127"}
      {:title       "Linear Algebra with Neanderthal"
-      :description "",
+      :description "In order to operate mathematics on collections of numbers, the easiest solution is to use for-loop. I assumed it was the fastest way until I discovered Neanderthal, a linear algebra built for Clojure. This workshop introduces the most basic linear algebra concepts so that you can also enjoy Neanderthal. My aim will be to show you the underlying intuition so that these squares of numbers and formulas won't scare you when you read them.",
       :libraries [neanderthal],
       :presenter "David Pham",
       :length    "90min",
-      :datetimes ["2021-11-30-15:00"]}]))
+      :datetimes ["2021-11-30-15:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282255314/"}]))
 
 ;; (require '[clojure.spec.alpha :as s])
 
