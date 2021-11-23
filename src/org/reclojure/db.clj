@@ -288,8 +288,16 @@ writing their own simple transducers when the need arises.",
       :libraries [notespace],
       :presenter "Daniel Slutsky",
       :length "90min",
-      :datetimes ["2021-11-19-14:00" "2021-11-28-16:00"]
+      :datetimes ["2021-11-19-14:00"]
       :link "https://www.meetup.com/London-Clojurians/events/282128800"}
+     {:title     "Your Namespace as a Notebook"
+      :description
+      "Notespace allows the creation of visual documents without leaving the comfort of the familiar Clojure editor, REPL, and namespace. It has evolved through usage in the Scicloj community. We will practice basic use of Notespace, discuss its design choices and relationship to other projects, and chat about future challenges."
+      :libraries [notespace],
+      :presenter "Daniel Slutsky",
+      :length    "90min",
+      :datetimes ["2021-11-28-16:00"]
+      :link      "https://www.meetup.com/London-Clojurians/events/282172462/"}
      {:title "Writing Web Apps with Fulcro"
       :description "Fulcro is unique among Clojure web frameworks in providing a complete, integrated, full-stack solution for creating non-trivial web applications. It is based on a few simple ideas with far-reaching consequences, it is unusually malleable, and we love it for its focus on creating maintainable, developer-friendly code.
       In this workshop you will get a brief introduction to Fulcro and then get your hands dirty exploring the concepts in practice on an existing application in a series of guided exercises. We will use the excellent Fulcro Inspect tooling and mess up with the code.
