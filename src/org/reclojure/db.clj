@@ -9,6 +9,13 @@
     :picture "christophe_grand-400x400.jpg"
     :brief "Co-author of Programming Clojure (O’Reilly)."
     :description "Christophe is an independent software engineer and has been coding and teaching Clojure for 10 years. He co-authored Clojure Programming (O’Reilly)."}
+   {:name "Baptiste Dupuch"
+    :slug "baptiste-dupuch"
+    :handle "baptistedupuch"
+    :link "https://www.linkedin.com/in/baptistedupuch/"
+    :picture "baptiste-dupuch.jpg"
+    :brief "CTO, DAB Freelance"
+    :description "Born and raised between Bordeaux and Les Landes de Gascogne (the nicest region in France :) now living in Paris. I'm an independant contractor since who started working in clojure in 2015. I've met Christophe working on `porktkey` (open source project) and collaborating with him on open-source and professionally."}
    {:name "Dragan Djuric"
     :slug "dragan-djuric"
     :handle "draganrocks"
@@ -542,7 +549,7 @@ Any questions? hello@xtdb.com",
      :time-end "10:25"
      :duration 25
      :title "How I got tricked into writing a Clojure port"
-     :speakers ["Christophe Grand"]
+     :speakers ["Christophe Grand" "Baptiste Dupuch"]
      :tags []
      :abstract "My business partner (Baptiste Dupuch) identified Dart+Flutter as an interesting platform for mobile dev. For months (maybe it was just weeks or days but definitely felt like months) he was delusional about the idea of compiling Clojure to Dart and nagged me to join forces and start this project until, one day, he decided to take on this endeavor alone. Now I had to stop him. It was a trap!"}
     {:index 2
