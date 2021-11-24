@@ -13,4 +13,4 @@
 (def disabled-blue  "hsl(252.4, 100%, 93.3%)")
 
 (def white          "hsl(0, 0%, 100%)")
-(def gray           "hsl(180, 25.4%, 24.7%)")
+(def gray           "hsl(0, 0%, 14.1%)")
