@@ -53,7 +53,6 @@
                                :width "324"
                                :height "327"}]]
     [:ul
-     [:li [:a {:href "/#cfp"} "CFP"]]
      [:li [:a {:href "/#keynote"} "Keynotes"]]
      [:li [:a {:href "/#speakers"} "Speakers"]]
      [:li [:a {:href "/#schedule"} "Schedule"]]
