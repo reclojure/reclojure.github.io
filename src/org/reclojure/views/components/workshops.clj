@@ -14,7 +14,7 @@
   {:filter "grayscale(50%) opacity(50%)"
    :margin-bottom "2rem"
    :display "block"}
-  [:at-media {:min-width "60rem"}
+  [:at-media {:min-width "80rem"}
    {:display "revert"
     :filter "revert"}])
 
@@ -22,7 +22,7 @@
   {:color c/gray}
   [:a {:color c/gray
        :text-decoration "underline 0.1em"}]
-  [:at-media {:min-width "60rem"}
+  [:at-media {:min-width "80rem"}
    [:.event {:font-weight 700
              :padding ".5rem 1rem"
              :border-radius "2px"
@@ -60,7 +60,7 @@
   [:> [(gs/nth-child "2n+1")
        {:background-color c/lighter-blue}]]
   [:&:last-child {:margin-bottom "initial"}]
-  [:at-media {:min-width "60rem"}
+  [:at-media {:min-width "80rem"}
    {:display "revert"
     :box-shadow "revert"
     :border "revert"}
@@ -78,7 +78,7 @@
   {:color c/gray
    :font-weight 400
    :font-style "italic"}
-  [:at-media {:min-width "60rem"}
+  [:at-media {:min-width "80rem"}
    {:line-height 2
     :font-style "revert"
     :font-variant "all-small-caps"}
@@ -177,7 +177,8 @@
 (o/defstyled workshops :section
   ;; Section boilerplate to be abstracted
   {:margin ["13vh" "auto" "20vh"]
-   :max-width "max-content"}
+   :max-width "max-content"
+   :padding "2rem"}
   [:.pre-title {:font-size "1.3rem"
                 :color c/gray
                 :font-variant "all-small-caps"
