@@ -138,7 +138,7 @@
   [:.juxt {:max-height "9rem"}]
   [:.nu {:max-height "9rem"
          :width "100%"}]
-  [:.healthunlocked {:min-width "34rem"}]
+  [:.healthunlocked {}]
   [:.freshcode {:max-height "13rem"
                 :height "100%"}]
   [:.gaiwan {:height "6rem"
