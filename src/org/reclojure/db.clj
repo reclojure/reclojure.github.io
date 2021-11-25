@@ -9,6 +9,13 @@
     :picture "christophe_grand-400x400.jpg"
     :brief "Co-author of Programming Clojure (O’Reilly)."
     :description "Christophe is an independent software engineer and has been coding and teaching Clojure for 10 years. He co-authored Clojure Programming (O’Reilly)."}
+   {:name "Baptiste Dupuch"
+    :slug "baptiste-dupuch"
+    :handle "baptistedupuch"
+    :link "https://www.linkedin.com/in/baptistedupuch/"
+    :picture "baptiste-dupuch.jpg"
+    :brief "CTO, DAB Freelance"
+    :description "Born and raised between Bordeaux and Les Landes de Gascogne (the nicest region in France :) now living in Paris. I'm an independant contractor since who started working in clojure in 2015. I've met Christophe working on `porktkey` (open source project) and collaborating with him on open-source and professionally."}
    {:name "Dragan Djuric"
     :slug "dragan-djuric"
     :handle "draganrocks"
@@ -29,7 +36,7 @@
     :link "https://alexanderoloo.com/"
     :picture "alexander_oloo-300x300.png"
     :brief "Design Director at Absa Design."
-    :description "Alexander is an engineer, designer, jack of all trades, great at Product, Clojure, coaching and debugging, currently a Design Director at the Absa Design Office. His primary focus is the design, analysis, and optimization of apps on the web."}
+    :description "Alex is an engineer by trade. A designer by necessity. He’s been writing code for over a decade, both front and back. From Assembly to C and Node to Vue. And of course lots and lots of Clojure. While the sun is up, Alex is the Head of Design at Absa Bank where he works with the most awesome bunch of humans. At the moment he’s focusing on building a world class design org in which designers and process engineers can thrive. Prior to his time at Absa, Alex was a bioengineer, lectured at the University of Pretoria, and worked in 3 early-stage startups."}
    {:name "Paula Gearon"
     :slug "paula-gearon"
     :handle "quoll"
@@ -281,8 +288,16 @@ writing their own simple transducers when the need arises.",
       :libraries [notespace],
       :presenter "Daniel Slutsky",
       :length "90min",
-      :datetimes ["2021-11-19-14:00" "2021-11-28-16:00"]
+      :datetimes ["2021-11-19-14:00"]
       :link "https://www.meetup.com/London-Clojurians/events/282128800"}
+     {:title     "Your Namespace as a Notebook"
+      :description
+      "Notespace allows the creation of visual documents without leaving the comfort of the familiar Clojure editor, REPL, and namespace. It has evolved through usage in the Scicloj community. We will practice basic use of Notespace, discuss its design choices and relationship to other projects, and chat about future challenges."
+      :libraries [notespace],
+      :presenter "Daniel Slutsky",
+      :length    "90min",
+      :datetimes ["2021-11-28-16:00"]
+      :link      "https://www.meetup.com/London-Clojurians/events/282172462/"}
      {:title "Writing Web Apps with Fulcro"
       :description "Fulcro is unique among Clojure web frameworks in providing a complete, integrated, full-stack solution for creating non-trivial web applications. It is based on a few simple ideas with far-reaching consequences, it is unusually malleable, and we love it for its focus on creating maintainable, developer-friendly code.
       In this workshop you will get a brief introduction to Fulcro and then get your hands dirty exploring the concepts in practice on an existing application in a series of guided exercises. We will use the excellent Fulcro Inspect tooling and mess up with the code.
@@ -352,9 +367,7 @@ We will also demonstrate a nice workflow for these types of investigations using
       :description "In this workshop we are going to dive into the search query log analysis similar to what search engineers are doing day to day. I'll use tools written mostly in Clojure that helps to do a semantic query analysis with the goal of getting query templates. The examples are going to be relevant for E-Commerce search applications.",
       :libraries [lucene-grep],
       :presenter "Dainius Jocas",
-      :length "90min",
-      :datetimes ["2021-11-24-18:00"]
-      :link "https://www.meetup.com/London-Clojurians/events/282172284/"}
+      :length "90min"}
      {:title "A Gentle Dive into XTDB"
       :description "Configure your database, wield Datalog queries, and travel through time with the experts.
 
@@ -369,11 +382,12 @@ Any questions? hello@xtdb.com",
       :datetimes ["2021-12-02-16:00"]
       :link "https://www.eventbrite.com/e/xtdb-workshop-reclojure-tickets-191330985127"}
      {:title       "Linear Algebra with Neanderthal"
-      :description "",
+      :description "In order to operate mathematics on collections of numbers, the easiest solution is to use for-loop. I assumed it was the fastest way until I discovered Neanderthal, a linear algebra built for Clojure. This workshop introduces the most basic linear algebra concepts so that you can also enjoy Neanderthal. My aim will be to show you the underlying intuition so that these squares of numbers and formulas won't scare you when you read them.",
       :libraries [neanderthal],
       :presenter "David Pham",
       :length    "90min",
-      :datetimes ["2021-11-30-15:00"]}]))
+      :datetimes ["2021-11-30-15:00"]
+      :link "https://www.meetup.com/London-Clojurians/events/282255314/"}]))
 
 ;; (require '[clojure.spec.alpha :as s])
 
@@ -543,7 +557,7 @@ Any questions? hello@xtdb.com",
      :time-end "10:25"
      :duration 25
      :title "How I got tricked into writing a Clojure port"
-     :speakers ["Christophe Grand"]
+     :speakers ["Christophe Grand" "Baptiste Dupuch"]
      :tags []
      :abstract "My business partner (Baptiste Dupuch) identified Dart+Flutter as an interesting platform for mobile dev. For months (maybe it was just weeks or days but definitely felt like months) he was delusional about the idea of compiling Clojure to Dart and nagged me to join forces and start this project until, one day, he decided to take on this endeavor alone. Now I had to stop him. It was a trap!"}
     {:index 2

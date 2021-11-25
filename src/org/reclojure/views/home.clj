@@ -8,7 +8,9 @@
             [org.reclojure.views.components.navigation :as navigation]
             [org.reclojure.views.components.schedule :as schedule]
             [org.reclojure.views.components.workshops :as workshops]
-            [org.reclojure.views.utils :as utils]))
+            [org.reclojure.views.utils :as utils]
+            [clojure.string :as str]
+            [garden.selectors :as gs]))
 
 (def design-tokens
   {:font-small "1.3rem"
@@ -51,14 +53,20 @@
    [:p:last-child {:font-weight 700
                    :font-size (:font-large design-tokens)}]]
   [:.description
-   {:display "flex"
-    :flex-wrap "wrap"
-    :row-gap "2rem"}
-   [:div [:p {:min-width "40vw"}]]
-   [":first-child" {:flex 4}]
+   {
+    ;; :display "flex"
+    ;; :flex-wrap "wrap"
+    ;; :row-gap "2rem"
+    :column-count "auto"
+    :column-width "30rem"
+    }
+   [:div [:p {
+              ;; :min-width "40vw"
+              }]]
+   [:> [":first-child" {:flex 4}]]
    [:article {:flex 5
               :overflow-y "scroll"
-              :max-height "20rem"
+              :max-height "30rem"
               :min-width "min(80vmin, 28rem)"}]
    [:p {:font-size (:font-small design-tokens)
         :line-height 1.6}
@@ -66,7 +74,15 @@
    [:at-media {:min-width "40em"}
     {:grid-template-columns "40% 1fr"
      :column-gap "2rem"}
-    [:p {:grid-column-end "2"}]]])
+    [:p {:grid-column-end "2"}]]]
+  [:.meantime
+   [:> [:p {:font-style "italic"}]]
+   [:ul {}
+    [:li
+     ["&::marker" {:content "\"🔥\""
+                   :font-size "2rem"}]
+     [:p {:padding-inline-start "1rem"}]
+     [:a {:text-decoration "2px solid underline"}]]]])
 
 #_(defstyled cfp :div
   {:text-align "center"
@@ -123,7 +139,7 @@
   [:.juxt {:max-height "9rem"}]
   [:.nu {:max-height "9rem"
          :width "100%"}]
-  [:.healthunlocked {:min-width "34rem"}]
+  [:.healthunlocked {}]
   [:.freshcode {:max-height "13rem"
                 :height "100%"}]
   [:.gaiwan {:height "6rem"
@@ -132,28 +148,63 @@
            :height "100%"}])
 
 (defstyled speaker-card :li
-  {:background-color c/white
-   :box-shadow [["1rem 1rem " c/light-blue]]
-   :border ["1px" "solid" c/light-blue]}
+  {;;:background-color c/white
+   ;;:box-shadow [["1rem 1rem " c/light-blue]]
+   :border ["4px" "solid" c/copy-blue]
+   :position "relative"}
+  [(gs/& gs/after)
+   {:content "\"\""
+    :background c/lighter-blue
+    :position "absolute"
+    :display "block"
+    :width "100%"
+    :z-index "-1"
+    :height "100%"
+    :left "1.5rem"
+    :top "1.5rem"}]
+  [(gs/& (gs/nth-child "6n+4"))
+   (gs/& (gs/nth-child "6n+5"))
+   (gs/& (gs/nth-child "6n+6"))
+   {:border ["4px" "solid" c/darker-green]}
+   [:h3 {:color c/darker-green}]
+   [(gs/& gs/after)
+    {:content "\"\""
+     :background "hsl(97.5, 60%, 92.2%)" ;FIXME move shade to colors
+     :position "absolute"
+     :display "block"
+     :width "100%"
+     :z-index "-1"
+     :height "100%"
+     :left "1.5rem"
+     :top "1.5rem"}]]
 
   [:a {:color "initial"}]
 
-  [:figure {:margin 0}]
+  [:figure {:display "flex"
+            :flex-direction "column"
+            :gap "0.5rem"               ;FIXME add fallback for Safari
+            :margin 0}]
 
   ["> :last-child" {:padding-bottom 0}]
 
-  [:img {:width "100%"
+  [:img {:width "calc(100% - 1.8rem)"
+         :margin-left "1.8rem"
+         :margin-top "1.8rem"
          :object-fit "cover"
          :aspect-ratio "1/1"
          :max-height "max(10rem, 30vh)"}
-   ["~ *" {:margin-left "1rem"
-           :margin-right "1rem"}]]
+   ["~ *" {;:margin-left "1rem"
+           ;:margin-right "1rem"
+           }]]
 
-  [:h3 {:font-size "2rem"
+  [:h3 {:font-size "1.7rem"
         :font-weight 700
         :line-height 1
+        :display "inline-block"
+        :padding-inline-start "1.8rem"
         :margin-top "1.3rem"
-        :margin-bottom "1.3rem"}]
+        :margin-bottom "1.3rem"
+        :color c/copy-blue}]
 
   [:p {:font-size "1rem"
        :line-height 1.3
@@ -206,11 +257,14 @@
    :padding "2rem"
    :border ["1px" "solid" c/light-blue]
    :box-shadow [["1rem" "1rem" 0 c/light-blue]]}
-  [:ol {:list-style-type "\"🔹 \""
-        :padding-left "1rem"
+  [:ol {:list-style-type "none"
+        :padding-left 0
         :display "flex"
         :flex-direction "column-reverse"
-        :gap "1rem"}]
+        ;; This is broken on Chromium!?
+        ;; :gap "1rem"
+        }
+   [:li {:padding-bottom "1rem"}]]
   [":where(p, small, h2)" {:margin 0}]
   [":is(p, #id)" {:line-height 1.4}]
   [:time {:font-size "1rem"
@@ -252,7 +306,13 @@
      [reclojure-title]
      [:div.info
       [:p "Virtual Conference"]
-      [:p "December 3-4, 2021"]]
+      [:p
+       [:time {:datetime "2021-12-03"} "December 3"]
+       "-"
+       [:time {:datetime "2021-12-04"} "4, 2021"]
+       " (+ "
+       [utils/external-link {:href "https://clojureverse.org/t/re-clojure-data-science-special-dec-5th-2021/"}
+        [:time {:datetime "2021-12-05"} "Dec. 5 special"]] ")"]]
      [:div.description
       [:div
        [:p "re:Clojure is a "
@@ -265,6 +325,11 @@
        [:p "It is our intention to keep the conferences lean, inclusive and
            rewarding to all attendees and to promote other Clojure conferences in
            Europe and worldwide."]]
+      [:aside.meantime
+       [:p "In the meantime…"]
+       [:ul
+        [:li [:p [:a {:href "/#workshops"} "Workshops now running"]]]
+        [:li [:p (utils/external-link {:href "https://pod.link/1471141263"} "Interviews with the speakers")]]]]
       [news]]]
 
 
