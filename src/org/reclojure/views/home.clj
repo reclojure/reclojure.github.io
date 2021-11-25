@@ -51,14 +51,20 @@
    [:p:last-child {:font-weight 700
                    :font-size (:font-large design-tokens)}]]
   [:.description
-   {:display "flex"
-    :flex-wrap "wrap"
-    :row-gap "2rem"}
-   [:div [:p {:min-width "40vw"}]]
-   [":first-child" {:flex 4}]
+   {
+    ;; :display "flex"
+    ;; :flex-wrap "wrap"
+    ;; :row-gap "2rem"
+    :column-count "auto"
+    :column-width "30rem"
+    }
+   [:div [:p {
+              ;; :min-width "40vw"
+              }]]
+   [:> [":first-child" {:flex 4}]]
    [:article {:flex 5
               :overflow-y "scroll"
-              :max-height "20rem"
+              :max-height "30rem"
               :min-width "min(80vmin, 28rem)"}]
    [:p {:font-size (:font-small design-tokens)
         :line-height 1.6}
@@ -66,7 +72,15 @@
    [:at-media {:min-width "40em"}
     {:grid-template-columns "40% 1fr"
      :column-gap "2rem"}
-    [:p {:grid-column-end "2"}]]])
+    [:p {:grid-column-end "2"}]]]
+  [:.meantime
+   [:> [:p {:font-style "italic"}]]
+   [:ul {}
+    [:li
+     ["&::marker" {:content "\"🔥\""
+                   :font-size "2rem"}]
+     [:p {:padding-inline-start "1rem"}]
+     [:a {:text-decoration "2px solid underline"}]]]])
 
 #_(defstyled cfp :div
   {:text-align "center"
@@ -206,11 +220,14 @@
    :padding "2rem"
    :border ["1px" "solid" c/light-blue]
    :box-shadow [["1rem" "1rem" 0 c/light-blue]]}
-  [:ol {:list-style-type "\"🔹 \""
-        :padding-left "1rem"
+  [:ol {:list-style-type "none"
+        :padding-left 0
         :display "flex"
         :flex-direction "column-reverse"
-        :gap "1rem"}]
+        ;; This is broken on Chromium!?
+        ;; :gap "1rem"
+        }
+   [:li {:padding-bottom "1rem"}]]
   [":where(p, small, h2)" {:margin 0}]
   [":is(p, #id)" {:line-height 1.4}]
   [:time {:font-size "1rem"
@@ -252,7 +269,13 @@
      [reclojure-title]
      [:div.info
       [:p "Virtual Conference"]
-      [:p "December 3-4, 2021"]]
+      [:p
+       [:time {:datetime "2021-12-03"} "December 3"]
+       "-"
+       [:time {:datetime "2021-12-04"} "4, 2021"]
+       " (+ "
+       [utils/external-link {:href "https://clojureverse.org/t/re-clojure-data-science-special-dec-5th-2021/"}
+        [:time {:datetime "2021-12-05"} "Dec. 5 special"]] ")"]]
      [:div.description
       [:div
        [:p "re:Clojure is a "
@@ -265,6 +288,11 @@
        [:p "It is our intention to keep the conferences lean, inclusive and
            rewarding to all attendees and to promote other Clojure conferences in
            Europe and worldwide."]]
+      [:aside.meantime
+       [:p "In the meantime…"]
+       [:ul
+        [:li [:p [:a {:href "/#workshops"} "Workshops now running"]]]
+        [:li [:p (utils/external-link {:href "https://pod.link/1471141263"} "Interviews with the speakers")]]]]
       [news]]]
 
 
