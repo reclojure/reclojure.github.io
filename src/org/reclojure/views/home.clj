@@ -1,14 +1,14 @@
 (ns org.reclojure.views.home
-  (:require [lambdaisland.ornament :refer [defstyled]]
+  (:require [clojure.string :as str]
+            [lambdaisland.ornament :refer [defstyled]]
             [org.reclojure.db :as db]
-            [org.reclojure.views.partials :as partials]
-            [org.reclojure.views.utils :as utils]
             [org.reclojure.views.-colors :as c]
             [org.reclojure.views.assets :as assets]
             [org.reclojure.views.components.keynote-speakers :as keynotes]
-            [org.reclojure.views.components.workshops :as workshops]
+            [org.reclojure.views.components.navigation :as navigation]
             [org.reclojure.views.components.schedule :as schedule]
-            [clojure.string :as str]))
+            [org.reclojure.views.components.workshops :as workshops]
+            [org.reclojure.views.utils :as utils]))
 
 (def design-tokens
   {:font-small "1.3rem"
@@ -243,9 +243,9 @@
 
 (defn page [data]
   [:<>
-   [partials/header
+   [navigation/header
 
-    [partials/navigation]]
+    [navigation/navigation]]
 
    [:main
     [banner
