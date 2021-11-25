@@ -44,7 +44,8 @@
    {:flex-direction "row"}
    [:button {:display "none"}]
    [:ol {:display "flex"
-         :flex-flow "row wrap"}]
+         :flex-flow "row wrap"
+         :font-size "clamp(1.6rem, 2.8vw, 3rem)"}]
    ["ol:is([aria-expanded], #id)" {:display "flex"}]]
   ([_]
    [:<>
