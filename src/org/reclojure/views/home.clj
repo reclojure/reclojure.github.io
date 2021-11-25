@@ -154,7 +154,7 @@
    [:h3 {:color c/darker-green}]
    [(gs/& gs/after)
     {:content "\"\""
-     :background c/lighter-green
+     :background "hsl(97.5, 60%, 92.2%)" ;FIXME move shade to colors
      :position "absolute"
      :display "block"
      :width "100%"
