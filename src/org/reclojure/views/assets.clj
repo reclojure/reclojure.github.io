@@ -2,11 +2,13 @@
   (:require [lambdaisland.ornament :refer [defstyled]]))
 
 (defstyled reclojure-symbol :img
-  {:height "5rem"
-   :width "5rem"
+  {:width "10rem"
+   :margin "0 auto"
+   :display "block"
    :max-width "unset"
    :transform "rotate(-10deg)"
-   :filter "drop-shadow(0px 0px 1px hsla(0,0%,0%,0.15))"})
+   :filter "drop-shadow(0px 0px 1px hsla(0,0%,0%,0.15))"
+   :vertical-align "middle"})
 
 (defstyled placeholder-picture :svg
   [:path

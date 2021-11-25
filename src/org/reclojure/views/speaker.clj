@@ -2,7 +2,7 @@
   (:require [lambdaisland.ornament :refer [defstyled]]
             [org.reclojure.views.-colors :as c]
             [org.reclojure.views.-sizes :as s]
-            [org.reclojure.views.partials :as partials]))
+            [org.reclojure.views.components.navigation :as navigation]))
 
 (defstyled speaker :article
   {:display "flex"
@@ -11,7 +11,7 @@
    :align-items "flex-start"
 
    :max-width "64rem"
-   :margin "0 auto"
+   :margin "5vmin auto"
    :padding-left "2rem"
    :padding-right "2rem"})
 
@@ -19,8 +19,7 @@
   {:flex-basis 0
    :flex-grow 999
    :min-width "50%"}
-  [:h1 {:font-size "3rem"
-        :margin-top 0}]
+  [:h1 {:font-size "3rem"}]
   [:p {:font-size "1.125rem"
        :max-width "50ch"
        :line-height 1.6}])
@@ -79,8 +78,8 @@
 
 (defn page [{:keys [name handle link picture description]}]
   [:<>
-   [partials/header
-    [partials/navigation]]
+   [navigation/header
+    [navigation/navigation]]
    [:main
     [^:article speaker
      [^:div text
