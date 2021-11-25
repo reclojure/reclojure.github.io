@@ -269,7 +269,13 @@
      [reclojure-title]
      [:div.info
       [:p "Virtual Conference"]
-      [:p "December 3-4, 2021"]]
+      [:p
+       [:time {:datetime "2021-12-03"} "December 3"]
+       "-"
+       [:time {:datetime "2021-12-04"} "4, 2021"]
+       " (+ "
+       [utils/external-link {:href "https://clojureverse.org/t/re-clojure-data-science-special-dec-5th-2021/"}
+        [:time {:datetime "2021-12-05"} "Dec. 5 special"]] ")"]]
      [:div.description
       [:div
        [:p "re:Clojure is a "
