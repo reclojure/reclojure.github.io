@@ -107,6 +107,13 @@
     :picture "adam-helins.png"
     :brief ""
     :description "A Clojure consultant and psychologist, Adam Helins has been addicted to pushing the boundaries of the language for years. Passionate by decentralized systems, he is one of the key maintainers behind `convex.world`, a next-gen decentralized network strongly inspired by Clojure."}
+   {:name "Mike Anderson"
+    :slug "mike-anderson"
+    :handle "mikera"
+    :link "https://www.linkedin.com/in/mike-anderson-7a9412/"
+    :picture "mike-anderson.jpg"
+    :brief "Consensus algorithm, CVM execution engine, Overall Convex architecture"
+    :description "Convex founder. Mike is a technology consultant and entrepreneur who has been using Clojure for many years. He's author of core.matrix, a popular matrix manipulation library."}
    {:name "Ben Sless"
     :slug "ben-sless"
     :handle ""
