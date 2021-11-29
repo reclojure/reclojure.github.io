@@ -573,7 +573,7 @@ Any questions? hello@xtdb.com",
      :time-end "10:55"
      :duration 25
      :title "Decentralize the world via the Clojure philosophy"
-     :speakers ["Adam Helins"]
+     :speakers ["Adam Helins" "Michael Anderson"]
      :tags []
      :abstract "Decentralized technologies have gained attention while remaining mysterious. The word \"blockchain\" can hold vastly different meanings to different people and it is unclear for most developers how it can be leveraged. Convex is a new kind of public database, replicated world-wide on a permissionless network. No one owns it, yet it is secure and tamperproof. Some might call it a blockchain, yet it feels like something different. Indeed, the Convex network has been closely modeled on core ideas from the Clojure philosophy. With pragmatic examples, we will finally understand what such a decentralized network really is and how the data-centric model of computation promoted by Clojure brings unforeseen innovation for building the \"Internet of Value\"."}
     {:index 3
