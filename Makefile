@@ -7,6 +7,7 @@ clean:
 build: clean
 	mkdir -p _site/
 	cp -r old_site _site/
+	npx shadow-cljs release main
 	clojure -A:dev -X:freeze
 	cp -r resources/public/* _site/
 	cp CNAME _site/

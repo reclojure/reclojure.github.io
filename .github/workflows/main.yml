@@ -26,6 +26,11 @@ jobs:
         with:
           tools-deps: 'latest'
 
+      - name: Setup Node/NPM
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
       - name: Execute clojure code on Linux and MacOS
         run: make build
         shell: bash
