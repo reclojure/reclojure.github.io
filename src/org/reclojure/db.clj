@@ -47,63 +47,63 @@
    {:name "Martin Kavalar"
     :slug "martin-kavalar"
     :picture "martin-kavalar.jpg"
-    :handle ""
-    :link ""
+    :handle "mk"
+    :link "https://github.com/mk"
     :brief ""
     :description "Martin Kavalar and his small team have been building and running Sauspiel, an online community for the traditional German card game Schafkopf, for fifteen years. They are now leveraging that experience to build NextJournal, a computational notebook designed to facilitate collaboration, reproducibility, and reuse in the sciences."}
    {:name "David Vujic"
     :slug "david-vujic"
-    :handle ""
-    :link ""
+    :handle "DavidVujic"
+    :link "https://davidvujic.blogspot.com/"
     :picture "david-vujic.jpg"
     :brief ""
     :description "My name is David and I'm a software developer. Colleagues and friends may know me as an early adopter of agile ideas and test driven development. I am passionate about things like that, and share the things I learn regularly to the community and the people I work with. I have participated as speaker at conferences and meetups like PyCon Sweden, Func Prog Sweden, dotNetConf, jDays, DevSum and NDC Oslo."}
    {:name "Johanna Antonelli"
     :slug "johanna-antonelli"
-    :handle ""
-    :link ""
+    :handle "johantonelli"
+    :link "https://github.com/johantonelli"
     :picture "johanna-antonelli.jpg"
     :brief ""
     :description "After earning a Masters degree in Physics, Johanna joined JUXT as a software developer. There, she was introduced to Clojure, both as a language and a community. Over the past few years, alongside client project work, she has been involved in training and mentoring, creating the XTDB \"Space adventure\" tutorial (https://github.com/xtdb/xtdb-tutorial). Johanna's passions include solving problems and exploring the English countryside with her husband and dog."}
    {:name "Artem Barmin"
     :slug "artem-barmin"
-    :handle ""
-    :link ""
+    :handle "artem-barmin"
+    :link "https://github.com/artem-barmin"
     :picture "artem-barmin.jpg"
     :brief ""
     :description "Co-founder at Freshcode, Clojure enthusiast, and functional programming adherent. Gathering people around the Clojurecentric ideas since 2012. Creating an environment where Clojure enthusiasts can succeed. Haskell and Common LISP under the hood of FP experience. Psychology explorer and product management adept."}
    {:name "Ella Hoeppner"
     :slug "ella-hoeppner"
-    :handle ""
-    :link ""
+    :handle "ella_hoeppner"
+    :link "https://www.ellahoeppner.com/"
     :picture "ella-hoeppner.jpg"
     :brief ""
     :description "Ella Hoeppner is a software engineer and the creator of Vlojure, a visual programming interface for ClojureScript. Her interests include Artificial Intelligence and creating new ways for people to interact with computational systems."}
    {:name "Sami Kallinen"
     :slug "sami-kallinen"
-    :handle ""
-    :link ""
+    :handle "sakalli"
+    :link "https://github.com/skallinen"
     :picture "sami-kallinen.jpg"
     :brief ""
-    :description ""}
+    :description "Sami is part of the generation who first hacked 8-bit computers in the early 80’s. A seasoned executive with three superpowers — data & AI, visionary leadership, and media. For Sami, transformation is about understanding that everything today is software. Kallinen founded his first professional online media service almost 25 years ago. For three years he worked in the CDO role at Yle, the Finnish Broadcasting Company, where he was responsible for driving the modernisation of the application architecture, and introducing AI and data platforms early on to the organisation. Later, he worked in the management team of KSF Media for two years with CDO & CTO responsibilities. Sami has implemented radical transformation programmes both in terms of product development and leadership. Since 4 - 5 years ago, when it became apparent that data & AI are both a question of business hygiene and competitive advantage, the subject has very much been at the centre of Sami’s focus."}
    {:name "Ethan Miller"
     :slug "ethan-miller"
-    :handle ""
-    :link ""
+    :handle "ezmiller"
+    :link "http://humanscode.com/"
     :picture "ethan-miller.jpg"
     :brief ""
     :description "Ethan Miller is a full-stack software engineer with interest in functional programming and Clojure in particular. For the past few years, he has tried to help build and organize the SciCloj community and contribute to the Clojure data science ecosystem."}
    {:name "João Santiago"
     :slug "joao-santiago"
-    :handle ""
-    :link ""
+    :handle "jcpsantiago"
+    :link "https://jcpsantiago.xyz/"
     :picture "joao-santiago.png"
     :brief ""
     :description "João Santiago is a data scientist with an interest in simplifying how machine learning is integrated into production systems. He likes R and Clojure for their LISP roots and functional features, and wishes he could ride his bicycle more often."}
    {:name "Adam Helins"
     :slug "adam-helins"
-    :handle ""
-    :link ""
+    :handle "helins"
+    :link "http://convex.world"
     :picture "adam-helins.png"
     :brief ""
     :description "A Clojure consultant and psychologist, Adam Helins has been addicted to pushing the boundaries of the language for years. Passionate by decentralized systems, he is one of the key maintainers behind `convex.world`, a next-gen decentralized network strongly inspired by Clojure."}
@@ -116,29 +116,29 @@
     :description "Convex founder. Mike is a technology consultant and entrepreneur who has been using Clojure for many years. He's author of core.matrix, a popular matrix manipulation library."}
    {:name "Ben Sless"
     :slug "ben-sless"
-    :handle ""
-    :link ""
+    :handle "bsless"
+    :link "https://bsless.github.io/"
     :picture "ben-sless.jpg"
     :brief ""
     :description "Ben works with Clojure since 2018 at Appsflyer building large scale event driven backend systems. He developed an unhealthy interest in performance and profiling, developed clj-fast, and contributes performance related work, mainly to malli. He's also at risk of writing blog posts whenever someone says Clojure is slow."}
    {:name "Léo Noel"
     :slug "leo-noel"
-    :handle ""
-    :link ""
+    :handle "36Rleonoel"
+    :link "https://github.com/leonoel"
     :picture "leo-noel.jpg"
     :brief ""
     :description "Léo is an independent software researcher and consultant, focusing on functional programming techniques applied to IO-intensive applications and user interfaces. He created Missionary, a functional effect and streaming system for Clojure/Script. He is currently working at Hyperfiddle on a next-generation UI architecture."}
    {:name "Eric Normand"
     :slug "eric-normand"
-    :handle ""
-    :link ""
+    :handle "ericnormand"
+    :link "https://lispcast.com/"
     :picture "eric-normand.jpg"
     :brief ""
     :description "Eric Normand is a long time functional programmer excited to see it entering the mainstream. He loves teaching and cooking. You can listen to his thoughts on his podcast (https://lispcast.com/podcast) and read his thoughts in The PurelyFunctional.tv Newsletter (https://purelyfunctional.tv/newsletter). If you visit him in New Orleans, you can meet his wife and daughters. He'll even make you some gumbo if you tell him you're coming."}
    {:name "Tovieye Ozi"
     :slug "tovieye-ozi"
-    :handle ""
-    :link ""
+    :handle "ozimos"
+    :link "https://github.com/ozimos"
     :picture "tovieye-moses-ozi.jpg"
     :brief ""
     :description "Tovieye Moses Ozi is a full stack software developer based in Lagos, Nigeria. He has worked in Javascript, Python, PHP but his language of choice is Clojure. Tovieye is currently working with Clojure at HUDStats https://hudstats.com/. Interests: Clojure, 3D Math Visualization in Virtual Reality."}
@@ -151,19 +151,19 @@
     :description "Prior to being a Clojure freelancer, Markus shared a desk with other traders (some of them fellow physicists) in an Austrian bank for 10 years. There he started to replace his Excel sheets with re-frame apps. Before that he was implementing trading systems in banks all over Europe whilst covering his lack of financial knowledge with a masters course in Oxford. At CERN in Geneva, he wrote his diploma thesis and got to know C++ but never really understood when to use which OO pattern."}
    {:name "Christopher Small"
     :slug "christopher-small"
-    :handle ""
-    :link ""
+    :handle "metasoarous"
+    :link "http://metasoarous.com/"
     :picture "christopher-small.jpg"
     :brief ""
     :description "Chris is a math geek turned software engineer and data scientist. About a decade ago, Clojure graced Chris' life with the miracle of simplicity, and he has been a passionate devotee ever since. He is currently the Research Director at The Computational Democracy Project, a nonprofit which seeks to make governance a better reflection of the public will by using data science and machine learning (and Clojure) to map out and synthesize the opinion landscapes around complex issues, helping people better understand \"the other side\", overcome partisan divides and find consensus"}
    {:name "Ashima Panjwani"
     :slug "ashima-panjwani"
-    :handle ""
+    :handle "ashimapanjwani"
     :link ""
     :picture "ashima-panjwani.jpg"
     :brief ""
-    :description "Ashima is a programmer with a degree in Pharmaceutical Sciences. An interest in using computational techniques to draw helpful insights from biological data led to her foray in computer science. She has since been working as a software engineer and loves dabbling in all things tech. She has contributed to various projects in the Clojure data science ecosystem."
-    }])
+    :description "Ashima is a programmer with a degree in Pharmaceutical Sciences. An interest in using computational techniques to draw helpful insights from biological data led to her foray in computer science. She has since been working as a software engineer and loves dabbling in all things tech. She has contributed to various projects in the Clojure data science ecosystem."}])
+
 
 (def workshops
   (let [fastmath {:name "Fastmath" :href "https://github.com/generateme/fastmath"}
@@ -701,8 +701,8 @@ Any questions? hello@xtdb.com",
      :time-start "19:30"
      :time-end "21:00"
      :duration 90
-     :speaker "Gerald Jay Sussman"}
-    ]})
+     :speaker "Gerald Jay Sussman"}]})
+
 
 (def friday "2021-12-03")
 (def saturday "2021-12-04")

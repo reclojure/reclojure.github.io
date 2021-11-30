@@ -47,22 +47,22 @@
 ;;    :border ["1px" "solid" c/light-blue]}
 
 ;;   [:a {:color "initial"}]
-  
+
 ;;   ["> :last-child" {:padding-bottom 0}]
-  
+
 ;;   [:img {:width "100%"
 ;;          :object-fit "cover"
 ;;          :aspect-ratio "1/1"
 ;;          :max-height "max(10rem, 30vh)"}
 ;;    ["~ *" {:margin-left "1rem"
 ;;            :margin-right "1rem"}]]
-  
+
 ;;   [:h3 {:font-size "2rem"
 ;;         :font-weight 700
 ;;         :line-height 1
 ;;         :margin-top "1.3rem"
 ;;         :margin-bottom "1.3rem"}]
-  
+
 ;;   [:p {:font-size "1rem"
 ;;        :line-height 1.3
 ;;        :margin-bottom "2rem"}]
@@ -88,5 +88,5 @@
       [:p description]]
      [^:aside sidebar
       [^:img pic {:alt (str "A picture of " name ".") :src (str "/images/speakers/" picture)}]
-      [:p (str "@" handle)]
+      [:p (when handle (str "@" handle))]
       [:p [:a {:href link} link]]]]]])
