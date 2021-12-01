@@ -670,9 +670,7 @@ Any questions? hello@xtdb.com",
      :time-start "17:30"
      :time-end "17:55"
      :duration 25
-     #_:authors                         ;FIXME as new data in the spreadsheet indicates the Interlude may have optional authors.
-     :title "The Spanish-speaking Clojure Community: from a Telegram group to World Domination"
-     :description "The Spanish-speaking Clojure Community: why we exist, who we are, what have we done so far, and (some) plans for the future. But, most importantly: why can't we agree on an official name :)"}
+     :title "Lightning Talks"}
     {:index 17
      :type :Talk
      :time-start "18:00"
