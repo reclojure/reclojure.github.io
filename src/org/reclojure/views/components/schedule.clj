@@ -4,7 +4,8 @@
             [org.reclojure.views.-colors :as c]
             [org.reclojure.db :as db]
             [clojure.string :as str]
-            [garden.selectors :as gs]))
+            [garden.selectors :as gs]
+            [org.reclojure.views.utils :as utils]))
 
 ;; Utils
 
@@ -121,6 +122,11 @@
 
 ;; Styled elements for each event type
 
+(defstyled mic-wrapper :span
+  [:svg {:height "1em"
+         :padding-inline-start "0.5em"
+         :vertical-align "middle"}])
+
 (defstyled talk :li
   {:padding "2rem 2rem"
    :display "grid"
@@ -150,8 +156,13 @@
      [:h4 title]
      [:p.name
       (->> (map (fn [speaker]
-                  [:a {:href (str "/2021/speaker/" (db/get-slug speaker))}
-                   speaker])
+                  [:span {:style {:white-space "nowrap"}}
+                   [:a {:href (str "/2021/speaker/" (db/get-slug speaker))}
+                    speaker]
+                   (when-let [interview (get db/interviews speaker)]
+                     (utils/external-link {:href interview
+                                           :alt (str "Interview with " speaker ".")}
+                      [mic-wrapper assets/fa-microphone-lines]))])
                 speakers)
            (interleave (repeat ", "))
            rest)]

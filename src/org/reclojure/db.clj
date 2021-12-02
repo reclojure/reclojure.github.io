@@ -752,3 +752,22 @@ Any questions? hello@xtdb.com",
 ;;     :time-end
 ;;     :speaker
 ;;     :time-start)
+
+(def interviews
+  {"Jeremy Taylor"     "https://pod.link/1471141263/episode/10a363f4e62eb8ca37120468d752c99b"
+   "Alex Oloo"         "https://pod.link/1471141263/episode/6c1b3b75294f84291809fa01595dbcf4"
+   "Jakub Holý"        "https://pod.link/1471141263/episode/ecac55d84ea04f309f534dfc28c5fef4"
+   "Kathi Fisler"      "https://pod.link/1471141263/episode/0cf4270aaa1e1cf9f16a27effe5ecef8"
+   "Kira McLean"       "https://pod.link/1471141263/episode/8ae3d1117bf4748a53a0f1ba5ea5c234"
+   "Paula Gearon"      "https://pod.link/1471141263/episode/ae980929e41fe28cbb8c412ccb084fb4"
+   "Rohit Thadani"     "https://pod.link/1471141263/episode/bd2dc478af16ea84fec15702eb310539"
+   "Dragan Djuric"     "https://pod.link/1471141263/episode/ede2903ca88a3412b62b7d50ef3fa2c7"
+   "Steven Wolfram"    "https://pod.link/1471141263/episode/32a5353ee7f9dba711d805e28f2821bc"
+   "Christopher Small" "https://pod.link/1471141263/episode/e8b98f080480d376d45eb29bc2bd9f47"
+   "João Santiago"     "https://pod.link/1471141263/episode/2a6881233e2e655e7d208ec93acd7515"
+   "Mey Beisaron"      "https://pod.link/1471141263/episode/e27e73e47d08314d9ae3a927a03dd85d"
+   "David Pham"        "https://pod.link/1471141263/episode/49dc8a0972c5d9ef90c0750b74386c97"
+   "Ben Sless"         "https://pod.link/1471141263/episode/a2f13c186b6dae262b4fb7eb1d2db3a8"
+   "Johanna Antonelli" "https://pod.link/1471141263/episode/baecded7956695abded580abffeed5dd"
+   "Eric Normand"      "https://pod.link/1471141263/episode/46c9e6f8311a09945836408565c9563a"
+   "Artem Barmin"      "https://pod.link/1471141263/episode/2a028a75e3d9bf63ff0c36bdb3b060f1"})
