@@ -62,7 +62,8 @@
   {:aspect-ratio "16 / 9"
    :background-color "hsl(0, 0%, 10%)"
    :margin "2vmax auto"
-   :display "flex"
+   ;; :display "flex"
+   :display "none"                      ;FIXME remove after conference
    :align-items "center"
    :justify-content "center"}
   [:time {:color "white"
