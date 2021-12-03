@@ -191,8 +191,10 @@
          :margin-left "1.8rem"
          :margin-top "1.8rem"
          :object-fit "cover"
-         :aspect-ratio "1/1"
-         :max-height "max(10rem, 30vh)"}
+         ;; :aspect-ratio "1/1"
+         ;; :max-height "max(10rem, 30vh)"
+         :height "16rem"
+         }
    ["~ *" {;:margin-left "1rem"
            ;:margin-right "1rem"
            }]]
