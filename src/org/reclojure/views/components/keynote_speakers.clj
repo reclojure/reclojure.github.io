@@ -2,7 +2,8 @@
   (:require [lambdaisland.ornament :as o]
             [org.reclojure.views.utils :as utils]
             [org.reclojure.views.-colors :as c]
-            [garden.selectors :as gs]))
+            [garden.selectors :as gs]
+            [org.reclojure.views.assets :as assets]))
 
 (o/defstyled speakers :ul
   {:list-style "none"
@@ -77,6 +78,25 @@
   [:at-media {:min-width "60em"}
    {:grid-row "revert"}])
 
+(o/defstyled sussman-interview :p
+  {:grid-column 1
+   :justify-self "start"}
+  [:a {:text-decoration "underline .2em var(--highlight)"
+       :font-size "1.25rem"
+       :font-weight 700
+       :color c/dark-blue
+       :display "inline-flex"}]
+  [:svg {:height "1em"
+         :width "2em"
+         :padding-inline-end ".5em"}]
+  [:at-media {:min-width "60em"}
+   {:grid-column 2}]
+  ([_]
+   [:<>
+    [utils/external-link
+     {:href "https://pod.link/1471141263/episode/e29bac1bc31b7bd61e693d7daca1e3f6"}
+     assets/fa-microphone-lines "NEW: JUXT Cast interview with Gerald Sussman!"]]))
+
 (o/defstyled keynotes :section
   {:margin ["13vh" "auto" "20vh"]
    :max-width "min(80%, 69rem)"}
@@ -130,7 +150,8 @@
         [description
          sussman " is cocreator of the programming
          language " scheme ", coauthor of the book " SICP ", and the
-         Panasonic Professor of Electrical Engineering at the " MIT "."])]
+         Panasonic Professor of Electrical Engineering at the " MIT "."])
+      [sussman-interview]]
 
      ;; Wolfram
      [wolfram {:id "wolfram"}
