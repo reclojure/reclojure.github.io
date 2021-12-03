@@ -612,8 +612,8 @@ Any questions? hello@xtdb.com",
     {:index 8
      :type :Break
      :time-start "13:30"
-     :time-end "13:55"
-     :duration 25}
+     :time-end "14:00"
+     :duration 30}
     {:index 9
      :type :Talk
      :time-start "14:00"
