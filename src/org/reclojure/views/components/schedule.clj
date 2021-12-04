@@ -97,17 +97,20 @@
      :slug slug}))
 
 (defstyled pic :img
-  {:aspect-ratio "1/1"
-   :border-radius "50%" 
+  {:border-radius "50%"
    :object-fit "cover"
    :width "6rem"
+   :height "6rem"
    :align-self "start"
    :justify-self "center"
    :background-color c/white
 
    :border-right (str "0.1px solid " c/white)
    :border-bottom (str "0.1px solid " c/white)
-   :box-shadow (str "1rem 1rem 0 0 var(--accent-color)")})
+   :box-shadow (str "1rem 1rem 0 0 var(--accent-color)")}
+  [:at-supports {:aspect-ratio "1/1"}
+   {:height "unset"
+    :aspect-ratio "1/1"}])
 
 ;; FIXME: This should work with `ornament` in the above `pic`
 ;; `defstyled` but the map is being converted to a string. Possibly
