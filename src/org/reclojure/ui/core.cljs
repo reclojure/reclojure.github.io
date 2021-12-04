@@ -11,8 +11,25 @@
     (.. nav-list (setAttribute "aria-expanded" "false"))
     (.. nav-list (setAttribute "aria-expanded" "true"))))
 
+;; Add a local time version of the schedule times
+(defn add-local-time! []
+  (let [schedule-times (->> (.querySelectorAll js/document "time")
+                            (filter #(re-find #"UTC" (.-innerText %))))]
+    (doseq [el schedule-times
+            :let [new-el     (.cloneNode el)
+                  date       (new js/Date (.getAttribute el "datetime"))
+                  local-time (.. date
+                                 (toLocaleTimeString
+                                  #js [] #js {:hour   "2-digit"
+                                              :minute "2-digit"
+                                              :hour12 false
+                                              :timeZoneName "short"}))]]
+      (set! (.-innerText new-el) (str " (" local-time ")"))
+      (.insertAdjacentElement el "afterend" new-el))))
+
 (defn mount! []
   (.addEventListener menu-btn "click" menu-toggle)
+  (add-local-time!)
   ;; If JavaScript is enabled, toggle off the menu.
   (.. nav-list (setAttribute "aria-expanded" "false"))
   (js/console.log "JS is loaded!"))
