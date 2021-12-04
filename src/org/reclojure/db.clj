@@ -640,8 +640,8 @@ Any questions? hello@xtdb.com",
     {:index 12
      :type :Break
      :time-start "15:30"
-     :time-end "15:55"
-     :duration 25}
+     :time-end "16:00"
+     :duration 30}
     {:index 13
      :type :Talk
      :time-start "16:00"
