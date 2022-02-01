@@ -46,23 +46,18 @@
    :width "100%"
    :max-width "69rem"}
   [:.info
-   {:font-size (:font-medium design-tokens)
+   {:font-size "clamp(2rem, 3.5vmax, 3rem)"
+    :font-weight 700
     :margin-top "2rem"
     :margin-bottom "4rem"}
-   [:p {:margin 0}]
-   [:p:last-child {:font-weight 700
-                   :font-size (:font-large design-tokens)}]]
+   [:p {:margin 0}
+    [:&:first-child {:font-weight "initial"
+                     :font-size (:font-medium design-tokens)}]
+    [(gs/& (gs/nth-child 2)) {:color "hsl(0deg, 0%, 57.6%)"}
+     [:a {:color "inherit"}]]]]
   [:.description
-   {
-    ;; :display "flex"
-    ;; :flex-wrap "wrap"
-    ;; :row-gap "2rem"
-    :column-count "auto"
-    :column-width "30rem"
-    }
-   [:div [:p {
-              ;; :min-width "40vw"
-              }]]
+   {:column-count "auto"
+    :column-width "30rem"}
    [:> [":first-child" {:flex 4}]]
    [:article {:flex 5
               :overflow-y "scroll"
@@ -314,7 +309,9 @@
        [:time {:datetime "2021-12-04"} "4, 2021"]
        " (+ "
        [utils/external-link {:href "https://clojureverse.org/t/re-clojure-data-science-special-dec-5th-2021/"}
-        [:time {:datetime "2021-12-05"} "Dec. 5 special"]] ")"]]
+        [:time {:datetime "2021-12-05"} "Dec. 5 special"]]
+       ") " [:span {:style {:color c/light-green}} "✓"]]
+      [:p "It’s a wrap! Thank you 💟 to all speakers and attendees. See you all at re:Clojure 2022!"]]
      [:div.description
       [:div
        [:p "re:Clojure is a "
