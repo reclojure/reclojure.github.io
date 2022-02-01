@@ -62,4 +62,7 @@
      [:li [:a {:href "/#workshops"} "Workshops"]]
      [:li [:a {:href "/#sponsors"} "Sponsors"]]
      [:li [:a {:class utils/disabled :href "/#instructions"} "Instructions"]]
-     [:li [utils/external-link {:href "https://www.meetup.com/London-Clojurians/events/281970268/"} "Tickets 🎟️🎫"]]]]))
+     [:li [utils/external-link {:href "https://www.meetup.com/London-Clojurians/events/281970268/"
+                                :class utils/disabled} "Tickets 🎟️🎫"]]
+     [:li [:a {:href "/old_site/index.html"} "2020"]]
+     [:li [:a {:href "/old_site/2019/"} "2019"]]]]))
