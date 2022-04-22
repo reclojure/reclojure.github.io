@@ -288,7 +288,14 @@
       [:small [:time {:datetime "2021-10-06"} "Sun Oct. 23"]]]
    [:li
       [:p "The final schedule is now " [:a {:href "#schedule"} "available"] "! Time to grab your " [:a {:target "_blank" :href "https://www.meetup.com/London-Clojurians/events/281970268/"} "ticket"] "!"]
-      [:small [:time {:datetime "2021-11-15"} "Mon Nov. 15"]]] ]]))
+      [:small [:time {:datetime "2021-11-15"} "Mon Nov. 15"]]]
+     [:li
+      [:p "SciCloj workshop videos published on " [:a {:target "_blank" :href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pNyb2NojSGBnCARRuvLxsAc"} "reClojure 2021 Data Science Special YouTube playlist"]]
+      [:small [:time {:datetime "2021-12-15"} "Wed Dec. 15"]]]
+     [:li
+      [:p "Conference videos published on " [:a {:target "_blank" :href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pNzQE0wqvCSovFSNgrn4PLK"} "reClojure 2021 YouTube playlist"]]
+      [:small [:time {:datetime "2021-12-24"} "Fri Dec. 24"]]]
+     ]]))
 
 ;;; Main
 
