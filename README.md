@@ -1,4 +1,4 @@
-# re:Clojure
+# reClojure
 
 This repo contains the website for https://reclojure.org
 
