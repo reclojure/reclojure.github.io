@@ -31,7 +31,7 @@
    [:span:first-child {:color c/light-green}]
    [:span:last-child {:color c/light-blue}]]
   ([_]
-   [:<> [:span.title [:span "re:"] [:span "Clojure"]]]))
+   [:<> [:span.title [:span "reClojure"]]]))
 
 ;;; Globals
 
@@ -80,33 +80,33 @@
      [:a {:text-decoration "2px solid underline"}]]]])
 
 #_(defstyled cfp :div
-  {:text-align "center"
-   :border ["1px" "solid" c/light-green]
-   :box-shadow [["1rem" "1rem" c/light-green]]
-   :color c/darker-green}
-  [:p {:font-size "2rem"
-       :font-weight 700
-       :margin-top "1rem"
-       :margin-bottom "1rem"
-       :line-height 1.2}]
-  [:a {:color c/light-blue}]
-  [:.apply {:display "inline-block"
-            :padding ".8rem 2rem"
-            :background-image "linear-gradient(to bottom right, lime, lightgreen)"
-            :border "none"
-            :border-radius "2rem"
-            :cursor "pointer"
-            :font-weight 700
-            :transition "all .3s"
-            :box-shadow "0 1rem 4rem -1.5rem transparent"
-            :margin "1rem 0 0"
-            :font-size "1.5rem"
-            :color c/dark-green}]
-  [:small {:display "block"
-           :margin "1.5rem"
-           :font-size "1.5rem"}]
-  [:at-media {:min-width "40em"}
-   {:grid-column "span 2"}])
+   {:text-align "center"
+    :border ["1px" "solid" c/light-green]
+    :box-shadow [["1rem" "1rem" c/light-green]]
+    :color c/darker-green}
+   [:p {:font-size "2rem"
+        :font-weight 700
+        :margin-top "1rem"
+        :margin-bottom "1rem"
+        :line-height 1.2}]
+   [:a {:color c/light-blue}]
+   [:.apply {:display "inline-block"
+             :padding ".8rem 2rem"
+             :background-image "linear-gradient(to bottom right, lime, lightgreen)"
+             :border "none"
+             :border-radius "2rem"
+             :cursor "pointer"
+             :font-weight 700
+             :transition "all .3s"
+             :box-shadow "0 1rem 4rem -1.5rem transparent"
+             :margin "1rem 0 0"
+             :font-size "1.5rem"
+             :color c/dark-green}]
+   [:small {:display "block"
+            :margin "1.5rem"
+            :font-size "1.5rem"}]
+   [:at-media {:min-width "40em"}
+    {:grid-column "span 2"}])
 
 (defstyled keynote :section
   {})
@@ -188,11 +188,11 @@
          :object-fit "cover"
          ;; :aspect-ratio "1/1"
          ;; :max-height "max(10rem, 30vh)"
-         :height "16rem"
-         }
-   ["~ *" {;:margin-left "1rem"
+         :height "16rem"}
+
+   ["~ *" {}]];:margin-left "1rem"
            ;:margin-right "1rem"
-           }]]
+
 
   [:h3 {:font-size "1.7rem"
         :font-weight 700
@@ -257,10 +257,10 @@
   [:ol {:list-style-type "none"
         :padding-left 0
         :display "flex"
-        :flex-direction "column-reverse"
+        :flex-direction "column-reverse"}
         ;; This is broken on Chromium!?
         ;; :gap "1rem"
-        }
+
    [:li {:padding-bottom "1rem"}]]
   [":where(p, small, h2)" {:margin 0}]
   [":is(p, #id)" {:line-height 1.4}]
@@ -280,22 +280,22 @@
      [:li
       [:p "New " [:a {:href "#workshops"} "workshops"] " section available."]
       [:small [:time {:datetime "2021-10-06"} "Thu Oct. 14"]]]
-    [:li
-      [:p "New " [:a {:href "#speakers"} "speaker"] ": " [:a {:href "2021/speaker/paula-gearon"} "Paula Gearon"] "!"]
-      [:small [:time {:datetime "2021-10-06"} "Thu Oct. 14"]]]
-    [:li
-      [:p "New keynote! Please welcome " [:a {:href "#wolfram"} "Stephen Wolfram"] "!"]
-      [:small [:time {:datetime "2021-10-06"} "Sun Oct. 23"]]]
-   [:li
-      [:p "The final schedule is now " [:a {:href "#schedule"} "available"] "! Time to grab your " [:a {:target "_blank" :href "https://www.meetup.com/London-Clojurians/events/281970268/"} "ticket"] "!"]
-      [:small [:time {:datetime "2021-11-15"} "Mon Nov. 15"]]]
+     [:li
+       [:p "New " [:a {:href "#speakers"} "speaker"] ": " [:a {:href "2021/speaker/paula-gearon"} "Paula Gearon"] "!"]
+       [:small [:time {:datetime "2021-10-06"} "Thu Oct. 14"]]]
+     [:li
+       [:p "New keynote! Please welcome " [:a {:href "#wolfram"} "Stephen Wolfram"] "!"]
+       [:small [:time {:datetime "2021-10-06"} "Sun Oct. 23"]]]
+     [:li
+        [:p "The final schedule is now " [:a {:href "#schedule"} "available"] "! Time to grab your " [:a {:target "_blank" :href "https://www.meetup.com/London-Clojurians/events/281970268/"} "ticket"] "!"]
+        [:small [:time {:datetime "2021-11-15"} "Mon Nov. 15"]]]
      [:li
       [:p "SciCloj workshop videos published on " [:a {:target "_blank" :href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pNyb2NojSGBnCARRuvLxsAc"} "reClojure 2021 Data Science Special YouTube playlist"]]
       [:small [:time {:datetime "2021-12-15"} "Wed Dec. 15"]]]
      [:li
       [:p "Conference videos published on " [:a {:target "_blank" :href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pNzQE0wqvCSovFSNgrn4PLK"} "reClojure 2021 YouTube playlist"]]
-      [:small [:time {:datetime "2021-12-24"} "Fri Dec. 24"]]]
-     ]]))
+      [:small [:time {:datetime "2021-12-24"} "Fri Dec. 24"]]]]]))
+
 
 ;;; Main
 
@@ -318,10 +318,10 @@
        [utils/external-link {:href "https://clojureverse.org/t/re-clojure-data-science-special-dec-5th-2021/"}
         [:time {:datetime "2021-12-05"} "Dec. 5 special"]]
        ") " [:span {:style {:color c/light-green}} "✓"]]
-      [:p "It’s a wrap! Thank you 💟 to all speakers and attendees. See you all at re:Clojure 2022!"]]
+      [:p "It’s a wrap! Thank you 💟 to all speakers and attendees. See you all at reClojure 2022!"]]
      [:div.description
       [:div
-       [:p "re:Clojure is a "
+       [:p "reClojure is a "
         [utils/highlight {:style {:text-shadow "0 0 .05em"}} "free"]
         ", "
         [utils/highlight {:style {:text-shadow "0 0 .05em"}} "community-driven"]
@@ -377,11 +377,8 @@
                         :src "images/sponsors/freshcode.png"}]]
       [:a {:href "https://www.hyde-housing.co.uk/" :target "_blank" :rel "noopener"}
        [:img.hyde {:alt "Logo for Hyde"
-                   :src "images/sponsors/hyde-logo-mod.png"}]]]]
+                   :src "images/sponsors/hyde-logo-mod.png"}]]]]]])
     ;; Instructions
     ;; Footer
     ;; [:p "Please review our code of conduct, relax and enjoy the conference! If
     ;; you have any questions, please do email us at info@reclojure.org"]
-
-
-    ]])

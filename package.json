@@ -1,1 +1,1 @@
-{"name":"reclojure.org","devDependencies":{"shadow-cljs":"^2.16.6"}}
+{"name":"reclojure.org","devDependencies":{"shadow-cljs":"^2.16.6"},"dependencies":{"react":"17.0.1","react-dom":"17.0.1"}}

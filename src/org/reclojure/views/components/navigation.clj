@@ -50,7 +50,7 @@
   ([_]
    [:<>
     [:a {:href "/"} [assets/reclojure-symbol
-                     {:alt "re:Clojure Symbol"
+                     {:alt "reClojure Symbol"
                       :src "/images/re-logo-white-bg.png"
                       :width "324"
                       :height "327"}]]
