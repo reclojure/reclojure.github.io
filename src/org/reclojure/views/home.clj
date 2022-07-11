@@ -53,7 +53,7 @@
    [:p {:margin 0}
     [:&:first-child {:font-weight "initial"
                      :font-size (:font-medium design-tokens)}]
-    [(gs/& (gs/nth-child 2)) {:color "hsl(0deg, 0%, 57.6%)"}
+    #_[(gs/& (gs/nth-child 2)) {:color "hsl(0deg, 0%, 57.6%)"}
      [:a {:color "inherit"}]]]]
   [:.description
    {:column-count "auto"
@@ -64,7 +64,8 @@
               :max-height "30rem"
               :min-width "min(80vmin, 28rem)"}]
    [:p {:font-size (:font-small design-tokens)
-        :line-height 1.6}
+        :line-height 1.6
+        :margin-top 0}
     [:&:last-child {:margin-bottom 0}]]
    [:at-media {:min-width "40em"}
     {:grid-template-columns "40% 1fr"
@@ -318,8 +319,8 @@
       [:p
        [:time {:datetime "2022-12-02"} "December 2"]
        "-"
-       [:time {:datetime "2022-12-03"} "3, 2022"]]
-      [:p "reClojure is back! Mark the date!"]]
+       [:time {:datetime "2022-12-03"} "3, 2022"]
+       " (mark the date!)"]]
      [:div.description
       [:div
        [:p "Given the succesful 2021 edition, reClojure 2022 is going to be virtual again!
