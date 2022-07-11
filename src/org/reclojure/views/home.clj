@@ -316,46 +316,44 @@
      [:div.info
       [:p "Virtual Conference"]
       [:p
-       [:time {:datetime "2021-12-03"} "December 3"]
+       [:time {:datetime "2022-12-02"} "December 2"]
        "-"
-       [:time {:datetime "2021-12-04"} "4, 2021"]
-       " (+ "
-       [utils/external-link {:href "https://clojureverse.org/t/re-clojure-data-science-special-dec-5th-2021/"}
-        [:time {:datetime "2021-12-05"} "Dec. 5 special"]]
-       ") " [:span {:style {:color c/light-green}} "✓"]]
-      [:p "It’s a wrap! Thank you 💟 to all speakers and attendees. See you all at reClojure 2022!"]]
+       [:time {:datetime "2022-12-03"} "3, 2022"]]
+      [:p "reClojure is back! Mark the date!"]]
      [:div.description
       [:div
-       [:p "reClojure is a "
-        [utils/highlight {:style {:text-shadow "0 0 .05em"}} "free"]
+       [:p "Given the succesful 2021 edition, reClojure 2022 is going to be virtual again!
+           reClojure is a free, community driven"
+        ; [utils/highlight {:style {:text-shadow "0 0 .05em"}} "free"]
         ", "
-        [utils/highlight {:style {:text-shadow "0 0 .05em"}} "community-driven"]
+        ; [utils/highlight {:style {:text-shadow "0 0 .05em"}} "community-driven"]
         " conference that brings together knowledgeable speakers to
-         present new and exciting topics on all things Clojure and
-         ClojureScript."]
-       [:p "It is our intention to keep the conferences lean, inclusive and
-           rewarding to all attendees and to promote other Clojure conferences in
-           Europe and worldwide."]]
+         present new and exciting topics."]
+       [:p "Do you have a side project? Did you learn something cool? Do you have little or no experience presenting at a conference? We'd like to help and support you! Please get in touch with "
+          [utils/highlight {:style {:text-shadow "0 0 .05em"}} "organizers@reclojure.org"]
+           " to discuss ideas and work together."]]
       [:aside.meantime
        [:p "In the meantime…"]
        [:ul
-        [:li [:p [:a {:href "/#workshops"} "Workshops now running"]]]
-        [:li [:p (utils/external-link {:href "https://pod.link/1471141263"} "Interviews with the speakers")]]]]
-      [news]]]
+        [:li [:p (utils/external-link {:href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pNzQE0wqvCSovFSNgrn4PLK"} "reClojure 2021 talks")]]
+        [:li [:p (utils/external-link {:href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pOzX2T7eeHq_nnGDQkjsdR5"} "reClojure 2021 workshops")]]
+        [:li [:p (utils/external-link {:href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pNyb2NojSGBnCARRuvLxsAc"} "reClojure 2021 Data Science Special")]]
+        ]]
+      #_[news]]]
 
 
 
     ;; Keynotes & Speakers
-    [keynotes/keynotes {:id "keynote"}]
+    ; [keynotes/keynotes {:id "keynote"}]
 
-    [speakers {:id "speakers"} db/speakers-data]
+    ; [speakers {:id "speakers"} db/speakers-data]
 
-    [schedule/schedule {:id "schedule"}]
+    ; [schedule/schedule {:id "schedule"}]
 
-    [workshops/workshops {:id "workshops"}]
+    ; [workshops/workshops {:id "workshops"}]
 
     ;; Sponsors
-    [sponsors {:id "sponsors"}
+    #_[sponsors {:id "sponsors"}
      [:h2 "Thanks to our lovely sponsors"]
      [logos
       [:a {:href "https://www.juxt.pro" :target "_blank" :rel "noopener"}
