@@ -319,30 +319,24 @@
       [:p
        [:time {:datetime "2022-12-02"} "December 2"]
        "-"
-       [:time {:datetime "2022-12-03"} "3, 2022"]
-       " (mark the date!)"]]
+       [:time {:datetime "2022-12-03"} "3, 2022"]]]
      [:div.description
       [:div
-       [:p "Given the succesful 2021 edition, reClojure 2022 is going to be virtual again!
-           reClojure is a free, community driven"
-        ; [utils/highlight {:style {:text-shadow "0 0 .05em"}} "free"]
-        ", "
-        ; [utils/highlight {:style {:text-shadow "0 0 .05em"}} "community-driven"]
-        " conference that brings together knowledgeable speakers to
-         present new and exciting topics."]
-       [:p "Do you have a side project? Did you learn something cool? Do you have little or no experience presenting at a conference? We'd like to help and support you! Please get in touch with "
-          [utils/highlight {:style {:text-shadow "0 0 .05em"}} "organizers@reclojure.org"]
-           " to discuss ideas and work together."]]
+       [:p "Given the succesful 2021 edition, reClojure 2022 is going to be virtual again! Mark the date! reClojure is a free, community driven conference that brings together inspiring speakers in a warm and friendly atmosphere."]
+       [:p "The theme of this year's conference is "
+        [utils/highlight {:style {:text-shadow "0 0 .05em"}} "Clojure Growth"]
+        ": how can we increase Clojure popularity and get more programmers to join our fantastic community?"]
+       [:p "The CfP isn't open yet. In the meanwhile, we'd like to get in touch with anyone who has little or no experience presenting in public but has something interesting to share. We'd like to help getting your voice out there! Please get in touch with "
+        [utils/highlight {:style {:text-shadow "0 0 .05em"}} "organizers@reclojure.org"]
+        " to discuss ideas and work together."]]
+      #_[news]
       [:aside.meantime
-       [:p "In the meantime…"]
+       [:p "Here's the videos from our past edition:"]
        [:ul
         [:li [:p (utils/external-link {:href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pNzQE0wqvCSovFSNgrn4PLK"} "reClojure 2021 talks")]]
         [:li [:p (utils/external-link {:href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pOzX2T7eeHq_nnGDQkjsdR5"} "reClojure 2021 workshops")]]
         [:li [:p (utils/external-link {:href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pNyb2NojSGBnCARRuvLxsAc"} "reClojure 2021 Data Science Special")]]
-        ]]
-      #_[news]]]
-
-
+        ]]]]
 
     ;; Keynotes & Speakers
     ; [keynotes/keynotes {:id "keynote"}]
@@ -381,8 +375,6 @@
                         :src "images/sponsors/freshcode.png"}]]
       [:a {:href "https://www.hyde-housing.co.uk/" :target "_blank" :rel "noopener"}
        [:img.hyde {:alt "Logo for Hyde"
-                   :src "images/sponsors/hyde-logo-mod.png"}]]]]]])
-    ;; Instructions
-    ;; Footer
-    ;; [:p "Please review our code of conduct, relax and enjoy the conference! If
-    ;; you have any questions, please do email us at info@reclojure.org"]
+                   :src "images/sponsors/hyde-logo-mod.png"}]]]]
+    [:p {:style {:text-align "center"}} "Follow us on Twitter " (utils/external-link {:href "https://twitter.com/reclojure"} "@reclojure")]
+    ]])
