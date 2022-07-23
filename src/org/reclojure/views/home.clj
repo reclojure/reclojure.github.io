@@ -53,7 +53,7 @@
    [:p {:margin 0}
     [:&:first-child {:font-weight "initial"
                      :font-size (:font-medium design-tokens)}]
-    [(gs/& (gs/nth-child 2)) {:color "hsl(0deg, 0%, 57.6%)"}
+    #_[(gs/& (gs/nth-child 2)) {:color "hsl(0deg, 0%, 57.6%)"}
      [:a {:color "inherit"}]]]]
   [:.description
    {:column-count "auto"
@@ -64,7 +64,8 @@
               :max-height "30rem"
               :min-width "min(80vmin, 28rem)"}]
    [:p {:font-size (:font-small design-tokens)
-        :line-height 1.6}
+        :line-height 1.6
+        :margin-top 0}
     [:&:last-child {:margin-bottom 0}]]
    [:at-media {:min-width "40em"}
     {:grid-template-columns "40% 1fr"
@@ -316,46 +317,38 @@
      [:div.info
       [:p "Virtual Conference"]
       [:p
-       [:time {:datetime "2021-12-03"} "December 3"]
+       [:time {:datetime "2022-12-02"} "December 2"]
        "-"
-       [:time {:datetime "2021-12-04"} "4, 2021"]
-       " (+ "
-       [utils/external-link {:href "https://clojureverse.org/t/re-clojure-data-science-special-dec-5th-2021/"}
-        [:time {:datetime "2021-12-05"} "Dec. 5 special"]]
-       ") " [:span {:style {:color c/light-green}} "✓"]]
-      [:p "It’s a wrap! Thank you 💟 to all speakers and attendees. See you all at reClojure 2022!"]]
+       [:time {:datetime "2022-12-03"} "3, 2022"]]]
      [:div.description
       [:div
-       [:p "reClojure is a "
-        [utils/highlight {:style {:text-shadow "0 0 .05em"}} "free"]
-        ", "
-        [utils/highlight {:style {:text-shadow "0 0 .05em"}} "community-driven"]
-        " conference that brings together knowledgeable speakers to
-         present new and exciting topics on all things Clojure and
-         ClojureScript."]
-       [:p "It is our intention to keep the conferences lean, inclusive and
-           rewarding to all attendees and to promote other Clojure conferences in
-           Europe and worldwide."]]
+       [:p "Given the succesful 2021 edition, reClojure 2022 is going to be virtual again! Mark the date! reClojure is a free, community driven conference that brings together inspiring speakers in a warm and friendly atmosphere."]
+       [:p "The theme of this year's conference is "
+        [utils/highlight {:style {:text-shadow "0 0 .05em"}} "Clojure Growth"]
+        ": how can we increase Clojure popularity and get more programmers to join our fantastic community?"]
+       [:p "The CfP isn't open yet. In the meanwhile, we'd like to get in touch with anyone who has little or no experience presenting in public but has something interesting to share. We'd like to help getting your voice out there! Please get in touch with "
+        [utils/highlight {:style {:text-shadow "0 0 .05em"}} "organizers@reclojure.org"]
+        " to discuss ideas and work together."]]
+      #_[news]
       [:aside.meantime
-       [:p "In the meantime…"]
+       [:p "Here's the videos from our past edition:"]
        [:ul
-        [:li [:p [:a {:href "/#workshops"} "Workshops now running"]]]
-        [:li [:p (utils/external-link {:href "https://pod.link/1471141263"} "Interviews with the speakers")]]]]
-      [news]]]
-
-
+        [:li [:p (utils/external-link {:href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pNzQE0wqvCSovFSNgrn4PLK"} "reClojure 2021 talks")]]
+        [:li [:p (utils/external-link {:href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pOzX2T7eeHq_nnGDQkjsdR5"} "reClojure 2021 workshops")]]
+        [:li [:p (utils/external-link {:href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pNyb2NojSGBnCARRuvLxsAc"} "reClojure 2021 Data Science Special")]]
+        ]]]]
 
     ;; Keynotes & Speakers
-    [keynotes/keynotes {:id "keynote"}]
+    ; [keynotes/keynotes {:id "keynote"}]
 
-    [speakers {:id "speakers"} db/speakers-data]
+    ; [speakers {:id "speakers"} db/speakers-data]
 
-    [schedule/schedule {:id "schedule"}]
+    ; [schedule/schedule {:id "schedule"}]
 
-    [workshops/workshops {:id "workshops"}]
+    ; [workshops/workshops {:id "workshops"}]
 
     ;; Sponsors
-    [sponsors {:id "sponsors"}
+    #_[sponsors {:id "sponsors"}
      [:h2 "Thanks to our lovely sponsors"]
      [logos
       [:a {:href "https://www.juxt.pro" :target "_blank" :rel "noopener"}
@@ -382,8 +375,6 @@
                         :src "images/sponsors/freshcode.png"}]]
       [:a {:href "https://www.hyde-housing.co.uk/" :target "_blank" :rel "noopener"}
        [:img.hyde {:alt "Logo for Hyde"
-                   :src "images/sponsors/hyde-logo-mod.png"}]]]]]])
-    ;; Instructions
-    ;; Footer
-    ;; [:p "Please review our code of conduct, relax and enjoy the conference! If
-    ;; you have any questions, please do email us at info@reclojure.org"]
+                   :src "images/sponsors/hyde-logo-mod.png"}]]]]
+    [:p {:style {:text-align "center"}} "Follow us on Twitter " (utils/external-link {:href "https://twitter.com/reclojure"} "@reclojure")]
+    ]])
