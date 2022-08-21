@@ -8,6 +8,4 @@
          (eval . (progn
                    (make-variable-buffer-local 'cider-jack-in-nrepl-middlewares)
                    (add-to-list 'cider-jack-in-nrepl-middlewares "shadow.cljs.devtools.server.nrepl/middleware")))
-         (eval . (define-clojure-indent
-                   (assoc 0)
-                   (ex-info 0))))))
+         )))
