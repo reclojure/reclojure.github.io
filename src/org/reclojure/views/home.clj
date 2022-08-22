@@ -61,11 +61,10 @@
    [:> [":first-child" {:flex 4}]]
    [:article {:flex 5
               :overflow-y "scroll"
-              :max-height "30rem"
+              ;; :max-height "30rem"
               :min-width "min(80vmin, 28rem)"}]
    [:p {:font-size (:font-small design-tokens)
-        :line-height 1.6
-        :margin-top 0}
+        :line-height 1.6}
     [:&:last-child {:margin-bottom 0}]]
    [:at-media {:min-width "40em"}
     {:grid-template-columns "40% 1fr"
@@ -80,7 +79,7 @@
      [:p {:padding-inline-start "1rem"}]
      [:a {:text-decoration "2px solid underline"}]]]])
 
-#_(defstyled cfp :div
+(defstyled cfp :div
    {:text-align "center"
     :border ["1px" "solid" c/light-green]
     :box-shadow [["1rem" "1rem" c/light-green]]
@@ -253,6 +252,7 @@
   {:background-color c/white
    :grid-area "1 / 2 / 3"
    :padding "2rem"
+   :height "35rem"
    :border ["1px" "solid" c/light-blue]
    :box-shadow [["1rem" "1rem" 0 c/light-blue]]}
   [:ol {:list-style-type "none"
@@ -274,31 +274,7 @@
     [:ol {:reversed true}
      [:li
       [:p [:a {:href "#keynote"} "Keynote"] " announcement, CFP begins"]
-      [:small [:time {:datetime "2021-09-10"} "Friday Sept. 10"]]]
-     [:li
-      [:p "First " [:a {:href "#speakers"} "speakers"] " announced! 🎉. The CFP is now closed."]
-      [:small [:time {:datetime "2021-10-06"} "Thu Oct. 14"]]]
-     [:li
-      [:p "New " [:a {:href "#workshops"} "workshops"] " section available."]
-      [:small [:time {:datetime "2021-10-06"} "Thu Oct. 14"]]]
-     [:li
-       [:p "New " [:a {:href "#speakers"} "speaker"] ": " [:a {:href "2021/speaker/paula-gearon"} "Paula Gearon"] "!"]
-       [:small [:time {:datetime "2021-10-06"} "Thu Oct. 14"]]]
-     [:li
-       [:p "New keynote! Please welcome " [:a {:href "#wolfram"} "Stephen Wolfram"] "!"]
-       [:small [:time {:datetime "2021-10-06"} "Sun Oct. 23"]]]
-     [:li
-        [:p "The final schedule is now " [:a {:href "#schedule"} "available"] "! Time to grab your " [:a {:target "_blank" :href "https://www.meetup.com/London-Clojurians/events/281970268/"} "ticket"] "!"]
-        [:small [:time {:datetime "2021-11-15"} "Mon Nov. 15"]]]
-     [:li
-      [:p "SciCloj Data Science videos published on " [:a {:target "_blank" :href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pNyb2NojSGBnCARRuvLxsAc"} "reClojure 2021 Data Science Special YouTube playlist"]]
-      [:small [:time {:datetime "2021-12-15"} "Wed Dec. 15"]]]
-     [:li
-      [:p "reClojure workshop videos published on " [:a {:target "_blank" :href "https://youtube.com/playlist?list=PLtw0bWXdq7pOzX2T7eeHq_nnGDQkjsdR5"} "reClojure 2021 Workshops YouTube Playlist"]]
-      [:small [:time {:datetime "2021-12-24"} "Wed Dec. 24"]]]
-     [:li
-      [:p "Conference videos published on " [:a {:target "_blank" :href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pNzQE0wqvCSovFSNgrn4PLK"} "reClojure 2021 YouTube playlist"]]
-      [:small [:time {:datetime "2021-12-24"} "Fri Dec. 24"]]]]]))
+      [:small [:time {:datetime "2022-09-01"} "Thursday Sept. 1"]]]]]))
 
 
 
@@ -322,15 +298,22 @@
        [:time {:datetime "2022-12-03"} "3, 2022"]]]
      [:div.description
       [:div
-       [:p "Given the succesful 2021 edition, reClojure 2022 is going to be virtual again! Mark the date! reClojure is a free, community driven conference that brings together inspiring speakers in a warm and friendly atmosphere."]
-       [:p "The theme of this year's conference is "
+       [:p "Mark the date! reClojure is a free, community driven conference that brings together inspiring speakers in a warm and friendly atmosphere."]
+       [:p "This year's conference theme is "
         [utils/highlight {:style {:text-shadow "0 0 .05em"}} "Clojure Growth"]
         ": how can we increase Clojure popularity and get more programmers to join our fantastic community?"]
-       [:p "The CfP isn't open yet. In the meanwhile, we'd like to get in touch with anyone who has little or no experience presenting in public but has something interesting to share. We'd like to help getting your voice out there! Please get in touch with "
+       #_[:p "The CfP isn't open yet. In the meanwhile, we'd like to get in touch with anyone who has little or no experience presenting in public but has something interesting to share. We'd like to help getting your voice out there! Please get in touch with "
         [utils/highlight {:style {:text-shadow "0 0 .05em"}} "organizers@reclojure.org"]
         " to discuss ideas and work together."]]
+      [cfp {:id "cfp"}
+       [:p "Want to be " [utils/nowrap "part of the show?"]]
+       [:p "CFP " [utils/nowrap "ends October 1st! ⏳"]]
+       [:a.apply {:href "https://docs.google.com/forms/d/1LSas3gB4rOmRAoQ_6QLcwiB3HgNeiBnyjhqppPRPpzE"
+                  :target "_blank"
+                  :rel "noopener"} "Apply"]
+       [:small "Questions? Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"]]]
       #_[news]
-      [:aside.meantime
+      #_[:aside.meantime
        [:p "Here's the videos from our past edition:"]
        [:ul
         [:li [:p (utils/external-link {:href "https://www.youtube.com/playlist?list=PLtw0bWXdq7pNzQE0wqvCSovFSNgrn4PLK"} "reClojure 2021 talks")]]
