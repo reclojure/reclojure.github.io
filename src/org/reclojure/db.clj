@@ -3,13 +3,7 @@
 
 ;; can be copied over from db21.clj if needed
 (def speakers-data
-  [{:name ""
-    :slug ""
-    :handle ""
-    :link ""
-    :picture ""
-    :brief ""
-    :description ""}])
+  [])
 
 (def workshops
   (let [fastmath {:name "Fastmath" :href "https://github.com/generateme/fastmath"}]
