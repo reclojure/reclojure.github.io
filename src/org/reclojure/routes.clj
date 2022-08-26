@@ -32,7 +32,7 @@
   [["/"
     {:name ::home
      :get {:handler get-home}}]
-   ["/2022/speaker/:slug"
+   ["/2021/speaker/:slug"
     {:name ::speaker
      :get {:handler get-speaker}
      :freeze-data-fn (fn [] (mapv (fn [{:keys [slug]}]
