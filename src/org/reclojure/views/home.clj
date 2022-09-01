@@ -322,7 +322,7 @@
         ]]]]
 
     ;; Keynotes & Speakers
-    ; [keynotes/keynotes {:id "keynote"}]
+    [keynotes/keynotes {:id "keynote"}]
 
     ; [speakers {:id "speakers"} db/speakers-data]
 
