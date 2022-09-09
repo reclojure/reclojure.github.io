@@ -117,70 +117,70 @@
 
      ;; Sussman
      [sussman
-      [name {:class "sussman"} "Gerald Jay Sussman"]
+      [name {:class "sussman"} "Alex Miller"]
       [wizard
-       {:alt "The wizard featured in the cover of the book Structure and
-              Interpretation of Computer Programs is depicted here shooting
-              laser beams through his eyes while holding an orb with the
-              words Eval and Apply."
-        :src "images/wizard.png"
+       {:alt ""
+        :src "images/alex-tools.png"
         :width "341"
         :height "660"}]
-      [picture
-       {:alt "A picture of a smiling Gerald Jay Sussman, who is wearing
-              glasses and a blue plaid shirt."
-        :src "images/speakers/gerald-jay-sussman-300x300.jpg"
-        :width "300"
-        :height "300"}]
-      (let [sussman [utils/external-link
-                     {:href "https://www.csail.mit.edu/person/gerald-sussman"}
-                     "Gerald Jay Sussman"]
-            MIT [:<>
-                 [utils/external-link {:href "https://web.mit.edu/"}
-                  "Massachusetts Institute of Technology"] " ("
-                 [:abbr {:title "Massachusetts Institute of Technology"}
-                  "MIT"] ")"]
-            SICP [utils/external-link
-                  {:href (str "https://mitpress.mit.edu/sites/default/files/"
-                              "sicp/index.html")}
-                  "Structure and Interpretation of Computer Programs"]
-            scheme [utils/external-link
-                    {:href "http://groups.csail.mit.edu/mac/projects/scheme/"}
-                    "Scheme"]]
+      [picture {:alt "A picture of a Alex Miller smiling with some blurry trees
+                      in the background."
+                :src "images/speakers/alex-miller.jpg"
+                :width "300"
+                :height "300"}]
+      (let [alex-miller [utils/external-link
+                         {:href "https://insideclojure.org/"}
+                         "Alex Miller"]
+            nubank [utils/external-link
+                    {:href "https://nubank.com.br/en/"}
+                    "Nubank"]
+            clojure-cli-tools [utils/external-link
+                               {:href "https://clojure.org/guides/deps_and_cli"}
+                               "Clojure CLI tools"]
+            spec [utils/external-link
+                  {:href "https://clojure.org/guides/spec"}
+                  "spec"]
+            many-other-libraries [utils/external-link
+                                  {:href "https://github.com/puredanger"}
+                                  "many other libraries"]
+            clojure-applied [utils/external-link
+                             {:href "https://pragprog.com/titles/vmclojeco/clojure-applied/"}
+                             "Clojure Applied"]
+            programming-clojure [utils/external-link
+                                 {:href "https://pragprog.com/titles/shcloj3/programming-clojure-third-edition/"}
+                                 "Programming Clojure"]
+            clojure-west [utils/external-link {:href ""} "Clojure/west"]
+            strange-loop [utils/external-link {:href ""} "Strange Loop"]]
         [description
-         sussman " is cocreator of the programming
-         language " scheme ", coauthor of the book " SICP ", and the
-         Panasonic Professor of Electrical Engineering at the " MIT "."])
-      [sussman-interview]]
+         alex-miller " has been part of the Clojure core
+         team since 2013 and is now part of " nubank ", where he
+         continues working on Clojure features, the "
+         clojure-cli-tools ", " spec ", and "
+         many-other-libraries ". Alex co-authored the books "
+         clojure-applied " and " programming-clojure " and created the
+         conferences " clojure-west " and " strange-loop "."])]
 
      ;; Wolfram
      [wolfram {:id "wolfram"}
-      [name "Stephen Wolfram"]
-      [wolfram-symbols {:alt "Symbol for Wolfram's Mathematica."
-                        :src "images/mathematica.png"}]
-      [picture {:alt "A picture of Stephen Wolfram (wearing glasses and a blue
-                      shirt) smiles."
-                :src "images/speakers/stephen-wolfram.png"}]
-      (let [wolfram [utils/external-link
-                     {:href "https://www.stephenwolfram.com/"}
-                     "Stephen Wolfram"]
-            mathematica [utils/external-link
-                         {:href "https://www.wolfram.com/mathematica/"}
-                         "Mathematica"]
-            wolfram-alpha [utils/external-link
-                           {:href "http://www.wolframalpha.com/"}
-                           "Wolfram|Alpha"]
-            wolfram-language [utils/external-link
-                              {:href "http://www.wolfram.com/language/"}
-                              "Wolfram Language"]
-            a-new-kind-of-science [utils/external-link
-                                   {:href "https://www.wolframscience.com/"}
-                                   "A New Kind of Science"]
-            CEO [:abbr {:title "Chief Executive Officer"} "CEO"]
-            wolfram-research [utils/external-link
-                              {:href "http://www.wolfram.com/"}
-                              "Wolfram Research"]]
+      [name "James Gosling"]
+      [wolfram-symbols {:alt "A drawing of Duke (the mascot of the Java
+                              programming language) raising one hand."
+                        :src "images/duke.png"}]
+      [picture {:alt "A picture of James Gosling (wearing glasses and with a
+                      white beard) smiling in a sunny day."
+                :src "images/speakers/james-gosling.jpg"}]
+      (let [james-gosling [utils/external-link
+                           {:href "https://en.wikipedia.org/wiki/James_Gosling"}
+                           "James Gosling"]
+            sun-microsystems [utils/external-link
+                              {:href "https://en.wikipedia.org/wiki/Sun_Microsystems_Laboratories"}
+                              "Sun Microsystems"]
+            java [utils/external-link
+                  {:href "http://java.sun.com/"}
+                  "Java language"]
+            emacs [utils/external-link {:href "https://en.wikipedia.org/wiki/Emacs"} "Emacs"]]
         [description
-         wolfram " is the creator of " mathematica ", " wolfram-alpha
-         " and the " wolfram-language "; the author of " a-new-kind-of-science
-         "; and the founder and " CEO " of " wolfram-research "."])]]]))
+         james-gosling " is Distinguished Engineer at Amazon Web Services. When
+        working at " sun-microsystems " he designed and implemented the first
+        version of the " java ". He is also the author of the first " emacs "
+        to run on Unix, parts of which still live in the present version."])]]]))
