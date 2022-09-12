@@ -311,7 +311,9 @@
        [:a.apply {:href "https://sessionize.com/reclojure-2022/"
                   :target "_blank"
                   :rel "noopener"} "Apply"]
-       [:small "Questions? Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"]]]
+       [:small "Questions? Email us at "
+        [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"] " or join our "
+        [:a {:href "https://discord.gg/GJ4hkbWgjF"} "Discord"]]]
       #_[news]
       #_[:aside.meantime
        [:p "Here's the videos from our past edition:"]
