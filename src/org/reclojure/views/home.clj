@@ -65,7 +65,7 @@
               :min-width "min(80vmin, 28rem)"}]
    [:p {:font-size (:font-small design-tokens)
         :line-height 1.6}
-    [:&:last-child {:margin-bottom 0}]]
+    #_[:&:last-child {:margin-bottom 0}]]
    [:at-media {:min-width "40em"}
     {:grid-template-columns "40% 1fr"
      :column-gap "2rem"}
@@ -87,8 +87,9 @@
    [:p {:font-size "2rem"
         :font-weight 700
         :margin-top "1rem"
-        :margin-bottom "1rem"
-        :line-height 1.2}]
+        :margin-block-end 0
+        :line-height 1.2}
+    [(gs/& (gs/nth-child 2)) {:margin-top 0}]]
    [:a {:color c/light-blue}]
    [:.apply {:display "inline-block"
              :padding ".8rem 2rem"
@@ -104,7 +105,8 @@
              :color c/dark-green}]
    [:small {:display "block"
             :margin "1.5rem"
-            :font-size "1.5rem"}]
+            :font-size "1.5rem"}
+    [:span {:display "inline-block"}]]
    [:at-media {:min-width "40em"}
     {:grid-column "span 2"}])
 
@@ -311,9 +313,10 @@
        [:a.apply {:href "https://sessionize.com/reclojure-2022/"
                   :target "_blank"
                   :rel "noopener"} "Apply"]
-       [:small "Questions? Email us at "
-        [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"] " or join our "
-        [:a {:href "https://discord.gg/GJ4hkbWgjF"} "Discord"]]]
+       [:small
+        [:span "Questions? "]
+        [:span "Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"]]
+        [:span " or " [:a {:href "https://discord.gg/GJ4hkbWgjF"} "join our Discord server"] "."]]]
       #_[news]
       #_[:aside.meantime
        [:p "Here's the videos from our past edition:"]
