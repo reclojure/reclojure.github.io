@@ -309,7 +309,7 @@
         " to discuss ideas and work together."]]
       [cfp {:id "cfp"}
        [:p "Want to be " [utils/nowrap "part of the show?"]]
-       [:p "CFP " [utils/nowrap "ends October 9th! ⏳"]]
+       [:p "CFP " [utils/nowrap "ends October 19th! ⏳"]]
        [:a.apply {:href "https://sessionize.com/reclojure-2022/"
                   :target "_blank"
                   :rel "noopener"} "Apply"]
