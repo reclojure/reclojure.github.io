@@ -120,7 +120,7 @@
     (if (str/blank? picture)
       [assets/placeholder-picture {:class pic} (str "picture" (inc index))]
       [pic {:alt (str "A picture of the speaker " speaker ".")
-            :src (str "images/speakers/" picture)
+            :src picture
             :style {:grid-area (str "picture" (inc index))}}])))
 
 ;; Styled elements for each event type
@@ -280,11 +280,11 @@
       [:h3.friday {:style {:padding-left "1.5rem"}}
        [:time {:datetime "2021-12-03"} "Friday"]]
       [events
-       (map time-wrap (partition 2 db/friday-2021) (repeat db/speakers-data))]]
+       (map time-wrap (partition 2 db/friday-2021) (repeat @db/speakers-data))]]
      [day {:style {"--background-color" c/lighter-blue
                    "--accent-color"     c/light-blue
                    "--dark-color"       c/dark-blue
                    "--black-color"      c/copy-blue}}
       [:h3.saturday [:time {:datetime "2021-12-04"} "Saturday"]]
       [events
-       (map time-wrap (partition 2 db/saturday-2021) (repeat db/speakers-data))]]]]))
+       (map time-wrap (partition 2 db/saturday-2021) (repeat @db/speakers-data))]]]]))

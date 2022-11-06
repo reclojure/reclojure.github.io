@@ -1,9 +1,7 @@
 (ns org.reclojure.db
-  (:require [clojure.string :as str]))
+  (:require [org.reclojure.sessionize :refer [speakers]]))
 
-;; can be copied over from db21.clj if needed
-(def speakers-data
-  [])
+(def speakers-data speakers)
 
 (def workshops
   (let [fastmath {:name "Fastmath" :href "https://github.com/generateme/fastmath"}]
@@ -51,7 +49,7 @@
     (map times->datetimes (:saturday schedule))))
 
 (defn get-slug [name]
-  (:slug (first (filter #(= name (:name %)) speakers-data))))
+  (:slug (first (filter #(= name (:name %)) @speakers-data))))
 
 (comment
   ;; Sort talks by index

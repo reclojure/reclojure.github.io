@@ -20,7 +20,7 @@
              [home/page data]]])})
 
 (defn get-speaker [{{:keys [slug]} :path-params :as req}]
-  (let [speaker (first (filter #(= (:slug %) slug) db/speakers-data))]
+  (let [speaker (first (filter #(= (:slug %) slug) @db/speakers-data))]
     {:status 200
      :body {}
      :view (fn [data]
@@ -36,4 +36,4 @@
     {:name ::speaker
      :get {:handler get-speaker}
      :freeze-data-fn (fn [] (mapv (fn [{:keys [slug]}]
-                                    {:slug slug}) db/speakers-data))}]])
+                                    {:slug slug}) @db/speakers-data))}]])

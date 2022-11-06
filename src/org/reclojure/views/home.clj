@@ -212,7 +212,7 @@
    [:<>
     [:a {:href (str "/2021/speaker/" (:slug speaker))}
      [:figure
-      [:img {:src (str "images/speakers/" (:picture speaker))
+      [:img {:src (:picture speaker)
              :alt (str "A picture of " (:name speaker) ".")
              :width "300"
              :height "300"}]
@@ -329,7 +329,7 @@
     ;; Keynotes & Speakers
     [keynotes/keynotes {:id "keynote"}]
 
-    ; [speakers {:id "speakers"} db/speakers-data]
+    [speakers {:id "speakers"} @db/speakers-data]
 
     ; [schedule/schedule {:id "schedule"}]
 
