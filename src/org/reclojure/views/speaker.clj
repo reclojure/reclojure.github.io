@@ -87,7 +87,7 @@
       [speaker
        [pic
         [:img {:alt (str "A picture of " name ".")
-               :src (str "/images/speakers/" picture)}]]
+               :src picture}]]
        [:div.info
         [:h1 name]
         [:p description]

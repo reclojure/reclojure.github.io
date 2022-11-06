@@ -210,7 +210,7 @@
        :margin-bottom "2rem"}]
   ([speaker]
    [:<>
-    [:a {:href (str "/2021/speaker/" (:slug speaker))}
+    [:a {:href (str "/2022/speaker/" (:slug speaker))}
      [:figure
       [:img {:src (:picture speaker)
              :alt (str "A picture of " (:name speaker) ".")
