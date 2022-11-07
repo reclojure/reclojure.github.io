@@ -243,7 +243,6 @@
                    :padding 0}]
   ([_ speakers-list]
    [:<>
-    [:p.pre-title "Confirmed"]
     [:h2 "Speakers"]
     [:ul.speaker-list
      (for [{:keys [picture] :as speaker} speakers-list]
