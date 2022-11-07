@@ -309,10 +309,10 @@
           " to discuss ideas and work together."]]
       [cfp {:id "cfp"}
        [:p "Want to be " [utils/nowrap "part of the show?"]]
-       [:p "CFP " [utils/nowrap "ends October 19th! ⏳"]]
-       [:a.apply {:href "https://sessionize.com/reclojure-2022/"
+       [:p "Grab " [utils/nowrap "your"]]
+       [:a.apply {:href "https://www.meetup.com/london-clojurians/events/289598000/"
                   :target "_blank"
-                  :rel "noopener"} "Apply"]
+                  :rel "noopener"} "Free Ticket"]
        [:small
         [:span "Questions? "]
         [:span "Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"]]
