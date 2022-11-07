@@ -20,7 +20,7 @@
    :flex-basis "20rem"
    :flex-grow 1
    :gap "4rem"
-   
+
    :margin-top "5vmax"
    ;; :border ["1px" "solid" c/light-green]
    ;; :box-shadow [["1rem" "1rem" 0 c/light-green]]
@@ -75,7 +75,7 @@
   (seq (filter #{speaker} speakers)))
 
 (defn get-talks-by-author [speaker]
-  (let [full-schedule (into db/friday-2021 db/saturday-2021)]
+  (let [full-schedule (into db/friday-schedule db/saturday-schedule)]
     (filter #(get-speaker speaker (:speakers %)) full-schedule)))
 
 (defn page [{:keys [name sessions handle link picture description] :as speaker-data}]

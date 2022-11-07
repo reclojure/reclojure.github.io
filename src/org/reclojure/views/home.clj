@@ -331,7 +331,7 @@
 
     [speakers {:id "speakers"} @db/speakers-data]
 
-    [schedule/schedule {:id "schedule"}]
+    #_[schedule/schedule {:id "schedule"}]
 
                                         ; [workshops/workshops {:id "workshops"}]
 

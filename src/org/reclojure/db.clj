@@ -38,13 +38,14 @@
 
 (def friday-schedule
   (->> @sessions
-       (filter #(str/starts-with? (:time-start %) friday))
+       (filter #(when (:time-start %) (str/starts-with? (:time-start %) friday)))
        (concat (:friday schedule))
-       (sort-by :time-start)))
+       (sort-by :time-start)
+       ))
 
 (def saturday-schedule
   (->> @sessions
-       (filter #(str/starts-with? (:time-start %) saturday))
+       (filter #(when (:time:start %) (str/starts-with? (:time-start %) saturday)))
        (concat (:friday schedule))
        (sort-by :time-start)))
 
