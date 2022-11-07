@@ -116,11 +116,11 @@
 ;; `defstyled` but the map is being converted to a string. Possibly
 ;; fixed in later versions.
 (defn make-pic [speaker index speakers-data]
-  (let [picture (:picture (get-speaker-data speaker speakers-data))]
+  (let [picture (:picture speaker)]
     (if (str/blank? picture)
       [assets/placeholder-picture {:class pic} (str "picture" (inc index))]
-      [pic {:alt (str "A picture of the speaker " speaker ".")
-            :src (str "images/speakers/" picture)
+      [pic {:alt (str "A picture of the speaker " (:name speaker) ".")
+            :src picture
             :style {:grid-area (str "picture" (inc index))}}])))
 
 ;; Styled elements for each event type
@@ -157,15 +157,17 @@
     [:<> (map make-pic speakers (range) (repeat speakers-data))]
     [:div.content
      [:h4 title]
+     (println "--------")
+     (println speakers)
      [:p.name
-      (->> (map (fn [speaker]
+      (->> (map (fn [{:keys [slug name] :as speaker}]
                   [:span {:style {:white-space "nowrap"}}
-                   [:a {:href (str "/2021/speaker/" (db/get-slug speaker))}
-                    speaker]
+                   [:a {:href (str "/2022/speaker/" slug )}
+                    name]
                    (when-let [interview (get db/interviews speaker)]
                      (utils/external-link {:href interview
                                            :alt (str "Interview with " speaker ".")}
-                      [mic-wrapper assets/fa-microphone-lines]))])
+                                          [mic-wrapper assets/fa-microphone-lines]))])
                 speakers)
            (interleave (repeat ", "))
            rest)]
@@ -270,7 +272,7 @@
         :padding-left "1.4rem"}]
   ([_]
    [:<>
-    [:p.pre-title "2021"]
+    [:p.pre-title "2022"]
     [:h2 "Schedule"]
     [days
      [day {:style {"--background-color" c/lighter-green
@@ -280,11 +282,11 @@
       [:h3.friday {:style {:padding-left "1.5rem"}}
        [:time {:datetime "2021-12-03"} "Friday"]]
       [events
-       (map time-wrap (partition 2 db/friday-2021) (repeat db/speakers-data))]]
+       (map time-wrap (partition 2 db/friday-schedule) (repeat @db/speakers-data))]]
      [day {:style {"--background-color" c/lighter-blue
                    "--accent-color"     c/light-blue
                    "--dark-color"       c/dark-blue
                    "--black-color"      c/copy-blue}}
       [:h3.saturday [:time {:datetime "2021-12-04"} "Saturday"]]
       [events
-       (map time-wrap (partition 2 db/saturday-2021) (repeat db/speakers-data))]]]]))
+       (map time-wrap (partition 2 db/saturday-schedule) (repeat @db/speakers-data))]]]]))

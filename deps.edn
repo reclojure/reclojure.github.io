@@ -1,8 +1,9 @@
 {:paths ["src" "resources"]
 
  :deps
- {org.clojure/clojure        {:mvn/version "1.10.3"}
+ {org.clojure/clojure        {:mvn/version "1.11.1"}
   lambdaisland/data-printers {:mvn/version "0.0.22"}
+  meander/epsilon            {:mvn/version "0.0.650"}
 
   ;; App setup & config
   integrant/integrant {:mvn/version "0.8.0"}
@@ -20,6 +21,7 @@
   metosin/reitit-http         {:mvn/version "0.5.12"}
   metosin/reitit-interceptors {:mvn/version "0.5.12"}
   ring/ring-jetty-adapter     {:mvn/version "1.9.0"}
+  clj-http/clj-http           {:mvn/version "3.12.3"}
 
   ;; HTTP / CSS (Server-side)
   lambdaisland/webstuff {:git/url "https://github.com/lambdaisland/webstuff"

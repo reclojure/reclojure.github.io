@@ -1,4 +1,4 @@
-(ns org.reclojure.db
+(ns org.reclojure.db21
   (:require [clojure.string :as str]))
 
 (def speakers-data
