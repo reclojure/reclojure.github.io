@@ -11,25 +11,6 @@
       :body
       (json/read-str :key-fn keyword)))
 
-(defn normalize-speakers [{:keys [speakers sessions]}]
-  (let [sessions-by-id (group-by :id sessions)]
-    (map
-     (fn [{:keys [sessions] :as speaker}]
-       (->> sessions
-            (map str)
-            (select-keys sessions-by-id)
-            vals
-            ;; group-by returns a vector of items, but session ids are unique
-            ;; so the vector only has one session
-            (map first)
-            (assoc speaker :sessions)))
-     speakers)))
-
-(defn normalize-sessions [{:keys [speakers sessions]}]
-  ;; we don't really havr the type of session info here
-  ;; is it a Talk, a Panel, or a Keynote?
-  sessions)
-
 (defn to-speaker-data [speaker]
   (transform/match
     speaker
@@ -55,13 +36,47 @@
   (transform/match
     session
     {:description ?description
+     :title ?title
      :startsAt ?starts-at
      :endsAt ?ends-at
      :speakers ?speakers}
     {:description ?description
-     :starts-at ?starts-at
-     :ends-at ?ends-at
+     :type :Talk
+     :title ?title
+     :time-start ?starts-at
+     :time-end ?ends-at
      :speakers ?speakers}))
+
+(defn normalize-speakers [{:keys [speakers sessions]}]
+  (let [sessions-by-id (group-by :id sessions)]
+    (map
+     (fn [{:keys [sessions] :as speaker}]
+       (->> sessions
+            (map str)
+            (select-keys sessions-by-id)
+            vals
+            ;; group-by returns a vector of items, but session ids are unique
+            ;; so the vector only has one session
+            (map first)
+            (assoc speaker :sessions)))
+     speakers)))
+
+(defn normalize-sessions [{:keys [speakers sessions]}]
+  ;; we don't really havr the type of session info here
+  ;; is it a Talk, a Panel, or a Keynote?
+  (let [speakers-by-id (group-by :id speakers)]
+    (map
+     (fn [{:keys [speakers] :as session}]
+       (->> speakers
+            (map str)
+            (select-keys speakers-by-id)
+            vals
+            ;; group-by returns a vector of items, but speaker ids are unique
+            ;; so the vector only has one session
+            (map first)
+            (map to-speaker-data)
+            (assoc session :speakers)))
+     sessions)))
 
 (def raw-api-data
   (->> (fetch-data! "https://sessionize.com/api/v2/3uz6wwyt/view/All"
