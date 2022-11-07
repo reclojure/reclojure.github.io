@@ -5,13 +5,14 @@
    [clojure.string :as str]
    [meander.epsilon :as transform]))
 
-(defn speakers! []
-  (let [{:keys [speakers sessions]}
-        (-> "https://sessionize.com/api/v2/3uz6wwyt/view/All"
-            http/get
-            :body
-            (json/read-str :key-fn keyword))
-        sessions-by-id (group-by :id sessions)]
+(defn fetch-data! [api-url]
+  (-> api-url
+      http/get
+      :body
+      (json/read-str :key-fn keyword)))
+
+(defn normalize-speakers [{:keys [speakers sessions]}]
+  (let [sessions-by-id (group-by :id sessions)]
     (map
      (fn [{:keys [sessions] :as speaker}]
        (->> sessions
@@ -23,6 +24,11 @@
             (map first)
             (assoc speaker :sessions)))
      speakers)))
+
+(defn normalize-sessions [{:keys [speakers sessions]}]
+  ;; we don't really havr the type of session info here
+  ;; is it a Talk, a Panel, or a Keynote?
+  sessions)
 
 (defn to-speaker-data [speaker]
   (transform/match
@@ -45,7 +51,41 @@
      :brief ?tagline
      :description ?bio}))
 
+(defn to-session-data [session]
+  (transform/match
+    session
+    {:description ?description
+     :startsAt ?starts-at
+     :endsAt ?ends-at
+     :speakers ?speakers}
+    {:description ?description
+     :starts-at ?starts-at
+     :ends-at ?ends-at
+     :speakers ?speakers}))
+
+(def raw-api-data
+  (->> (fetch-data! "https://sessionize.com/api/v2/3uz6wwyt/view/All"
+                    ;; test api
+                    #_"https://sessionize.com/api/v2/p80x8jeu/view/All")
+       delay))
+
 (def speakers
-  (->> (speakers!)
+  (->> @raw-api-data
+       normalize-speakers
        (map to-speaker-data)
        delay))
+
+(def sessions
+  (->> @raw-api-data
+       normalize-sessions
+       (map to-session-data)
+       delay))
+
+(comment
+  @raw-api-data
+  @speakers
+  @sessions
+  :starts-at "2022-12-02T09:00:00Z"
+  :ends-at "2022-12-02T09:45:00Z"
+
+  ,)
