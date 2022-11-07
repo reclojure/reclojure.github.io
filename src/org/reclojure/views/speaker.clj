@@ -78,8 +78,9 @@
   (let [full-schedule (into db/friday-2021 db/saturday-2021)]
     (filter #(get-speaker speaker (:speakers %)) full-schedule)))
 
-(defn page [{:keys [name handle link picture description]}]
-  (let [talks (get-talks-by-author name)]
+(defn page [{:keys [name sessions handle link picture description] :as speaker-data}]
+  (println speaker-data)
+  (let []
     [:<>
      [navigation/header
       [navigation/navigation]]
@@ -93,10 +94,10 @@
         [:p description]
         [:p (when handle (str "@" handle))]
         [:p [:a {:href link} link]]]]
-      (for [{:keys [title speakers abstract _time-start]} talks]
+      (for [{:keys [title speakers description _time-start]} sessions]
         [:div
          [talk-title title]
-         [by "By " (str/join " and " speakers)]
+         #_[by "By " (str/join " and " speakers)]
          [video-placeholder
           ;; [:time {:datetime time-start}
           ;;  (case (subs time-start 8 10)
@@ -105,4 +106,4 @@
           ;;    "04" [:span "Saturday, 04/12/2021"
           ;;          [:span (subs time-start 11 16) " UTC"]])]
           ]
-         [abstract* abstract]])]]))
+         [abstract* description]])]]))
