@@ -15,7 +15,7 @@ the development http server at http://localhost:7070
 
 ### Other environments
 
-    clojure -M:dev:cider-nrepl
+    clj -M:dev:cider-nrepl
     (go)
     (cljs-repl)
 

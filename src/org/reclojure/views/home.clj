@@ -330,9 +330,9 @@
 
     [speakers {:id "speakers"} @db/speakers-data]
 
-    #_[schedule/schedule {:id "schedule"}]
+    [schedule/schedule {:id "schedule"}]
 
-                                        ; [workshops/workshops {:id "workshops"}]
+    ; [workshops/workshops {:id "workshops"}]
 
     ;; Sponsors
     #_[sponsors {:id "sponsors"}

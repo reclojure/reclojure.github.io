@@ -1,6 +1,5 @@
 (ns org.reclojure.db
-  (:require [clojure.string :as str]
-            [org.reclojure.sessionize :refer [speakers sessions]]))
+  (:require [org.reclojure.sessionize :as sessionize :refer [speakers]]))
 
 (def friday "2022-12-02")
 (def saturday "2022-12-03")
@@ -37,17 +36,10 @@
      :saturday []}))
 
 (def friday-schedule
-  (->> @sessions
-       (filter #(when (:time-start %) (str/starts-with? (:time-start %) friday)))
-       (concat (:friday schedule))
-       (sort-by :time-start)
-       ))
+  sessionize/friday-schedule)
 
 (def saturday-schedule
-  (->> @sessions
-       (filter #(when (:time:start %) (str/starts-with? (:time-start %) saturday)))
-       (concat (:friday schedule))
-       (sort-by :time-start)))
+  sessionize/saturday-schedule)
 
 (defn get-slug [name]
   (:slug (first (filter #(= name (:name %)) @speakers-data))))
