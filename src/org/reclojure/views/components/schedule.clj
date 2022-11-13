@@ -235,24 +235,27 @@
    {:background-color c/lighter-blue
     :color c/copy-blue}
    [:h4 [:span {:color c/dark-blue}]]]
-  ([{:keys [duration speaker]}]
-   (case speaker
-     "Stephen Wolfram"
+  ([{:keys [duration speaker title]}]
+   (cond
+     (re-find #"Alex Miller" title)
      [:div.keynotes.wolfram
       [:p "Keynote"]
-      [:img {:alt "A picture of Stephen Wolfram (wearing glasses and a blue
-                      shirt) smiles."
-             :src "images/speakers/stephen-wolfram.png"}]
-      [:h4 "Stephen" [:span "Wolfram"]]
+      [:img {:alt "A picture of Alex Miller"
+             :src "images/speakers/alex-miller.png"}]
+      [:h4 "Alex" [:span "Miller"]]
       [:p [:time {:datetime duration} (duration-str duration)]]]
-     "Gerald Jay Sussman"
+     (re-find #"James Gosling" title)
      [:div.keynotes.sussman
       [:p "Keynote"]
-      [:img {:alt "A picture of a smiling Gerald Jay Sussman, who is wearing
-              glasses and a blue plaid shirt."
-             :src "images/speakers/gerald-jay-sussman-300x300.jpg"}]
-      [:h4 "Gerald Jay" [:span "Sussman"]]
-      [:p [:time {:datetime duration} (duration-str duration)]]])))
+      [:img {:alt "A picture of James Gosling"
+             :src "images/speakers/james-gosling.jpg"}]
+      [:h4 "James" [:span "Gosling"]]
+      [:p [:time {:datetime duration} (duration-str duration)]]]
+     :else
+    [:div.keynotes.sussman
+      [:p "Expected Keynote found Error"]
+      [:h4 "Keynote" [:span "Error"]]
+      [:p [:time {:datetime duration} (duration-str duration)]]] )))
 
 (defstyled schedule :section
   {:margin ["13vh" "auto" "20vh"]
