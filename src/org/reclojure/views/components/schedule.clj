@@ -270,10 +270,10 @@
         :font-family "inter, sans-serif"
         :margin "0 0 3rem"
         :padding-left "1.4rem"}]
-  ([_] ;; sessionize HTML component
-    [:script
+  ([_] [:script
      {:type "text/javascript"
-      :src "https://sessionize.com/api/v2/t83b0ouh/view/GridSmart"}])
+      :src "https://sessionize.com/api/v2/t83b0ouh/view/GridSmart"}]
+    ;; sessionize HTML component)
   #_([_] ;; custom schedule currently commented out
    [:<>
     [:p.pre-title "2022"]

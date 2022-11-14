@@ -11,14 +11,23 @@
 (def speakers-data speakers)
 
 (def workshops
-  (let [fastmath {:name "Fastmath" :href "https://github.com/generateme/fastmath"}]
-    [{:title ""
-      :description "",
-      :libraries [fastmath],
-      :presenter "",
-      :length "",
-      :datetimes ["2021-11-13-14:00"]
-      :link ""}]))
+  [
+   {:title "Combining HoneySQL with XTDB ‘Core2’"
+    :description "Core2 is the latest R&D initiative from the XTDB team. The objective is to take the key principles embodied in XTDB 1.x — immutability, schemaless records, and temporal querying — to a mainstream SQL audience. This workshop will explore Core2 concepts through the lens of HoneySQL with bitemporal extensions.",
+    :prerequisites [{:name "VSCode + Calva"}],
+    :presenter "Yehonathan Sharvit",
+    :length "2 hours",
+    :datetimes ["2022-11-30-17:30"]
+    :link ""}
+
+   {:title "Introduction to Data-Oriented Programming in Clojure"
+    :description "Get into the Functional Programming and Data-Oriented Programming mindset. Learn best practices. Build a project following FP and DOP principles. Leverage the REPL for an efficient development workflow.",
+    :prerequisites [{:name ""}],
+    :presenter "Jeremy Taylor",
+    :length "2 hours",
+    :datetimes ["2022-11-30-14:30"]
+    :link "https://www.eventbrite.com/e/xtdb-workshop-reclojure-2022-tickets-445947861057"}
+   ])
 
 (def schedule
   (let [fri (partial make-datetime friday)

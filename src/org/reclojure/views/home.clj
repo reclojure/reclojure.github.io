@@ -332,7 +332,7 @@
 
     [schedule/schedule {:id "schedule"}]
 
-    ; [workshops/workshops {:id "workshops"}]
+    [workshops/workshops {:id "workshops"}]
 
     ;; Sponsors
     #_[sponsors {:id "sponsors"}

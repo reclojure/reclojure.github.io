@@ -90,10 +90,7 @@
 
 (o/defstyled libs :td
   cell
-  [:ul {:max-width "20rem"
-        :list-style "none"
-        :padding 0
-        :margin 0}]
+  [:ul {:max-width "20rem" :list-style "none" :padding 0 :margin 0}]
   [:li {:display "inline"}])
 
 (o/defstyled workshop-title :h3
@@ -189,7 +186,6 @@
         :margin "0 0 3rem"}]
   ([_]
    [:<>
-    [:p.pre-title "Confirmed"]
     [:h2 "Workshops"]
     [table
      [head
@@ -200,16 +196,15 @@
        [th [iconify assets/fa-pen-nib "Title"]]
        [th [iconify assets/fa-paragraph "Description"]]
        [th [iconify assets/fa-chalkboard-user "Presenter"]]
-       [th [iconify assets/fa-book "Libraries" assets/fa-up-right-from-square]]]]
+       [th [iconify assets/fa-book "Prerequisites"]]]]
      [body
       (->> db/workshops
            arrange-by-datetime
-           (map (fn [{:keys [link datetime length title description libraries presenter]}]
+           (map (fn [{:keys [link datetime length title description prerequisites presenter]}]
                   [row
                    [td [iconify assets/fa-up-right-from-square
                         (when link
-                          [utils/external-link {:class "event"
-                                                :href link}
+                          [utils/external-link {:class "event" :href link}
                            [utils/nowrap "Join"]])]]
                    [td {:class "datetime"} [iconify assets/fa-calendar-day (datetime-view datetime)]]
                    [td {:class "duration"} [iconify assets/fa-stopwatch length]]
@@ -223,10 +218,9 @@
                    [libs
                     [iconify assets/fa-book
                      [:ul
-                      (let [lib-link (fn [{:keys [href name]}]
-                                       [:li [utils/external-link {:href href} [utils/nowrap name]]])
-                            linked-libraries (map lib-link libraries)]
+                      (let [prereq (fn [{:keys [name]}] [:li [utils/nowrap name]])
+                            linked-prerequisites (map prereq prerequisites)]
                         (-> ", "
                             repeat
-                            (interleave linked-libraries)
+                            (interleave linked-prerequisites)
                             rest))]]]])))]]]))
