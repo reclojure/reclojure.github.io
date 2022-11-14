@@ -4,7 +4,6 @@
             [org.reclojure.views.-colors :as c]
             [org.reclojure.db :as db]
             [clojure.string :as str]
-            [garden.selectors :as gs]
             [org.reclojure.views.utils :as utils]))
 
 ;; Utils
@@ -19,9 +18,9 @@
 
 (declare talk panel-and-break interlude keynote)
 
-(defn make-event [event speakers]
+(defn make-event [event]
   (case (:type event)
-    :Talk      (talk event speakers)
+    :Talk      (talk event)
     :Panel     (panel-and-break :Panel event)
     :Break     (panel-and-break :Break event)
     :Interlude (interlude event)
@@ -36,7 +35,7 @@
    :color "var(--black-color)"}
   [:.time {:background-color c/white
           :padding "0.8rem 2.5rem"}]
-  ([_ [event1 event2] speakers]
+  ([_ [event1 event2]]
    (let [time-start1 (:time-start event1)
          time-end1 (:time-end event1)
          time-start2 (:time-start event2)
@@ -48,16 +47,16 @@
                 (= (:type event2) :Keynote)))
        [:<>
         [:p.time [:time {:datetime time-start1} (time-str time-start1)]]
-        (make-event event1 speakers)
+        (make-event event1)
         [:p.time [:time {:datetime time-end1} (time-str time-end1)]]
         [:p.time [:time {:datetime time-start2} (time-str time-start2)]]
-        (make-event event2 speakers)
+        (make-event event2)
         [:p.time [:time {:datetime time-end2} (time-str time-end2)]]]
        :else
        [:<>
         [:p.time [:time {:datetime time-start1} (time-str time-start1)]]
-        (make-event event1 speakers)
-        (make-event event2 speakers)
+        (make-event event1)
+        (make-event event2)
         [:p.time [:time {:datetime time-end2} (time-str time-end2)]]]))))
 
 ;; Containers
@@ -115,7 +114,7 @@
 ;; FIXME: This should work with `ornament` in the above `pic`
 ;; `defstyled` but the map is being converted to a string. Possibly
 ;; fixed in later versions.
-(defn make-pic [speaker index speakers-data]
+(defn make-pic [speaker index]
   (let [picture (:picture speaker)]
     (if (str/blank? picture)
       [assets/placeholder-picture {:class pic} (str "picture" (inc index))]
@@ -152,13 +151,11 @@
         :text-decoration [["2px" "underline" "var(--dark-color)"]]}]]
   [:time {:display "block"
           :grid-area "duration"}]
-  ([{:keys [duration title speakers #_tags #_abstract]} speakers-data]
+  ([{:keys [duration title speakers #_tags #_abstract]}]
    [:<>
-    [:<> (map make-pic speakers (range) (repeat speakers-data))]
+    [:<> (map make-pic speakers (range))]
     [:div.content
      [:h4 title]
-     (println "--------")
-     (println speakers)
      [:p.name
       (->> (map (fn [{:keys [slug name] :as speaker}]
                   [:span {:style {:white-space "nowrap"}}
@@ -238,24 +235,27 @@
    {:background-color c/lighter-blue
     :color c/copy-blue}
    [:h4 [:span {:color c/dark-blue}]]]
-  ([{:keys [duration speaker]}]
-   (case speaker
-     "Stephen Wolfram"
+  ([{:keys [duration speaker title]}]
+   (cond
+     (re-find #"Alex Miller" title)
      [:div.keynotes.wolfram
       [:p "Keynote"]
-      [:img {:alt "A picture of Stephen Wolfram (wearing glasses and a blue
-                      shirt) smiles."
-             :src "images/speakers/stephen-wolfram.png"}]
-      [:h4 "Stephen" [:span "Wolfram"]]
+      [:img {:alt "A picture of Alex Miller"
+             :src "images/speakers/alex-miller.png"}]
+      [:h4 "Alex" [:span "Miller"]]
       [:p [:time {:datetime duration} (duration-str duration)]]]
-     "Gerald Jay Sussman"
+     (re-find #"James Gosling" title)
      [:div.keynotes.sussman
       [:p "Keynote"]
-      [:img {:alt "A picture of a smiling Gerald Jay Sussman, who is wearing
-              glasses and a blue plaid shirt."
-             :src "images/speakers/gerald-jay-sussman-300x300.jpg"}]
-      [:h4 "Gerald Jay" [:span "Sussman"]]
-      [:p [:time {:datetime duration} (duration-str duration)]]])))
+      [:img {:alt "A picture of James Gosling"
+             :src "images/speakers/james-gosling.jpg"}]
+      [:h4 "James" [:span "Gosling"]]
+      [:p [:time {:datetime duration} (duration-str duration)]]]
+     :else
+    [:div.keynotes.sussman
+      [:p "Expected Keynote found Error"]
+      [:h4 "Keynote" [:span "Error"]]
+      [:p [:time {:datetime duration} (duration-str duration)]]] )))
 
 (defstyled schedule :section
   {:margin ["13vh" "auto" "20vh"]
@@ -270,7 +270,11 @@
         :font-family "inter, sans-serif"
         :margin "0 0 3rem"
         :padding-left "1.4rem"}]
-  ([_]
+  ([_] ;; sessionize HTML component
+    [:script
+     {:type "text/javascript"
+      :src "https://sessionize.com/api/v2/t83b0ouh/view/GridSmart"}])
+  #_([_] ;; custom schedule currently commented out
    [:<>
     [:p.pre-title "2022"]
     [:h2 "Schedule"]
@@ -280,13 +284,14 @@
                    "--dark-color"       c/dark-green
                    "--black-color"      c/darker-green}}
       [:h3.friday {:style {:padding-left "1.5rem"}}
-       [:time {:datetime "2021-12-03"} "Friday"]]
+       [:time {:datetime "2022-12-02"} "Friday"]]
       [events
-       (map time-wrap (partition 2 db/friday-schedule) (repeat @db/speakers-data))]]
+       (map time-wrap (partition 2 @db/friday-schedule))]]
      [day {:style {"--background-color" c/lighter-blue
                    "--accent-color"     c/light-blue
                    "--dark-color"       c/dark-blue
                    "--black-color"      c/copy-blue}}
-      [:h3.saturday [:time {:datetime "2021-12-04"} "Saturday"]]
+      [:h3.saturday [:time {:datetime "2022-12-03"} "Saturday"]]
       [events
-       (map time-wrap (partition 2 db/saturday-schedule) (repeat @db/speakers-data))]]]]))
+       (map time-wrap (partition 2 @db/saturday-schedule))]]]])
+  )

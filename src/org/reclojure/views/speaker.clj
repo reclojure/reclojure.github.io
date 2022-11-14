@@ -75,7 +75,7 @@
   (seq (filter #{speaker} speakers)))
 
 (defn get-talks-by-author [speaker]
-  (let [full-schedule (into db/friday-schedule db/saturday-schedule)]
+  (let [full-schedule (into @db/friday-schedule @db/saturday-schedule)]
     (filter #(get-speaker speaker (:speakers %)) full-schedule)))
 
 (defn page [{:keys [name sessions handle link picture description] :as speaker-data}]
