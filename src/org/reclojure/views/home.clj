@@ -330,8 +330,7 @@
 
     [speakers {:id "speakers"} @db/speakers-data]
 
-    ; [schedule/schedule {:id "schedule"}]
-    [:script {:type "text/javascript" :src "https://sessionize.com/api/v2/t83b0ouh/view/GridSmart"}]
+    [schedule/schedule {:id "schedule"}]
 
     ; [workshops/workshops {:id "workshops"}]
 
