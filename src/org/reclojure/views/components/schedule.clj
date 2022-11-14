@@ -255,7 +255,7 @@
     [:div.keynotes.sussman
       [:p "Expected Keynote found Error"]
       [:h4 "Keynote" [:span "Error"]]
-      [:p [:time {:datetime duration} (duration-str duration)]]] )))
+      [:p [:time {:datetime duration} (duration-str duration)]]])))
 
 (defstyled schedule :section
   {:margin ["13vh" "auto" "20vh"]
@@ -274,24 +274,24 @@
      {:type "text/javascript"
       :src "https://sessionize.com/api/v2/t83b0ouh/view/GridSmart"}]
     ;; sessionize HTML component)
-  #_([_] ;; custom schedule currently commented out
-   [:<>
-    [:p.pre-title "2022"]
-    [:h2 "Schedule"]
-    [days
-     [day {:style {"--background-color" c/lighter-green
-                   "--accent-color"     c/light-green
-                   "--dark-color"       c/dark-green
-                   "--black-color"      c/darker-green}}
-      [:h3.friday {:style {:padding-left "1.5rem"}}
-       [:time {:datetime "2022-12-02"} "Friday"]]
-      [events
-       (map time-wrap (partition 2 @db/friday-schedule))]]
-     [day {:style {"--background-color" c/lighter-blue
-                   "--accent-color"     c/light-blue
-                   "--dark-color"       c/dark-blue
-                   "--black-color"      c/copy-blue}}
-      [:h3.saturday [:time {:datetime "2022-12-03"} "Saturday"]]
-      [events
-       (map time-wrap (partition 2 @db/saturday-schedule))]]]])
-  )
+  ; ([_] ;; custom schedule currently commented out
+  ;  [:<>
+  ;   [:p.pre-title "2022"]
+  ;   [:h2 "Schedule"]
+  ;   [days
+  ;    [day {:style {"--background-color" c/lighter-green
+  ;                  "--accent-color"     c/light-green
+  ;                  "--dark-color"       c/dark-green
+  ;                  "--black-color"      c/darker-green}}
+  ;     [:h3.friday {:style {:padding-left "1.5rem"}}
+  ;      [:time {:datetime "2022-12-02"} "Friday"]]
+  ;     [events
+  ;      (map time-wrap (partition 2 @db/friday-schedule))]]
+  ;    [day {:style {"--background-color" c/lighter-blue
+  ;                  "--accent-color"     c/light-blue
+  ;                  "--dark-color"       c/dark-blue
+  ;                  "--black-color"      c/copy-blue}}
+  ;     [:h3.saturday [:time {:datetime "2022-12-03"} "Saturday"]]
+  ;     [events
+  ;      (map time-wrap (partition 2 @db/saturday-schedule))]]]])
+  ))
