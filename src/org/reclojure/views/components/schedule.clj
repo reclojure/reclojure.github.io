@@ -237,13 +237,13 @@
    {:background-color c/lighter-blue
     :color c/copy-blue}
    [:h4 [:span {:color c/dark-blue}]]]
-  ([{:keys [duration speaker title]}]
+  ([{:keys [duration title]}]
    (cond
      (re-find #"Alex Miller" title)
      [:div.keynotes.wolfram
       [:p "Keynote"]
       [:img {:alt "A picture of Alex Miller"
-             :src "images/speakers/alex-miller.png"}]
+             :src "images/speakers/alex-miller.jpg"}]
       [:h4 "Alex" [:span "Miller"]]
       [:p [:time {:datetime duration} (duration-str duration)]]]
      (re-find #"James Gosling" title)
