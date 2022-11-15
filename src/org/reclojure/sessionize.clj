@@ -3,7 +3,8 @@
    [clj-http.client :as http]
    [clojure.data.json :as json]
    [clojure.string :as str]
-   [meander.epsilon :as t]))
+   [meander.epsilon :as t])
+  (:import (java.time Instant Duration)))
 
 (defn fetch-data! [api-url]
   (-> api-url
@@ -67,7 +68,8 @@
                :else :Panel)
        :time-start ?startsAt
        :time-end ?endsAt
-       :duration 25
+       :duration (.toMinutes (Duration/between (Instant/parse ?startsAt)
+                                               (Instant/parse ?endsAt)))
        :title ?title
        :speakers ?speakers
        :tags ?categories
@@ -153,7 +155,8 @@
   @endpoint-all
   @speakers
   @sessions
-  :starts-at "2022-12-02T09:00:00Z"
-  :ends-at "2022-12-02T09:45:00Z"
-
+  @friday-schedule
+  (def tt  {:starts-at "2022-12-02T09:00:00Z"
+            :ends-at "2022-12-02T09:45:00Z"})
+  (java.time.Instant/parse (:starts-at tt))
   ,)
