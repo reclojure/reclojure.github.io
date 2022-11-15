@@ -43,8 +43,20 @@ other local web server will probably do.
 
 ## Deploy
 
-Merge the project with the generated output into master and it will be
-published live.
+Merge your commits into master and it will be published live automatically by
+gh-action.
+
+This is how the deploy works:
+- github action gets triggered
+- it calls the `-X:freeze` command which use reitit-jaatya to build the latest
+  site - atm it's the 2022 version
+- it creates a static site out of the sessionize and `db.clj` data and spits it
+  out into `_site`
+- then it copies the the `2021` folder in root to `_site`. This folder is a
+  "BUILT" snapshot, we shouldn't edit this anymore
+- finally gh-actions will copy all the contents of `_site` to a branch
+  `gh-pages`
+- this branch is what gets displayed on reclojure.org
 
 ## Cleanup
 
