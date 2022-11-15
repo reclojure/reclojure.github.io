@@ -50,28 +50,28 @@
 (defn to-slot-data [index]
   (fn [slot]
     (t/match slot
-             {:description ?description
-              :speakers ?speakers
-              :startsAt ?startsAt
-              :endsAt ?endsAt
-              :isServiceSession ?isServiceSession
-              :title ?title
-              :categories ?categories}
-             {:index index
-              :type (cond
-                     (not ?isServiceSession) :Talk
-                     (re-find #"(?i)keynote" ?title) :Keynote
-                     (re-find #"(?i)interlude" ?title) :Interlude
-                     (re-find #"(?i)opening" ?title) :Interlude
-                     (re-find #"(?i)break" ?title) :Break
-                     :else :Panel)
-              :time-start ?startsAt
-              :time-end ?endsAt
-              :duration 25
-              :title ?title
-              :speakers ?speakers
-              :tags ?categories
-              :abstract ?description})))
+      {:description ?description
+       :speakers ?speakers
+       :startsAt ?startsAt
+       :endsAt ?endsAt
+       :isServiceSession ?isServiceSession
+       :title ?title
+       :categories ?categories}
+      {:index index
+       :type (cond
+               (not ?isServiceSession) :Talk
+               (re-find #"(?i)keynote" ?title) :Keynote
+               (re-find #"(?i)interlude" ?title) :Interlude
+               (re-find #"(?i)opening" ?title) :Interlude
+               (re-find #"(?i)break" ?title) :Break
+               :else :Panel)
+       :time-start ?startsAt
+       :time-end ?endsAt
+       :duration 25
+       :title ?title
+       :speakers ?speakers
+       :tags ?categories
+       :abstract ?description})))
 
 (defn normalize-speakers [{:keys [speakers sessions]}]
   (let [sessions-by-id (group-by :id sessions)]
@@ -137,7 +137,7 @@
        first
        :timeSlots
        (map (normalize-slot @speakers))
-       (map #(get-in % [:rooms 0 :session]))
+       #_(map #(get-in % [:rooms 0 :session]))
        (map (to-slot-data 1))
        delay))
 
