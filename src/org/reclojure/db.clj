@@ -12,7 +12,7 @@
 
 (def workshops
   [
-   {:title "Combining HoneySQL with XTDB ‘Core2’"
+   {:title "Combining HoneySQL with XTDB Core2"
     :description "Core2 is the latest R&D initiative from the XTDB team. The objective is to take the key principles embodied in XTDB 1.x — immutability, schemaless records, and temporal querying — to a mainstream SQL audience. This workshop will explore Core2 concepts through the lens of HoneySQL with bitemporal extensions.",
     :prerequisites [{:name ""}],
     :presenter "Jeremy Taylor",
