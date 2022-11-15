@@ -7,7 +7,7 @@ clean:
 build: clean
 	mkdir -p _site/
 	cp -r old_site _site/
-	cp -r 2022 _site/
+	cp -r 2021 _site/
 	npx shadow-cljs release main
 	clojure -A:dev -X:freeze
 	cp -r resources/public/* _site/
