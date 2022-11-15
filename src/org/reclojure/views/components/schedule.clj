@@ -272,12 +272,13 @@
         :font-family "inter, sans-serif"
         :margin "0 0 3rem"
         :padding-left "1.4rem"}]
-  #_([_] [:script
-          {:type "text/javascript"
-           :src "https://sessionize.com/api/v2/t83b0ouh/view/GridSmart"}]
+  #_([_]
      ;; sessionize HTML component
-     )
-  ([_] ;; custom schedule currently commented out
+     [:script
+      {:type "text/javascript"
+       :src "https://sessionize.com/api/v2/t83b0ouh/view/GridSmart"}])
+  ([_]
+   ;; custom schedule component
    [:<>
     [:p.pre-title "2022"]
     [:h2 "Schedule"]
@@ -296,5 +297,4 @@
                    "--black-color"      c/copy-blue}}
       [:h3.saturday [:time {:datetime "2022-12-03"} "Saturday"]]
       [events
-       (map time-wrap (partition-all 2 @db/saturday-schedule))]]]])
-  )
+       (map time-wrap (partition-all 2 @db/saturday-schedule))]]]]))
