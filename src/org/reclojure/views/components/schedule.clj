@@ -272,12 +272,12 @@
         :font-family "inter, sans-serif"
         :margin "0 0 3rem"
         :padding-left "1.4rem"}]
-  #_([_]
+  ([_]
      ;; sessionize HTML component
      [:script
       {:type "text/javascript"
        :src "https://sessionize.com/api/v2/t83b0ouh/view/GridSmart"}])
-  ([_]
+  #_([_]
    ;; custom schedule component
    [:<>
     [:p.pre-title "2022"]
