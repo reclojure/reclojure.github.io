@@ -24,7 +24,8 @@
     :Panel     (panel-and-break :Panel event)
     :Break     (panel-and-break :Break event)
     :Interlude (interlude event)
-    :Keynote   (keynote event)))
+    :Keynote   (keynote event)
+    nil))
 
 (defstyled time-wrap :div
   {:background
@@ -34,7 +35,7 @@
    :margin-bottom "2rem"
    :color "var(--black-color)"}
   [:.time {:background-color c/white
-          :padding "0.8rem 2.5rem"}]
+           :padding "0.8rem 2.5rem"}]
   ([_ [event1 event2]]
    (let [time-start1 (:time-start event1)
          time-end1 (:time-end event1)
@@ -56,8 +57,9 @@
        [:<>
         [:p.time [:time {:datetime time-start1} (time-str time-start1)]]
         (make-event event1)
-        (make-event event2)
-        [:p.time [:time {:datetime time-end2} (time-str time-end2)]]]))))
+        (when event2
+          (make-event event2)
+          [:p.time [:time {:datetime time-end2} (time-str time-end2)]])]))))
 
 ;; Containers
 
@@ -235,13 +237,13 @@
    {:background-color c/lighter-blue
     :color c/copy-blue}
    [:h4 [:span {:color c/dark-blue}]]]
-  ([{:keys [duration speaker title]}]
+  ([{:keys [duration title]}]
    (cond
      (re-find #"Alex Miller" title)
      [:div.keynotes.wolfram
       [:p "Keynote"]
       [:img {:alt "A picture of Alex Miller"
-             :src "images/speakers/alex-miller.png"}]
+             :src "images/speakers/alex-miller.jpg"}]
       [:h4 "Alex" [:span "Miller"]]
       [:p [:time {:datetime duration} (duration-str duration)]]]
      (re-find #"James Gosling" title)
@@ -252,7 +254,7 @@
       [:h4 "James" [:span "Gosling"]]
       [:p [:time {:datetime duration} (duration-str duration)]]]
      :else
-    [:div.keynotes.sussman
+     [:div.keynotes.sussman
       [:p "Expected Keynote found Error"]
       [:h4 "Keynote" [:span "Error"]]
       [:p [:time {:datetime duration} (duration-str duration)]]])))
@@ -270,28 +272,29 @@
         :font-family "inter, sans-serif"
         :margin "0 0 3rem"
         :padding-left "1.4rem"}]
-  ([_] [:script
-     {:type "text/javascript"
-      :src "https://sessionize.com/api/v2/t83b0ouh/view/GridSmart"}]
-    ;; sessionize HTML component)
-  ; ([_] ;; custom schedule currently commented out
-  ;  [:<>
-  ;   [:p.pre-title "2022"]
-  ;   [:h2 "Schedule"]
-  ;   [days
-  ;    [day {:style {"--background-color" c/lighter-green
-  ;                  "--accent-color"     c/light-green
-  ;                  "--dark-color"       c/dark-green
-  ;                  "--black-color"      c/darker-green}}
-  ;     [:h3.friday {:style {:padding-left "1.5rem"}}
-  ;      [:time {:datetime "2022-12-02"} "Friday"]]
-  ;     [events
-  ;      (map time-wrap (partition 2 @db/friday-schedule))]]
-  ;    [day {:style {"--background-color" c/lighter-blue
-  ;                  "--accent-color"     c/light-blue
-  ;                  "--dark-color"       c/dark-blue
-  ;                  "--black-color"      c/copy-blue}}
-  ;     [:h3.saturday [:time {:datetime "2022-12-03"} "Saturday"]]
-  ;     [events
-  ;      (map time-wrap (partition 2 @db/saturday-schedule))]]]])
-  ))
+  #_([_]
+     ;; sessionize HTML component
+     [:script
+      {:type "text/javascript"
+       :src "https://sessionize.com/api/v2/t83b0ouh/view/GridSmart"}])
+  ([_]
+   ;; custom schedule component
+   [:<>
+    [:p.pre-title "2022"]
+    [:h2 "Schedule"]
+    [days
+     [day {:style {"--background-color" c/lighter-green
+                   "--accent-color"     c/light-green
+                   "--dark-color"       c/dark-green
+                   "--black-color"      c/darker-green}}
+      [:h3.friday {:style {:padding-left "1.5rem"}}
+       [:time {:datetime "2022-12-02"} "Friday"]]
+      [events
+       (map time-wrap (partition-all 2 @db/friday-schedule))]]
+     [day {:style {"--background-color" c/lighter-blue
+                   "--accent-color"     c/light-blue
+                   "--dark-color"       c/dark-blue
+                   "--black-color"      c/copy-blue}}
+      [:h3.saturday [:time {:datetime "2022-12-03"} "Saturday"]]
+      [events
+       (map time-wrap (partition-all 2 @db/saturday-schedule))]]]]))

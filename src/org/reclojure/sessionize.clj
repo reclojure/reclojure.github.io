@@ -3,7 +3,8 @@
    [clj-http.client :as http]
    [clojure.data.json :as json]
    [clojure.string :as str]
-   [meander.epsilon :as t]))
+   [meander.epsilon :as t])
+  (:import (java.time Instant Duration)))
 
 (defn fetch-data! [api-url]
   (-> api-url
@@ -50,28 +51,29 @@
 (defn to-slot-data [index]
   (fn [slot]
     (t/match slot
-             {:description ?description
-              :speakers ?speakers
-              :startsAt ?startsAt
-              :endsAt ?endsAt
-              :isServiceSession ?isServiceSession
-              :title ?title
-              :categories ?categories}
-             {:index index
-              :type (cond
-                     (not ?isServiceSession) :Talk
-                     (re-find #"(?i)keynote" ?title) :Keynote
-                     (re-find #"(?i)interlude" ?title) :Interlude
-                     (re-find #"(?i)opening" ?title) :Interlude
-                     (re-find #"(?i)break" ?title) :Break
-                     :else :Panel)
-              :time-start ?startsAt
-              :time-end ?endsAt
-              :duration 25
-              :title ?title
-              :speakers ?speakers
-              :tags ?categories
-              :abstract ?description})))
+      {:description ?description
+       :speakers ?speakers
+       :startsAt ?startsAt
+       :endsAt ?endsAt
+       :isServiceSession ?isServiceSession
+       :title ?title
+       :categories ?categories}
+      {:index index
+       :type (cond
+               (not ?isServiceSession) :Talk
+               (re-find #"(?i)keynote" ?title) :Keynote
+               (re-find #"(?i)interlude" ?title) :Interlude
+               (re-find #"(?i)opening" ?title) :Interlude
+               (re-find #"(?i)break" ?title) :Break
+               :else :Panel)
+       :time-start ?startsAt
+       :time-end ?endsAt
+       :duration (.toMinutes (Duration/between (Instant/parse ?startsAt)
+                                               (Instant/parse ?endsAt)))
+       :title ?title
+       :speakers ?speakers
+       :tags ?categories
+       :abstract ?description})))
 
 (defn normalize-speakers [{:keys [speakers sessions]}]
   (let [sessions-by-id (group-by :id sessions)]
@@ -137,7 +139,7 @@
        first
        :timeSlots
        (map (normalize-slot @speakers))
-       (map #(get-in % [:rooms 0 :session]))
+       #_(map #(get-in % [:rooms 0 :session]))
        (map (to-slot-data 1))
        delay))
 
@@ -153,7 +155,8 @@
   @endpoint-all
   @speakers
   @sessions
-  :starts-at "2022-12-02T09:00:00Z"
-  :ends-at "2022-12-02T09:45:00Z"
-
+  @friday-schedule
+  (def tt  {:starts-at "2022-12-02T09:00:00Z"
+            :ends-at "2022-12-02T09:45:00Z"})
+  (java.time.Instant/parse (:starts-at tt))
   ,)
