@@ -312,10 +312,14 @@
        [:a.apply {:href "https://www.meetup.com/london-clojurians/events/289598000/"
                   :target "_blank"
                   :rel "noopener"} "Free Ticket"]
+       [:p "Join " [utils/nowrap "our"]]
+       [:a.apply {:href "https://discord.gg/dgn95zvqtB"
+                  :target "_blank"
+                  :rel "noopener"} "Discord Server"]
+       [:p "For the best experience"]
        [:small
         [:span "Questions? "]
-        [:span "Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"]]
-        [:span " or " [:a {:href "https://discord.gg/GJ4hkbWgjF"} "join our Discord server"] "."]]]
+        [:span "Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"] "or @organizers in the discord channel"]]]
       #_[news]
       #_[:aside.meantime
          [:p "Here's the videos from our past edition:"]
