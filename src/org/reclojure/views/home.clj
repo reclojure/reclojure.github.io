@@ -307,15 +307,15 @@
           [utils/highlight {:style {:text-shadow "0 0 .05em"}} "organizers@reclojure.org"]
           " to discuss ideas and work together."]]
       [cfp {:id "cfp"}
-       [:p "Want to be " [utils/nowrap "part of the show?"]]
-       [:p "Grab " [utils/nowrap "your"]]
-       [:a.apply {:href "https://www.meetup.com/london-clojurians/events/289598000/"
+       [:a.apply {:href   "https://www.meetup.com/london-clojurians/events/289598000/"
                   :target "_blank"
-                  :rel "noopener"} "Free Ticket"]
+                  :rel    "noopener"} "Register for a Free Ticket"]
+       [:a.apply {:href   "https://discord.gg/dgn95zvqtB"
+                  :target "_blank"
+                  :rel    "noopener"} "Join our Discord Server"]
        [:small
         [:span "Questions? "]
-        [:span "Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"]]
-        [:span " or " [:a {:href "https://discord.gg/GJ4hkbWgjF"} "join our Discord server"] "."]]]
+        [:span "Email us at " [:a {:href "mailto:cfp@reclojure.org"} "cfp@reclojure.org"] " or @organizers in the discord channel"]]]
       #_[news]
       #_[:aside.meantime
          [:p "Here's the videos from our past edition:"]
