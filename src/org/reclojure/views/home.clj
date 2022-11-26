@@ -139,7 +139,7 @@
   ; [:.healthunlocked {}]
   [:.freshcode {:max-height "13rem"
                 :height "100%"}]
-  [:.flexiana {:max-height "15rem"
+  [:.flexiana {:max-height "13rem"
                :height "100%"}]
   [:.gaiwan {:height "6rem"
              :width "100%"}]
