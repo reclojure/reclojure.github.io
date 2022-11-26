@@ -134,15 +134,18 @@
   [:img {:padding "1rem"
          :max-height "8rem"}]
   [:.juxt {:max-height "9rem"}]
-  [:.nu {:max-height "9rem"
-         :width "100%"}]
-  [:.healthunlocked {}]
+  ; [:.nu {:max-height "9rem"
+  ;        :width "100%"}]
+  ; [:.healthunlocked {}]
   [:.freshcode {:max-height "13rem"
                 :height "100%"}]
+  [:.flexiana {:max-height "15rem"
+               :height "100%"}]
   [:.gaiwan {:height "6rem"
              :width "100%"}]
-  [:.hyde {:max-height "13rem"
-           :height "100%"}])
+  ; [:.hyde {:max-height "13rem"
+  ;          :height "100%"}]
+  )
 
 (defstyled speaker-card :li
   {;;:background-color c/white
@@ -335,7 +338,7 @@
     [workshops/workshops {:id "workshops"}]
 
     ;; Sponsors
-    #_[sponsors {:id "sponsors"}
+    [sponsors {:id "sponsors"}
        [:h2 "Thanks to our lovely sponsors"]
        [logos
         [:a {:href "https://www.juxt.pro" :target "_blank" :rel "noopener"}
@@ -343,16 +346,16 @@
                      :src "images/sponsors/juxt-mod.svg"
                      :width "375"
                      :height "128"}]]
-        [:a {:href "https://nubank.com.br/en/" :target "_blank" :rel "noopener"}
-         [:img.nu {:alt "Logo for NuBank"
-                   :src "images/sponsors/nu.png"
-                   :width "320"
-                   :height "158"}]]
-        [:a {:href "https://healthunlocked.com" :target "_blank" :rel "noopener"}
-         [:img.healthunlocked {:alt "Logo for HealthUnlocked."
-                               :src "images/sponsors/healthunlocked.svg"
-                               :width "862"
-                               :height "113"}]]
+        ; [:a {:href "https://nubank.com.br/en/" :target "_blank" :rel "noopener"}
+        ;  [:img.nu {:alt "Logo for NuBank"
+        ;            :src "images/sponsors/nu.png"
+        ;            :width "320"
+        ;            :height "158"}]]
+        ; [:a {:href "https://healthunlocked.com" :target "_blank" :rel "noopener"}
+        ;  [:img.healthunlocked {:alt "Logo for HealthUnlocked."
+        ;                        :src "images/sponsors/healthunlocked.svg"
+        ;                        :width "862"
+        ;                        :height "113"}]]
         [:a {:href "https://gaiwan.co" :target "_blank" :rel "noopener"}
          [:svg.gaiwan { :width "390.236" :height "75.266" :viewBox "0 0 103.25 19.914" :xmlns "http://www.w3.org/2000/svg"}
           [:g {:transform "translate(62.858 -64.577)" :style "shape-inside:url(#rect841);white-space:pre" :aria-label "Gaiwan"}
@@ -360,8 +363,12 @@
         [:a {:href "https://freshcodeit.com/" :target "_blank" :rel "noopener"}
          [:img.freshcode {:alt "Logo for Freshcode."
                           :src "images/sponsors/freshcode.png"}]]
-        [:a {:href "https://www.hyde-housing.co.uk/" :target "_blank" :rel "noopener"}
-         [:img.hyde {:alt "Logo for Hyde"
-                     :src "images/sponsors/hyde-logo-mod.png"}]]]]
+        [:a {:href "https://flexiana.com" :target "_blank" :rel "noopener"}
+         [:img.flexiana {:alt "Logo for Flexiana."
+                          :src "images/sponsors/flexiana.png"}]]
+        ; [:a {:href "https://www.hyde-housing.co.uk/" :target "_blank" :rel "noopener"}
+        ;  [:img.hyde {:alt "Logo for Hyde"
+        ;              :src "images/sponsors/hyde-logo-mod.png"}]]
+        ]]
     [:p {:style {:text-align "center"}} "Follow us on Twitter " (utils/external-link {:href "https://twitter.com/reclojure"} "@reclojure")]
     ]])
