@@ -12,6 +12,13 @@
 
 (def workshops
   [
+   {:title "Moldable Live Programming with Clerk"
+    :description "Clerk is an open source programmer's assistant for Clojure that combines the advantages of notebooks like Jupyter, Smalltalk-style Moldable Development, and using one's favorite editor. In this workshop, you'll learn how you can use Clerk to complement the REPL. We'll embark on a tour through the use cases enabled by it – from data analysis, generative art, moldable documentation to small local-first apps – all with very little code. You will learn how Clerk works under the hood and how you can leverage its open toolbox design to extend it to your problem at hand. This workshop is intended for intermediate and advanced Clojure programmers.",
+    :prerequisites [{:name ""}],
+    :presenter "Martin Kavalar",
+    :length "1.5 hours",
+    :datetimes ["2022-12-08-17:30"]
+    :link "https://www.meetup.com/london-clojurians/events/290062595/"}
    {:title "Combining HoneySQL with XTDB Core2"
     :description "Core2 is the latest R&D initiative from the XTDB team. The objective is to take the key principles embodied in XTDB 1.x — immutability, schemaless records, and temporal querying — to a mainstream SQL audience. This workshop will explore Core2 concepts through the lens of HoneySQL with bitemporal extensions.",
     :prerequisites [{:name ""}],
