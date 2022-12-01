@@ -142,6 +142,8 @@
   [:.flexiana {:height "100%"}]
   [:.gaiwan {:height "6rem"
              :width "100%"}]
+  [:.nette {:max-height "10rem"}]
+  ["a:has(.nette)" {:grid-column "1 / -1"}]
   ; [:.hyde {:max-height "13rem"
   ;          :height "100%"}]
   )
@@ -364,7 +366,10 @@
                           :src "images/sponsors/freshcode.png"}]]
         [:a {:href "https://flexiana.com" :target "_blank" :rel "noopener"}
          [:img.flexiana {:alt "Logo for Flexiana."
-                          :src "images/sponsors/flexiana.png"}]]
+                         :src "images/sponsors/flexiana.png"}]]
+        [:a {:href "https://nette.io" :target "_blank" :rel "noopener"}
+         [:img.nette {:alt "Logo for Nette."
+                      :src "images/sponsors/netteio.png"}]]
         ; [:a {:href "https://www.hyde-housing.co.uk/" :target "_blank" :rel "noopener"}
         ;  [:img.hyde {:alt "Logo for Hyde"
         ;              :src "images/sponsors/hyde-logo-mod.png"}]]
