@@ -136,7 +136,7 @@
   [:.juxt {:max-height "9rem"}]
   ; [:.nu {:max-height "9rem"
   ;        :width "100%"}]
-  ; [:.healthunlocked {}]
+  [:.nilenso {:height "100%"}]
   [:.freshcode {:max-height "13rem"
                 :height "100%"}]
   [:.flexiana {:height "100%"}]
@@ -352,11 +352,6 @@
         ;            :src "images/sponsors/nu.png"
         ;            :width "320"
         ;            :height "158"}]]
-        ; [:a {:href "https://healthunlocked.com" :target "_blank" :rel "noopener"}
-        ;  [:img.healthunlocked {:alt "Logo for HealthUnlocked."
-        ;                        :src "images/sponsors/healthunlocked.svg"
-        ;                        :width "862"
-        ;                        :height "113"}]]
         [:a {:href "https://gaiwan.co" :target "_blank" :rel "noopener"}
          [:svg.gaiwan { :width "390.236" :height "75.266" :viewBox "0 0 103.25 19.914" :xmlns "http://www.w3.org/2000/svg"}
           [:g {:transform "translate(62.858 -64.577)" :style "shape-inside:url(#rect841);white-space:pre" :aria-label "Gaiwan"}
@@ -370,6 +365,11 @@
         [:a {:href "https://nette.io" :target "_blank" :rel "noopener"}
          [:img.nette {:alt "Logo for Nette."
                       :src "images/sponsors/netteio.png"}]]
+        [:a {:href "https://nilenso.com/" :target "_blank" :rel "noopener"}
+         [:img.nilenso {:alt "Logo for Nilenso"
+                               :src "images/sponsors/nilenso.svg"
+                               :width "862"
+                               :height "113"}]]
         ; [:a {:href "https://www.hyde-housing.co.uk/" :target "_blank" :rel "noopener"}
         ;  [:img.hyde {:alt "Logo for Hyde"
         ;              :src "images/sponsors/hyde-logo-mod.png"}]]
