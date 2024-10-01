@@ -8,4 +8,7 @@
    :depends [clean]
    :task (do (fs/create-dir "_site")
              (fs/copy "CNAME" "_site/CNAME")
-             (fs/copy-tree "resources" "_site"))}}}
+             (fs/copy-tree "resources" "_site")
+             (fs/copy-tree "old_site" "_site/old_site")
+             (fs/copy-tree "2021" "_site/2021")
+             (fs/copy-tree "2022" "_site/2022"))}}}
