@@ -25,6 +25,7 @@ jobs:
         uses: DeLaGuardo/setup-clojure@master
         with:
           tools-deps: 'latest'
+          bb: 'latest'
 
       - name: Setup Node/NPM
         uses: actions/setup-node@v2
@@ -32,8 +33,7 @@ jobs:
           node-version: '16'
 
       - name: Execute clojure code on Linux and MacOS
-        run: make build
-        shell: bash
+        run: bb build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

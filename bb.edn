@@ -1,0 +1,17 @@
+{:tasks
+ {:requires ([babashka.fs :as fs])
+  clean
+  (do (fs/delete-tree "_site" {:force true})
+      (fs/delete-if-exists "resources/public/css/compiled.css"))
+
+  build
+  (do (fs/create-dir "_site")
+      (fs/copy-tree "old_site" "_site/old_site")
+      (fs/copy-tree "2021" "_site/2021")
+      (shell "npx shadow-cljs release main")
+      (clojure "-A:dev" "-X:freeze")
+      (fs/copy-tree "resources/public" "_site")
+      (fs/copy "CNAME" "_site/CNAME"))
+
+  server
+  (shell {:dir "_site"} "python3 -m http.server 8080 --bind 127.0.0.1")}}
