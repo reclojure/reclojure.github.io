@@ -47,7 +47,7 @@
          :flex-flow "row wrap"
          :font-size "clamp(1.6rem, 2.8vw, 3rem)"}]
    ["ol:is([aria-expanded], #id)" {:display "flex"}]]
-  ([_]
+  ([]
    [:<>
     [:a {:href "/"} [assets/reclojure-symbol
                      {:alt "reClojure Symbol"

@@ -30,7 +30,7 @@
             :z-index "3"}
    [:span:first-child {:color c/light-green}]
    [:span:last-child {:color c/light-blue}]]
-  ([_]
+  ([]
    [:<> [:span.title [:span "reClojure"]]]))
 
 ;;; Globals
@@ -273,7 +273,7 @@
   [:time {:font-size "1rem"
           :color c/gray
           :font-varient "all-small-caps"}]
-  ([_]
+  ([]
    [:<>
     [:h2 "News"]
     [:ol {:reversed true}
