@@ -11,4 +11,9 @@
              (fs/copy-tree "resources" "_site")
              (fs/copy-tree "old_site" "_site/old_site")
              (fs/copy-tree "2021" "_site/2021")
-             (fs/copy-tree "2022" "_site/2022"))}}}
+             (fs/copy-tree "2022" "_site/2022"))}
+  server
+  {:doc "Run a development webserver"
+   :depends [build]
+   :task (shell {:dir "_site"}
+                "python3 -m http.server 8080 --bind 127.0.0.1")}}}
