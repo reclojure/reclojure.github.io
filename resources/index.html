@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="reset.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
         <link rel="stylesheet" href="style.css">
+        <title>reClojure 2025</title>
     </head>
     <body>
-        <header>
-            <nav>
-                <menu>
-                    <li>About</li>
-                    <li>
-                        <h4>Speakers</h4>
-                        <menu>
-                            <li>Call for papers</li>
-                        </menu>
-                    </li>
-                    <li>
-                        <h4>Past conferences</h4>
-                        <menu>
-                            <li><a href="/old_site">2019</a></li>
-                            <li><a href="/2021">2021</a></li>
-                            <li><a href="/2022">2022</a></li>
-                        </menu>
-                    </li>
-                </menu>
-            </nav>
-            <h1>reClojure</h1>
-            <h2>May 26 2025, London, UK</h2>
+        <header class="hero is-primary is-medium">
+            <div class="hero-head">
+                <nav class="navbar" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <a role="button" class="navbar-burger" aria-label="menu"
+                           aria-expanded="false" data-target="navbarBasicExample">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <div class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item">About</a>
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                <a class="navbar-link">Speakers</a>
+                                <div class="navbar-dropdown">
+                                    <a class="navbar-item">Call for papers</a>
+                                </div>
+                            </div>
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                <a class="navbar-link">Past conferences</a>
+                                <div class="navbar-dropdown">
+                                    <a class="navbar-item" href="/old_site">2019</a>
+                                    <a class="navbar-item" href="/2021">2021</a>
+                                    <a class="navbar-item" href="/2022">2022</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="hero-body">
+                <h1>reClojure</h1>
+                <h2>May 26 2025, London, UK</h2>
+            </div>
         </header>
-        <section id="about">
+        <section id="about" class="section">
             <p>reClojure is a community driven conference for the Clojure
             programming language.</p>
         </section>
