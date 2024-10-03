@@ -5,6 +5,7 @@ header.hero.is-primary {
 header {
     perspective: 1px;
 }
+
 body {
     height: 100vh;
     overflow-x: hidden;
@@ -18,11 +19,11 @@ body {
     left: -50px;
     bottom: -50px;
     right: -50px;
-    filter: brightness(50%) blur(0px);
+    filter: brightness(40%) blur(0px);
     transform: translateZ(-1px) scale(2);
     background-image: url(background.jpg);
     background-size: 100%;
-    background-position: center -80%;
+    background-position: center 0%;
     z-index: -1;
     overflow: hidden auto;
 }
@@ -36,4 +37,26 @@ body {
     min-height: 100vh;
 }
 
-h1 { color: blue; }
+header h1 {
+    height: calc(780px / 3);
+    width: calc(1840px / 3);
+    background-image: url(title.png);
+    background-size: cover;
+    margin: auto;
+}
+
+header h1 span {
+    display: none;
+}
+
+header .hero-body {
+    --bulma-hero-body-padding-medium: 0 20px 60px 20px;
+}
+
+header h2 {
+    color: white;
+    font-size: 32pt;
+    text-align: center;
+    margin-top: -55px;
+    padding-left: 45px;
+}
