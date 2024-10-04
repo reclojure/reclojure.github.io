@@ -27,7 +27,7 @@ body {
     transform: translateZ(-1px) scale(2);
     background-image: url(background.jpg);
     background-size: 100%;
-    background-position: center 0%;
+    background-position: center 10%;
     z-index: -1;
     overflow: hidden auto;
 }
@@ -71,4 +71,16 @@ header h2 {
     text-align: center;
     margin-top: -55px;
     padding-left: 45px;
+}
+
+header h2 .date {
+    font-weight: bold;
+}
+
+body section:first-child {
+    padding-top: 1.5rem;
+}
+
+#submit-talk .button {
+    margin: auto;
 }
