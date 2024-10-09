@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.getElementById('navbar');
+
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(
         document.querySelectorAll('.navbar-burger'), 0);
@@ -15,11 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
             el.classList.toggle('is-active');
             $target.classList.toggle('is-active');
 
+            navbar.classList.toggle('is-burgered');
         });
     });
 
     // Change opacity of navbar on scroll
-    const navbar = document.getElementById('navbar');
     const main   = document.getElementById('main');
 
     let ticking = false;
