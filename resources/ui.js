@@ -20,9 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Change opacity of navbar on scroll
     const navbar = document.getElementById('navbar');
+    const main   = document.getElementById('main');
 
-    document.getElementById('main').addEventListener('scroll', (event) => {
-        const alpha = Math.min(event.target.scrollTop, 200) / 200.0;
-        navbar.style.backgroundColor = 'rgba(0,0,0,' + alpha + ')';
+    let ticking = false;
+
+    document.getElementById('main').addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const alpha = Math.min(main.scrollTop, 200) / 200.0;
+                navbar.style.setProperty('--reclojure-navbar-alpha', alpha);
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 });
