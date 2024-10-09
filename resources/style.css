@@ -15,6 +15,7 @@ header {
 
 header .navbar {
     --bulma-navbar-dropdown-arrow: #71b83f;
+    --bulma-navbar-burger-color: white;
 }
 
 .background {
@@ -61,8 +62,9 @@ a.navbar-item:hover, .navbar-link:hover {
 }
 
 header h1 {
-    height: calc(780px / 3);
-    width: calc(1840px / 3);
+    --reclojure-scale: 3;
+    height: calc(780px / var(--reclojure-scale));
+    width: calc(1840px / var(--reclojure-scale));
     background-image: url(title.png);
     background-size: cover;
     margin: auto;
@@ -82,6 +84,17 @@ header h2 {
     text-align: center;
     margin-top: -55px;
     padding-left: 45px;
+}
+
+@media screen and (max-width: 1023px) {
+    header h1 {
+        --reclojure-scale: 4.5;
+    }
+    header h2 {
+        font-size: 28pt;
+        margin-top: -30px;
+        padding-left: 20px;
+    }
 }
 
 header h2 .date {
