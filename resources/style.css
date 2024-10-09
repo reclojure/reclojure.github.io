@@ -36,8 +36,10 @@ body {
     padding-top: .75rem;
 }
 
-.navbar-item, .navbar-link {
-    color: white;
+@media screen and (min-width: 1024px) {
+    .navbar-item, .navbar-link {
+        color: white;
+    }
 }
 
 a.navbar-item:hover, .navbar-link:hover {

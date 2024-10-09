@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
         <link rel="stylesheet" href="style.css">
+        <script src="ui.js"></script>
         <title>reClojure 2025</title>
     </head>
     <body>
@@ -14,14 +15,14 @@
                 <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
                     <div class="navbar-brand">
                         <a role="button" class="navbar-burger" aria-label="menu"
-                           aria-expanded="false" data-target="navbarBasicExample">
+                           aria-expanded="false" data-target="nav-menu">
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
                         </a>
                     </div>
-                    <div class="navbar-menu">
+                    <div class="navbar-menu" id="nav-menu">
                         <div class="navbar-end">
                             <a class="navbar-item">About</a>
                             <div class="navbar-item has-dropdown is-hoverable">
