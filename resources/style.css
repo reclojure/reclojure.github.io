@@ -1,4 +1,4 @@
-body {
+#main {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
@@ -13,9 +13,10 @@ header {
     perspective: 1px;
 }
 
-header .navbar {
+.navbar {
     --bulma-navbar-dropdown-arrow: #71b83f;
     --bulma-navbar-burger-color: white;
+    background-color: transparent;
 }
 
 .background {
@@ -33,15 +34,15 @@ header .navbar {
     overflow: hidden auto;
 }
 
-header .navbar-dropdown {
+.navbar-dropdown {
     padding-top: .75rem;
 }
 
-header .navbar .navbar-dropdown a.navbar-item {
+.navbar .navbar-dropdown a.navbar-item {
     transition: none;
 }
 
-header .navbar .navbar-dropdown a.navbar-item:hover {
+.navbar .navbar-dropdown a.navbar-item:hover {
     background-color: #688bf6;
     color: white;
 }
@@ -75,7 +76,7 @@ header h1 span {
 }
 
 header .hero-body {
-    --bulma-hero-body-padding-medium: 0 20px 80px 20px;
+    --bulma-hero-body-padding-medium: 20px 20px 60px 20px;
 }
 
 header h2 {

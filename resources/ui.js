@@ -17,4 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         });
     });
+
+    // Change opacity of navbar on scroll
+    const navbar = document.getElementById('navbar');
+
+    document.getElementById('main').addEventListener('scroll', (event) => {
+        const alpha = Math.min(event.target.scrollTop, 200) / 200.0;
+        navbar.style.backgroundColor = 'rgba(0,0,0,' + alpha + ')';
+    });
 });
