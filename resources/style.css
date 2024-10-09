@@ -1,3 +1,10 @@
+body {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+}
+
 header.hero.is-primary {
     background-color: transparent;
 }
@@ -6,14 +13,7 @@ header {
     perspective: 1px;
 }
 
-body {
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    perspective: 1px;
-}
-
-.navbar {
+header .navbar {
     --bulma-navbar-dropdown-arrow: #71b83f;
 }
 
@@ -23,7 +23,7 @@ body {
     left: -50px;
     bottom: -50px;
     right: -50px;
-    filter: brightness(40%) blur(0px);
+    filter: brightness(40%);
     transform: translateZ(-1px) scale(2);
     background-image: url(background.jpg);
     background-size: 100%;
@@ -32,8 +32,17 @@ body {
     overflow: hidden auto;
 }
 
-.navbar-dropdown {
+header .navbar-dropdown {
     padding-top: .75rem;
+}
+
+header .navbar .navbar-dropdown a.navbar-item {
+    transition: none;
+}
+
+header .navbar .navbar-dropdown a.navbar-item:hover {
+    background-color: #688bf6;
+    color: white;
 }
 
 @media screen and (min-width: 1024px) {
