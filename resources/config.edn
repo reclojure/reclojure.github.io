@@ -1,3 +1,0 @@
-{:org.reclojure.http/server
- {:port #profile {:default 7070 :test 7071}
-  :rebuild-on-request? #profile {:default true :prod false}}}
