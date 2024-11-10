@@ -1,0 +1,122 @@
+#main {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+}
+
+header.hero.is-primary {
+    background-color: transparent;
+}
+
+header {
+    perspective: 1px;
+}
+
+.navbar {
+    --bulma-navbar-dropdown-arrow: #71b83f;
+    --bulma-navbar-burger-color: white;
+    --reclojure-navbar-alpha: 0;
+    background-color: rgba(0, 0, 0, var(--reclojure-navbar-alpha));
+}
+
+.background {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    bottom: -50px;
+    right: -50px;
+    filter: brightness(40%);
+    transform: translateZ(-1px) scale(2);
+    background-image: url(background.jpg);
+    background-size: 100%;
+    background-position: center -20%;
+    z-index: -1;
+    overflow: hidden auto;
+}
+
+.navbar-dropdown {
+    padding-top: .75rem;
+}
+
+.navbar .navbar-dropdown a.navbar-item {
+    transition: none;
+}
+
+.navbar .navbar-dropdown a.navbar-item:hover {
+    background-color: #688bf6;
+    color: white;
+}
+
+@media screen and (min-width: 1024px) {
+    .navbar-item, .navbar-link {
+        color: white;
+    }
+}
+
+a.navbar-item:hover, .navbar-link:hover {
+    --bulma-navbar-item-background-a: 0.15;
+}
+
+.content {
+    background: white;
+    min-height: calc(100vh - 200px);
+}
+
+header h1 {
+    --reclojure-scale: 3;
+    height: calc(780px / var(--reclojure-scale));
+    width: calc(1840px / var(--reclojure-scale));
+    background-image: url(title.png);
+    background-size: cover;
+    margin: auto;
+}
+
+header h1 span {
+    display: none;
+}
+
+header .hero-body {
+    --bulma-hero-body-padding-medium: 20px 20px 40px 20px;
+}
+
+@media screen and (min-width: 1024px) {
+    header .hero-body {
+        --bulma-hero-body-padding-medium: 40px 20px 70px 20px;
+    }
+}
+
+header h2 {
+    color: white;
+    font-size: 32pt;
+    text-align: center;
+    margin-top: -55px;
+    padding-left: 45px;
+}
+
+@media screen and (max-width: 1023px) {
+    header h1 {
+        --reclojure-scale: 4.5;
+    }
+    header h2 {
+        font-size: 28pt;
+        margin-top: -30px;
+        padding-left: 20px;
+    }
+}
+
+header h2 .date {
+    font-weight: bold;
+}
+
+body section:first-child {
+    padding-top: 1.5rem;
+}
+
+#submit-talk.buttons {
+    margin-bottom: 0;
+}
+
+#submit-talk .button, #submit-sponsor .button {
+    margin: auto;
+}
