@@ -113,7 +113,7 @@ body section:first-child {
     padding-top: 1.5rem;
 }
 
-#submit-talk.buttons {
+#submit-talk.buttons, #submit-sponsor.buttons {
     margin-bottom: 0;
 }
 
