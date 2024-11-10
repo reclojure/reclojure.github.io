@@ -30,7 +30,7 @@ header {
     transform: translateZ(-1px) scale(2);
     background-image: url(background.jpg);
     background-size: 100%;
-    background-position: center -10%;
+    background-position: center -20%;
     z-index: -1;
     overflow: hidden auto;
 }
@@ -60,7 +60,7 @@ a.navbar-item:hover, .navbar-link:hover {
 
 .content {
     background: white;
-    min-height: 100vh;
+    min-height: calc(100vh - 200px);
 }
 
 header h1 {
@@ -113,6 +113,10 @@ body section:first-child {
     padding-top: 1.5rem;
 }
 
-#submit-talk .button {
+#submit-talk.buttons {
+    margin-bottom: 0;
+}
+
+#submit-talk .button, #submit-sponsor .button {
     margin: auto;
 }
