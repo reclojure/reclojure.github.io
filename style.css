@@ -22,17 +22,27 @@ header {
 
 .background {
     position: absolute;
-    top: -50px;
-    left: -50px;
-    bottom: -50px;
-    right: -50px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     filter: brightness(40%);
-    transform: translateZ(-1px) scale(2);
+    transform: translateZ(-2px) scale(3);
     background-image: url(background.jpg);
     background-size: 100%;
-    background-position: center -20%;
-    z-index: -1;
+    background-position: center 0%;
+    z-index: -2;
     overflow: hidden auto;
+}
+
+footer {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    background: white;
 }
 
 .navbar-dropdown {
@@ -60,7 +70,6 @@ a.navbar-item:hover, .navbar-link:hover {
 
 .content {
     background: white;
-    min-height: calc(100vh - 200px);
 }
 
 header h1 {
