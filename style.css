@@ -1,3 +1,7 @@
+html {
+    overflow-y: auto;
+}
+
 #main {
     height: 100vh;
     overflow-x: hidden;
@@ -40,7 +44,7 @@ footer {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -50px;
     height: 50%;
     background: white;
 }
