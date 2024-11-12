@@ -22,14 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Change opacity of navbar on scroll
-    const main   = document.getElementById('main');
-
     let ticking = false;
 
-    document.getElementById('main').addEventListener('scroll', () => {
+    document.addEventListener('scroll', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
-                const alpha = Math.min(main.scrollTop, 200) / 200.0;
+                const alpha = Math.min(window.scrollY, 200) / 200.0;
                 navbar.style.setProperty('--reclojure-navbar-alpha', alpha);
                 ticking = false;
             });
