@@ -1,5 +1,19 @@
-{:tasks
- {:requires ([babashka.fs :as fs])
+{:deps {comb/comb {:mvn/version "0.1.1"}}
+ :tasks
+ {:requires ([babashka.fs :as fs]
+             [clojure.string :as str]
+             [comb.template :as comb])
+  :init (do (defn copy-template [f src dest]
+              (spit (fs/file dest (fs/relativize src f))
+                    (comb/eval (slurp (fs/file f)))))
+            (defn partial-file? [f]
+              (str/starts-with? (-> f .getFileName str) "_"))
+            (defn copy-template-tree [src dest]
+              (fs/walk-file-tree
+               src {:visit-file
+                    (fn [f _]
+                      (when-not (partial-file? f) (copy-template f src dest))
+                      :continue)})))
   clean
   {:doc "Clean generated files"
    :task (fs/delete-tree "_site" {:force true})}
@@ -9,6 +23,7 @@
    :task (do (fs/create-dir "_site")
              (fs/copy "CNAME" "_site/CNAME")
              (fs/copy-tree "resources" "_site")
+             (copy-template-tree "templates" "_site")
              (fs/copy-tree "old_site" "_site/old_site")
              (fs/copy-tree "2021" "_site/2021")
              (fs/copy-tree "2022" "_site/2022"))}
