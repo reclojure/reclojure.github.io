@@ -16,7 +16,47 @@
         </header>
         <div class="content">
             <div class="container is-max-desktop">
-                <section id="about" class="section speaker is-size-6">
+                <section class="section speaker is-size-6">
+                    <h1>Electric Clojure: Differential Dataflow for UI</h1>
+                    <h2>Dustin Getz</h2>
+                    <img class="portrait" src="speakers/dustin_getz.jpg">
+                    <p>
+                        Electric is a new way to make rich, interactive web
+                        products that simply have too much interactivity,
+                        realtime streaming, and too rich network connections to
+                        be able to write all the frontend/backend plumbing by
+                        hand. This talk will introduce Electric v3 with an
+                        emphasis on its new callback-free pure-functional
+                        abstractions for user input, forms, datagrids, server
+                        transactions and optimistic updates.
+                    </p>
+                </section>
+                <section class="section speaker is-size-6">
+                    <h1>UI, Pure and Simple</h1>
+                    <h2>Christian Johansen</h2>
+                    <img class="portrait" src="speakers/christian_johansen.jpg">
+                    <p>
+                        React introduced the idea that the UI is a function of
+                        application state, and it changed the way we think about
+                        building UIs. Unfortunately, it also allowed mutable
+                        state everywhere.
+                    </p>
+                    <p>
+                        What if UI rendering was truly functional — stateless,
+                        deterministic, and built entirely on data? Enter
+                        Replicant: a Clojure rendering library with no
+                        dependencies and no state management, just immutable
+                        data and pure functions.
+                    </p>
+                    <p>
+                        In this talk, we’ll use Replicant to explore how
+                        Clojure’s strengths can refine UI development once
+                        again. Let's build modular UIs that decouple rendering
+                        from state management, are fully testable, and
+                        dramatically simpler than the current state of the art.
+                    </p>
+                </section>
+                <section class="section speaker is-size-6">
                     <h1>Pioneering Brain-Computer Interfacing (BCI)
                         Research with Clojure</h1>
                     <h2>Lorelai Lyons</h2>
@@ -69,6 +109,184 @@
                         Clojure wrapper around the OpenBCI API and a
                         thought-provoking discussion on responsible innovation
                         in neurotechnology.
+                    </p>
+                </section>
+                <section class="section speaker is-size-6">
+                    <h1>Writing Model Context Protocol (MCP) servers in Clojure</h1>
+                    <h2>Vedang Manerikar</h2>
+                    <img class="portrait" src="speakers/vedang_manerikar.jpg">
+                    <p>
+                        This talk showcases mcp-cljc-sdk, a Clojure SDK I've
+                        written for building MCP servers. Model Context Protocol
+                        (MCP) is an emerging standard that allows AI agents to
+                        interact with external systems through specialized
+                        servers. I'll demonstrate how MCP creates powerful,
+                        composable workflows that gradually automate complex
+                        tasks using real-world examples of MCP servers I have
+                        written.
+                    </p>
+                    <p>
+                        We'll explore why Clojure is particularly well-suited
+                        for implementing MCP servers, comparing it with other
+                        approaches and highlighting Clojure's strengths through
+                        side-by-side code comparisons.
+                    </p>
+                    <p>
+                        By the end of this talk, you'll understand how to create
+                        your own MCP servers, contribute to the growing
+                        ecosystem, and leverage these tools to build powerful
+                        AI-enhanced applications that integrate with your
+                        existing workflows.
+                    </p>
+                </section>
+                <section class="section speaker is-size-6">
+                    <h1>Datomic at Nubank, simplicity scaled</h1>
+                    <h2>Jordan Miller</h2>
+                    <img class="portrait" src="speakers/jordan_miller.jpg">
+                    <p>
+                        Nubank runs on Clojure and Datomic, but what does that
+                        really look like at scale? In this talk, I’ll share my
+                        personal journey—from early interactions with the
+                        Cognitect team to joining Nubank and working directly
+                        with Datomic. I’ll give an inside look at how we use
+                        Datomic in production, what we’ve accomplished over the
+                        last year, and what it’s like being part of the Datomic
+                        team today.
+                    </p>
+                </section>
+                <section class="section speaker is-size-6">
+                    <h1>Recognizing regular patterns in mixed-type sequences
+                        using Symbolic Finite Automata</h1>
+                    <h2>Jim Newton</h2>
+                    <img class="portrait" src="speakers/jim_newton.jpg">
+                    <p>
+                        Run-time type-based reflection is a powerful tool which
+                        is used to solve certain problems which are out of reach
+                        to purely statically typed programming languages. The
+                        JVM-based implementation Clojure allows a running
+                        program to make certain type-based decisions which
+                        cannot be made at compile time. Notably, type predicates
+                        and dynamic method dispatch allow the running Clojure
+                        program to make run-time decisions based on
+                        characteristics of input data, the type of which cannot
+                        be known at compile time.
+                    </p>
+                    <p>
+                        In this expose, we present yet another kind of run-time
+                        based type decision which allows us to arbitrate among
+                        various regular patterns in otherwise untyped data. We
+                        call these patterns RTEs (regular type expressions).
+                    </p>
+                    <p>
+                        Clojure programs often manipulate sequences of mixed
+                        typed elements. We would additionally like to specify
+                        sequences of heterogeneous but regular types.
+                    </p>
+                    <p>
+                        We assume the audience to already be familiar with
+                        string-based regular expressions (REs). REs are used to
+                        distinguish strings which follow a regular pattern such
+                        as <code>$a(a|b)^*b$</code>, the set of strings
+                        beginning with the character <em>a</em>, ending with
+                        <em>b</em>, and with zero or more <em>a</em> or
+                        <em>b</em> (or both) characters falling in between. We
+                        generalize this familiar concept to define expressions
+                        which specify a sequence beginning with an integer,
+                        ending with a string, and with zero or more integers or
+                        strings (or both) falling in between.
+                    </p>
+                    <p>
+                        The implementation of Regular Type Expressions (RTEs) in
+                        Clojure involved several challenges.
+                    </p>
+                    <ol>
+                        <li>Embed a Simple type system (SETS) into Clojure’s
+                            run-time &mdash; adding intersection, union, and
+                            complement types, as well an singleton and predicate
+                            types.</li>
+                        <li>Define an s-expression syntax for defining
+                            regular-type-expression in terms of types, including
+                            intersections, unions, and complements.</li>
+                        <li>Construct deterministic finite automata, DFAs, from
+                            the regular type expressions. This library
+                            manipulates DFAs with operations such as minimize,
+                            intersection, union, xor, and extract-rte.</li>
+                    </ol>
+                    <p>
+                        There are many theoretical questions which investigate
+                        the limitations of the generalization from classical
+                        character based regular expressions to regular type
+                        expressions. Some of these concerns include habitation
+                        and vacuity checks (given an RTE, can we determine
+                        whether all or no sequence will match). Given two
+                        types designators determine whether one is a subtype of
+                        the other, and whether either is empty. Subtype
+                        determination is important for guaranteeing that finite
+                        automata be deterministic. Unfortunately, the subtype
+                        relation cannot always be determined (for several
+                        interesting theoretical reasons). We present a clever
+                        procedure for DFA construction which is guaranteed to
+                        be deterministic, even when the subtype relation cannot
+                        be determined.
+                    </p>
+                    <p>
+                        This project is part of a larger scoped multi-language
+                        project including implementsion in Clojure, Scala,
+                        Python, and Common Lisp. The fundamental theoretical
+                        introduction was given in the PhD thesis:
+                        <a href="https://theses.hal.science/tel-03018107v1"><em>
+                            Representing and computing with types in dynamically
+                            typed languages</em></a>.
+                    </p>
+                    <p>
+                        The library is publically available at:
+                        <a href="https://github.com/jimka2001/clojure-rte">
+                            https://github.com/jimka2001/clojure-rte</a>.
+                    </p>
+                </section>
+                <section class="section speaker is-size-6">
+                    <h1>LLMs + Clojure = Who needs frameworks?</h1>
+                    <h2>Kapil Reddy</h2>
+                    <img class="portrait" src="speakers/kapil_reddy.jpg">
+                    <p>
+                        Large Language Models have transformed coding workflows.
+                        They are particularly good at project scaffolding.
+                    </p>
+                    <p>
+                        While Clojure's philosophy of composable libraries over
+                        frameworks grants exceptional power and flexibility. It
+                        also has a steeper learning curve for newer developers —
+                        many of whom lament the absence of a Rails-like
+                        framework to ease their journey.
+                    </p>
+                    <p>
+                        This talk introduces a novel approach that preserves
+                        Clojure's library-centric philosophy while improving
+                        developer experience using LLMs.
+                    </p>
+                    <p>
+                        Key parts:
+                    </p>
+                    <ul>
+                        <li>llms.edn: A structured, Clojure-native approach to
+                            describing libraries and their common usage
+                            patterns, building on concepts from llms.txt but
+                            tailored specifically for Clojure's ecosystem.</li>
+                        <li>LLM-powered composition workflow: A practical
+                            demonstration of how LLMs can intelligently combine
+                            libraries based on these declarations, generating
+                            cohesive starter projects that reflect Clojure's
+                            best practices.</li>
+                        <li>Beyond frameworks: An exploration of whether LLMs
+                            fundamentally change the library-vs-framework debate
+                            by offering ""framework-like"" convenience without
+                            sacrificing composability.</li>
+                    </ul>
+                    <p>
+                        Let's discuss the future of the llms.edn project and
+                        help shape a tool that could significantly enhance
+                        Clojure's accessibility while honouring its core design
+                        philosophy.
                     </p>
                 </section>
             </div>
