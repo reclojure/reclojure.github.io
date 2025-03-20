@@ -54,9 +54,8 @@ header.hero.is-medium h1 {
 }
 
 header.hero.is-small h1 {
-    height: calc(780px / 8);
-    width: calc(1840px / 8);
-    margin: 0;
+    height: calc(780px / 10);
+    width: calc(1840px / 10);
     float: left;
 }
 
@@ -81,10 +80,11 @@ header.hero.is-medium h2 {
 }
 
 header.hero.is-small h2 {
-    font-size: 32pt;
+    font-size: 38pt;
+    font-weight: bold;
     text-align: left;
-    margin-top: 24px;
-    margin-left: 260px;
+    margin-top: 4px;
+    margin-left: 195px;
 }
 
 @media screen and (max-width: 1023px) {
@@ -127,4 +127,25 @@ body section:first-child {
 
 #buy-ticket .button, #submit-sponsor .button {
     margin: auto;
+}
+
+.speaker {
+    width: 150px;
+    float: left;
+}
+
+.speaker h2 {
+    font-size: 16pt;
+    color: #1e4acf;
+}
+
+.speaker img {
+    width: 140px;
+    height: 200px;
+    background: #ccc;
+}
+
+.talk {
+    margin-left: 150px;
+    min-height: 250px;
 }
