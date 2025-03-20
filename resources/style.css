@@ -42,30 +42,49 @@ a.navbar-item:hover, .navbar-link:hover {
     background: white;
 }
 
-header h1 {
-    height: calc(780px / 3);
-    width: calc(1840px / 3);
+header.hero h1 {
     background-image: url(title.png);
     background-size: cover;
+}
+
+header.hero.is-medium h1 {
+    height: calc(780px / 3);
+    width: calc(1840px / 3);
     margin: auto;
+}
+
+header.hero.is-small h1 {
+    height: calc(780px / 8);
+    width: calc(1840px / 8);
+    margin: 0;
+    float: left;
 }
 
 header h1 span {
     display: none;
 }
 
-
-header .hero-body {
+header.hero.is-medium .hero-body {
     --bulma-hero-body-padding: 30px 10px 50px 10px;
     --bulma-hero-body-padding-medium: 40px 20px 70px 20px;
 }
 
 header h2 {
     color: white;
+}
+
+header.hero.is-medium h2 {
     font-size: 32pt;
     text-align: center;
     margin-top: -55px;
     padding-left: 45px;
+}
+
+header.hero.is-small h2 {
+    font-size: 32pt;
+    text-align: left;
+    margin-top: 24px;
+    margin-left: 260px;
 }
 
 @media screen and (max-width: 1023px) {
