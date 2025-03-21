@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+    <head>
+        <%= (slurp "templates/_head.html") %>
+        <title>reClojure 2025: Speaker Profile - Jordan Miller</title>
+    </head>
+    <body>
+        <%= (slurp "templates/_navbar.html") %>
+        <header class="hero is-primary is-small">
+            <div class="hero-head">
+            </div>
+            <div class="hero-body">
+                <h1><span>reClojure</span></h1>
+                <h2>Speaker Profile</h2>
+            </div>
+        </header>
+        <div class="content">
+            <div class="container is-max-desktop">
+                <section class="section profile is-size-6">
+                    <h1>Dustin Getz</h1>
+                    <div class="speaker">
+                        <img class="portrait" src="dustin_getz.jpg">
+                    </div>
+                    <p>
+                        Dustin Getz is the founder of
+                        <a href="https://www.hyperfiddle.net/">Hyperfiddle</a>,
+                        a "UI Spreadsheet" for making internal app frontends.
+                        Hyperfiddle's mission is to collapse to zero the cost of
+                        internal frontend development for a wide range of
+                        business process applications, by applying distributed
+                        systems and concurrency techniques to build a new class
+                        of UI infrastructure.
+                    </p>
+                    <div class="links">
+                        <a href="https://www.dustingetz.com/" title="Website">
+                            <i class="fa-solid fa-link"></i> <span>Website</span>
+                        </a>
+                        <a href="https://github.com/dustingetz" title="GitHub">
+                            <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/dustingetz/"
+                           title="Linked-In">
+                            <i class="fa-brands fa-linkedin"></i> <span>Linked-In</span>
+                        </a>
+                        <a href="https://twitter.com/dustingetz" title="Twitter">
+                            <i class="fa-brands fa-twitter"></i> <span>Twitter</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>

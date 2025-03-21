@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+    <head>
+        <%= (slurp "templates/_head.html") %>
+        <title>reClojure 2025: Speaker Profile - Jordan Miller</title>
+    </head>
+    <body>
+        <%= (slurp "templates/_navbar.html") %>
+        <header class="hero is-primary is-small">
+            <div class="hero-head">
+            </div>
+            <div class="hero-body">
+                <h1><span>reClojure</span></h1>
+                <h2>Speaker Profile</h2>
+            </div>
+        </header>
+        <div class="content">
+            <div class="container is-max-desktop">
+                <section class="section profile is-size-6">
+                    <h1>Jim Newton</h1>
+                    <div class="speaker">
+                        <img class="portrait" src="jim_newton.jpg">
+                    </div>
+                    <p>
+                        Jim Newton is an assistant research professor at EPITA,
+                        Kremlin Becetre, FRANCE, where he occasionally teaches
+                        courses in functional programming using Clojure and
+                        Scala.  Jim has been a Lisp programmer since 1988, and
+                        has used various lisp dialects such as Common Lisp,
+                        SKILL++ (a Scheme dialect), elisp, and most recently,
+                        Clojure.
+                    </p>
+                    <div class="links">
+                        <a href="https://github.com/jimka2001" title="GitHub">
+                            <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>
