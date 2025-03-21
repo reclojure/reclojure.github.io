@@ -88,12 +88,12 @@ header.hero.is-small h2 {
 }
 
 @media screen and (max-width: 1023px) {
-    header h1 {
+    header.hero.is-medium h1 {
         height: calc(780px / 4);
         width: calc(1840px / 4);
 
     }
-    header h2 {
+    header.hero.is-medium h2 {
         font-size: 24pt;
         margin-top: -30px;
         padding-left: 20px;
@@ -101,12 +101,12 @@ header.hero.is-small h2 {
 }
 
 @media screen and (max-width: 768px) {
-    header h1 {
+    header.hero.is-medium h1 {
         height: calc(780px / 5);
         width: calc(1840px / 5);
 
     }
-    header h2 {
+    header.hero.is-medium h2 {
         font-size: 20pt;
         margin-top: -30px;
         padding-left: 20px;

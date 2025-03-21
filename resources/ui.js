@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('scroll', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
-                const alpha = Math.min(window.scrollY, 200) / 200.0;
+                const alpha = Math.min(window.scrollY, 70) / 70.0;
                 navbar.style.setProperty('--reclojure-navbar-alpha', alpha);
                 ticking = false;
             });
