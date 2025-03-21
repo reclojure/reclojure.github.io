@@ -141,6 +141,14 @@ body section:first-child {
     margin: 0 0 10px 0;
 }
 
+.speaker h2 a {
+    color: #1e4acf;
+}
+
+.speaker h2 a:hover {
+    text-decoration: underline;
+}
+
 .speaker img {
     width: 150px;
     height: 150px;
@@ -161,6 +169,26 @@ body section:first-child {
 .speaker .links i {
     font-size: 20px;
     padding: 7px 5px;
+}
+
+.profile .speaker {
+    width: 170px;
+}
+
+.profile .links a {
+    padding-left: 5px;
+}
+
+.profile .links a span {
+    padding-right: 5px;
+}
+
+.profile .links a::after {
+    content: " · ";
+}
+
+.profile .links a:last-child::after {
+    content: "";
 }
 
 i.fa-link { color: #444; }
