@@ -153,3 +153,18 @@ body section:first-child {
     margin-left: 170px;
     min-height: 200px;
 }
+
+.speaker .links {
+    text-align: center;
+}
+
+.speaker .links i {
+    font-size: 20px;
+    padding: 7px 5px;
+}
+
+i.fa-link { color: #444; }
+i.fa-twitter { color: #1d9eef; }
+i.fa-github { color: black; }
+i.fa-mastodon { color: #5b4be1; }
+i.fa-linkedin { color: #0a66c2; }
