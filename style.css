@@ -42,39 +42,58 @@ a.navbar-item:hover, .navbar-link:hover {
     background: white;
 }
 
-header h1 {
-    height: calc(780px / 3);
-    width: calc(1840px / 3);
+header.hero h1 {
     background-image: url(title.png);
     background-size: cover;
+}
+
+header.hero.is-medium h1 {
+    height: calc(780px / 3);
+    width: calc(1840px / 3);
     margin: auto;
+}
+
+header.hero.is-small h1 {
+    height: calc(780px / 10);
+    width: calc(1840px / 10);
+    float: left;
 }
 
 header h1 span {
     display: none;
 }
 
-
-header .hero-body {
+header.hero.is-medium .hero-body {
     --bulma-hero-body-padding: 30px 10px 50px 10px;
     --bulma-hero-body-padding-medium: 40px 20px 70px 20px;
 }
 
 header h2 {
     color: white;
+}
+
+header.hero.is-medium h2 {
     font-size: 32pt;
     text-align: center;
     margin-top: -55px;
     padding-left: 45px;
 }
 
+header.hero.is-small h2 {
+    font-size: 38pt;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 4px;
+    margin-left: 195px;
+}
+
 @media screen and (max-width: 1023px) {
-    header h1 {
+    header.hero.is-medium h1 {
         height: calc(780px / 4);
         width: calc(1840px / 4);
 
     }
-    header h2 {
+    header.hero.is-medium h2 {
         font-size: 24pt;
         margin-top: -30px;
         padding-left: 20px;
@@ -82,12 +101,12 @@ header h2 {
 }
 
 @media screen and (max-width: 768px) {
-    header h1 {
+    header.hero.is-medium h1 {
         height: calc(780px / 5);
         width: calc(1840px / 5);
 
     }
-    header h2 {
+    header.hero.is-medium h2 {
         font-size: 20pt;
         margin-top: -30px;
         padding-left: 20px;
@@ -102,10 +121,77 @@ body section:first-child {
     padding-top: 1.5rem;
 }
 
-#submit-talk.buttons, #submit-sponsor.buttons {
+#buy-ticket.buttons, #submit-sponsor.buttons {
     margin-bottom: 0;
 }
 
-#submit-talk .button, #submit-sponsor .button {
+#buy-ticket .button, #submit-sponsor .button {
     margin: auto;
 }
+
+.speaker {
+    width: 150px;
+    float: left;
+}
+
+.speaker h2 {
+    font-size: 16pt;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+.speaker h2 a {
+    color: #1e4acf;
+}
+
+.speaker h2 a:hover {
+    text-decoration: underline;
+}
+
+.speaker img {
+    width: 150px;
+    height: 150px;
+    background: #ccc;
+    border-radius: 75px;
+    border: 3px solid #6fb53e;
+}
+
+.talk {
+    margin-left: 170px;
+    min-height: 200px;
+}
+
+.speaker .links {
+    text-align: center;
+}
+
+.speaker .links i {
+    font-size: 20px;
+    padding: 7px 5px;
+}
+
+.profile .speaker {
+    width: 170px;
+}
+
+.profile .links a {
+    padding-left: 5px;
+}
+
+.profile .links a span {
+    padding-right: 5px;
+}
+
+.profile .links a::after {
+    content: " · ";
+}
+
+.profile .links a:last-child::after {
+    content: "";
+}
+
+i.fa-link { color: #444; }
+i.fa-twitter { color: #1d9eef; }
+i.fa-github { color: black; }
+i.fa-mastodon { color: #5b4be1; }
+i.fa-linkedin { color: #0a66c2; }
