@@ -196,24 +196,38 @@ i.fa-github { color: black; }
 i.fa-mastodon { color: #5b4be1; }
 i.fa-linkedin { color: #0a66c2; }
 
-table.talks tr td {
+table.schedule tr td {
     vertical-align: middle;
 }
 
-.talks .title {
+.schedule .title {
     font-weight: normal;
     font-size: 18px;
-    margin: 0 0 2px 0;
-    padding: 0;
+    padding: 0 0 2px 0;
+    margin: 0;
+    width: 100%;
 }
 
-.talks .speaker {
+.schedule .speaker {
     font-style: italic;
     font-size: 14px;
+    width: 100%;
 }
 
-.talks .break {
+.schedule .break {
     color: #6fb53d;
     font-size: 14px;
     font-weight: bold;
+}
+
+.schedule td a {
+    display: block;
+}
+
+.schedule td a .title, .schedule td a .speaker {
+    color: var(--bulma-text);
+}
+
+.schedule td a:hover .title, .schedule td a:hover .speaker {
+    color: var(--bulma-link);
 }
