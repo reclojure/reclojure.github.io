@@ -211,3 +211,9 @@ table.talks tr td {
     font-style: italic;
     font-size: 14px;
 }
+
+.talks .break {
+    color: #6fb53d;
+    font-size: 14px;
+    font-weight: bold;
+}
