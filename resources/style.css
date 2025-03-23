@@ -195,3 +195,19 @@ i.fa-twitter { color: #1d9eef; }
 i.fa-github { color: black; }
 i.fa-mastodon { color: #5b4be1; }
 i.fa-linkedin { color: #0a66c2; }
+
+table.talks tr td {
+    vertical-align: middle;
+}
+
+.talks .title {
+    font-weight: normal;
+    font-size: 18px;
+    margin: 0 0 2px 0;
+    padding: 0;
+}
+
+.talks .speaker {
+    font-style: italic;
+    font-size: 14px;
+}
