@@ -258,9 +258,8 @@ table.schedule tr td {
     padding: 4px;
 }
 
-.sponsors img.whitebg {
-    background: white;
-    border-radius: 5px;
-    padding: 4px;
+.sponsors img.nubank {
     height: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
