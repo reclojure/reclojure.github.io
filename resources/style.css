@@ -259,7 +259,17 @@ table.schedule tr td {
 }
 
 .sponsors img.nubank {
-    height: 30px;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 4px;
+}
+
+.sponsors img.clojurists {
+    padding: 0 4px;
+}
+
+.sponsors img.freshcode {
+    padding: 0 4px;
+}
+
+.sponsors img.factorhouse {
+    padding: 0 4px;
 }
