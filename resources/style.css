@@ -273,3 +273,11 @@ table.schedule tr td {
 .sponsors img.factorhouse {
     padding: 0 4px;
 }
+
+#tickets-closed {
+    color: #800
+}
+
+#tickets-closed p {
+    text-align: center;
+}
