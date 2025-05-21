@@ -275,7 +275,8 @@ table.schedule tr td {
 }
 
 #tickets-closed {
-    color: #800
+    color: #800;
+    padding: 10px;
 }
 
 #tickets-closed p {
